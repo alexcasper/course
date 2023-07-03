@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M9 – L4: Merging</h2>
+</div>
+<div id="kl_banner_image"><img class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802109/download?verifier=trcDOjpDqOarrm9HNfNfdbERrwxH0FbFBGkgEeoY" alt="SQL–Table Operations.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802109" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Merging</h3>
+<p>&nbsp;</p>
+<p>A <em>data manipulation language</em> (DML) action involves either inserting, updating or deleting records from a table within a database.</p>
+<p>For example, you may want to update a record with a particular value using the following DML action:</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>UPDATE Employees </strong></span><br><span style="font-size: 12pt;"><strong>SET bonus = 2000 </strong></span><br><span style="font-size: 12pt;"><strong>WHERE empno = 8844;</strong></span></p>
+<p>In this instance, the <em>bonus</em> attribute for employee number (<em>empno</em>) 8844 is updated to 2000 in the <strong>Employees</strong> table.</p>
+<p>However, if we want to replace the 2000 with a more “adaptable” value, we can replace it with a subquery such as:</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>UPDATE Employees </strong></span><br><span style="font-size: 12pt;"><strong>SET bonus = (SELECT AVG(bonus) FROM Employees) </strong></span><br><span style="font-size: 12pt;"><strong>WHERE empno = 8844;</strong></span></p>
+<p>In this instance, the 2000 has been replaced with the <span style="color: #000000;"><em>output of the subquery </em></span>which has calculated the average bonus value paid to the employees contained within the <strong>Employees</strong> table.</p>
+<p>Employing a <strong>MERGE</strong> statement permits a <em>series of DML actions</em> to occur within a <em>single</em> SQL statement. Data sources can be updated based on values contained within other data sources.</p>
+<p>We can use <strong>Oracle Live SQL</strong> to illustrate this using the <span style="text-decoration: underline;"><strong>Just Lee Bookstore</strong></span> database.</p>
+<p>Click on the tabs below in the numbered order to see the use of the MERGE keyword.</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">1. Generating two temporary tables (Books_1 and Books_2).</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802217/download?verifier=yW5VrJBRhcxBpQ3DHSvxeFKB1V6QjT9nMCIaMzTK" alt="M3_L4_MERGE_1_CreateTables.png" width="726" height="718" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802217" data-api-returntype="File"></p>
+<p>We can see that in <strong>Books_1</strong>, the first five rows are selected by the SQL commands “<strong>FETCH FIRST 5 ROWS ONLY;</strong>” in place of “<strong>LIMIT 5</strong>” (used in <strong>SQLite3</strong>),.</p>
+<p>Similarly in <strong>Books_2</strong> we have used “<strong>OFFSET 4 ROWS</strong>” similar to <strong>SQLite3</strong> (“<strong>OFFSET 4</strong>”) but then we use the <strong>FETCH</strong> command to extract rows 5 to 10 from the <strong>Books</strong> table, i.e. “<strong>FETCH NEXT 6 ROWS ONLY;</strong>”.</p>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">2. Updating Books_2</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802349/download?verifier=0kot7THH7Xqo1EkMVpnj3w7hAiHCFCEuTRVHJRmC" alt="M3_L4_MERGE_2_UpdateTable.png" width="685" height="412" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802349" data-api-returntype="File"></p>
+<p>We have updated the retail and category values for the book called “COOKING WITH MUSHROOMS”.</p>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">3. Employing the MERGE keyword</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802425/download?verifier=02H0k6DXjwONFmDrTCNZNKrvRfHTNmPhhdfaHxtA" alt="M3_L4_MERGE_3_Merge.png" width="735" height="614" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802425" data-api-returntype="File"></p>
+<p>Here we have made use of a <strong>MERGE</strong> statement with conditions (<em><strong>Lines 1 to 3</strong></em>) in order to update a value in the <strong>Books_1</strong> table with the values from the <strong>Books_2</strong> table (<em><strong>Lines 4 to 5</strong></em>), or to insert new records from the <strong>Books_2</strong> table into the <strong>Books_1</strong> table (<em><strong>Lines 6 to 8</strong></em>).</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
