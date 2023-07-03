@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M9 – L8: Table Joins: Left Outer</h2>
+</div>
+<div id="kl_banner_image"><img class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802109/download?verifier=trcDOjpDqOarrm9HNfNfdbERrwxH0FbFBGkgEeoY" alt="SQL–Table Operations.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802109" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<p>&nbsp;</p>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>LEFT (OUTER) JOIN</h3>
+<p><span>Please watch the Explainer video to learn more about the <strong>LEFT OUTER JOIN</strong>.</span></p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><iframe style="width: 720px; height: 405px;" title="Module 3 Left Outer Join" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3Deaf70339-c0a5-4e20-9473-acb700d1fbdf" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe><br><a class="instructure_file_link instructure_scribd_file" title="M3_Left Outer Join.pdf" href="https://nulondon.instructure.com/courses/2778/files/802379?verifier=yhfT7Rqx2PJGVnQJGoBcdMurvQrHcbXPRsZWMwDZ&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802379" data-api-returntype="File">Transcript&nbsp;</a></p>
+<p style="text-align: center;">&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/download?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File"> Try It Yourself!</p>
+<p>We can take this example further by including an <strong>ORDER BY</strong> clause.</p>
+<p>If we wanted to order in ascending order by the <em>CustomerID</em>, where would you put it and how would you write it?</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p class=""><a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #a9a9a9; background: #f7f7f7; padding: 10px; width: 800px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>The <strong>ORDER BY</strong> clause would be placed before the “<strong>LIMIT 20;</strong>” line, and would be written as:</p>
+<p><strong>ORDER BY C.CustomerID&nbsp; </strong></p>
+<p><strong>&nbsp;</strong>The figure below shows the outcome (“<strong>LIMIT 30;</strong>” was used instead of “<strong>LIMIT 20;</strong>”).</p>
+<p><span style="color: #e03e2d;"><img id="63459" class="kl_image_full_width kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802252/download?verifier=In79flpOvCD4mhuOmvrjcHc1bjX9NoacUTy6hgue" alt="M3_L11_CustomerID attribute ascending.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802252" data-api-returntype="File"> </span></p>
+<p style="text-align: center;"><em>Repeating the same SQL statement as in the explainer video but also arranging the CustomerID attribute in ascending order.&nbsp;</em></p>
+<p>You can see there are repetitive customer ID values and customer names who have made multiple orders for music tracks.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<p><strong>&nbsp;</strong></p>
+<p>The <strong>GROUP BY</strong> clause can also be used in conjunction with <strong>JOIN</strong> clauses.</p>
+<p>It will group the rows with the same values into <em>summary rows</em> leading to the generation of summaries such as “total purchases of tracks or albums by each respective customer" .</p>
+<p>If you recall, the <strong>GROUP BY</strong> clause tends to be employed when one of the aggregate functions are being used such as <strong>COUNT()</strong> or <strong>SUM()</strong>, and by that reckoning we would need to insert the <strong>SUM()</strong> function in our SQL statement as shown when you click on the tab below:&nbsp;</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">Total Spend Per Customer</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p><strong>SELECT c.CustomerId, c.FirstName, c.LastName, SUM(i.Total)&nbsp; Total</strong></p>
+<p><strong>FROM Invoice i</strong></p>
+<p><strong>LEFT JOIN Customer c</strong></p>
+<p><strong>ON i.CustomerId = c.CustomerId</strong></p>
+<p><strong>GROUP BY c.CustomerId</strong></p>
+<p><strong>LIMIT 30;</strong></p>
+<p>This produces the following output table:</p>
+<p><img id="63461" class="kl_image_full_width kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802203/download?verifier=TntgRjkRBAtOs8EIWPMim892eI1a6pBgbr1Bcqwm" alt="M3_L11_Total Spend Per Customer.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802203" data-api-returntype="File"></p>
+<p style="text-align: center;"><em>The output following the application of the SUM() function, </em><em>which now produces the total spend per customer.</em></p>
+</div>
+</div>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
