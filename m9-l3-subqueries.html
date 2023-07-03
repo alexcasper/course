@@ -1,0 +1,157 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M9 – L3: Subqueries</h2>
+</div>
+<div id="kl_banner_image"><img class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802109/download?verifier=trcDOjpDqOarrm9HNfNfdbERrwxH0FbFBGkgEeoY" alt="SQL–Table Operations.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802109" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Subqueries</h3>
+<p>&nbsp; <br>In Module 2, you were introduced to the <strong>GROUP BY</strong> and <strong>HAVING</strong> clauses which can be used together. These can be normally used when specific calculations are required for appropriate groups within a dataset.</p>
+<p>View the video below to see a specific example of the <strong>GROUP BY c</strong>lause.&nbsp; <br><br></p>
+<p style="text-align: center;"><iframe style="border: 1px solid #464646;" title="embedded content" src="https://northeastern.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=301d155f-cafc-4248-8e20-acb800d0829d&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" width="720" height="405" allowfullscreen="allowfullscreen" allow="autoplay"></iframe> <br><a class="instructure_file_link instructure_scribd_file" title="M3_Group By Clause.pdf" href="https://nulondon.instructure.com/courses/2778/files/802553?verifier=5IEGa6YcZjyWtCkFIvwjEiM9Gh2uHAtlFBj4W5ll&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802553" data-api-returntype="File">Transcript</a></p>
+<p>Though we can see how useful <strong>GROUP BY</strong> is, it can be <strong>restricted</strong> to the table of interest (e.g. the <strong>Track</strong> table in the Chinook database), even if combined with the <strong>HAVING</strong> clause.</p>
+<p>Finding the number of tracks for a particular album name involves querying the <strong>Album</strong> table to get the 'album ID', and then query the <strong>Track</strong> table with that information, all in the one SQL statement (query).</p>
+<p>This can be achieved using a <strong>subquery</strong>.</p>
+<p>This is simply a <strong><em>query or statement that resides within a SQL statement</em></strong>.</p>
+<p>In other words, it is a “<strong>SELECT</strong> statement” inside another “<strong>SELECT</strong> statement”. The subqueries tend to mostly be found within the <strong>FROM</strong> or <strong>WHERE</strong> clauses and are <em>enclosed in parentheses</em>.</p>
+<p>This means that they will execute first before the external <strong>SELECT</strong> statement completes its execution.</p>
+<p>Before we look more deeply at subqueries, have a go at the "Try It Yourself" tasks below.&nbsp;</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/download?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Try It Yourself!</p>
+<p>In order to find the number of tracks in an album, e.g. “Van Halen” (by Van Halen) we first need to find the <em>AlbumID</em> from the <strong>Album</strong> table. How would you do this? Type in your query at the prompt and see what the output is.</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p>&nbsp;<strong> <a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a> </strong></p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>The query would be thus:</p>
+<p class="mps-program"><span style="font-size: 10pt;"><strong>SELECT AlbumId </strong></span><br><span style="font-size: 10pt;"><strong>FROM Album </strong></span><br><span style="font-size: 10pt;"><strong>WHERE Title = ‘Van Halen’;</strong></span> <br>&nbsp;</p>
+The <em>AlbumID</em> should be 244.</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/download?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Try It Yourself!</p>
+<p>Now you know the value of the <em>AlbumID</em> for the album title “Van Halen”, you can use it to attain the number of tracks in that album from the <strong>Track</strong> table. Type in the required query and what do you get?</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p><a id="kl_popup_2_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_2_content">Reveal Answer</a></p>
+<div id="kl_popup_2_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>The query is as follows.</p>
+<p class="mps-program"><span style="font-size: 10pt;"><strong>SELECT COUNT(TrackId) </strong></span><br><span style="font-size: 10pt;"><strong>FROM Track </strong></span><br><span style="font-size: 10pt;"><strong>WHERE AlbumId = 244;</strong></span></p>
+<p>&nbsp;The number of tracks is <strong>11</strong>.</p>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/download?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Try It Yourself!</p>
+<p>Now create the full query using the first SQL statement to find the Album ID as a subquery! Do you get the same output?</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p><a id="kl_popup_1_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_1_content">Reveal Answer</a></p>
+<div id="kl_popup_1_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>Don’t worry if you did not write the statement as shown below. How you set up the subquery in the <strong>WHERE</strong> clause is more important!&nbsp;</p>
+<p class="mps-program"><span style="font-size: 10pt;"><strong>SELECT AlbumId, COUNT(TrackId) AS “Number of Tracks” </strong></span><br><span style="font-size: 10pt;"><strong>FROM Track </strong></span><br><span style="font-size: 10pt;"><strong>WHERE AlbumId = (<span style="color: #843fa1;">SELECT AlbumId FROM Album WHERE Title = ‘Van Halen’</span>);</strong></span></p>
+<p>The output should again be <strong>11</strong> (i.e. the number of tracks).</p>
+</div>
+<p><strong>&nbsp;</strong></p>
+<p>Please be sure to click on both of the tabs below:</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">Subquery Inside WHERE</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p><span>It is common to have a subquery inside a WHERE clause in which a single value can be returned by that subquery. </span>If a subquery returns multiple values — again you may have been expecting just the one value — you can fine tune your query by including <strong>IN</strong>, <strong>LIKE</strong> and <strong>GROUP BY</strong> to display multiple results, as shown in the figure below.</p>
+<p><span style="color: #e03e2d;"> <img id="63457" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802188/download?verifier=HZXybXmysKF3oXlFOVLdg0I4oi3qauSgV7ihhioN" alt="M3_L6_Subquery Fine Tune.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802188" data-api-returntype="File"> </span></p>
+<p style="text-align: center;">&nbsp;<em>SQL Statement making use of other keywords such as IN, LIKE and GROUP BY in addition to containing a subquery to ‘fine tune’ the SQL statement.</em></p>
+<p>The output above would suggest that there are two albums with “Van Halen” in the title – the first having 11 tracks and the second 12 tracks. What if we wanted to list the name of the two albums alongside or in place of the <em>AlbumId</em> attribute? We would want to somehow extract the <em>Title</em> from the <strong>Album</strong> table at the same time as counting the number of tracks for the <em>AlbumId</em> in the <strong>Track</strong> table. This can be achieved by joining tables (temporarily) during a SQL statement/query. We will discuss this later in this module.</p>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">Subquery Inside FROM</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p>Please ensure you have read through the <strong>Subquery Inside WHERE</strong> tab first.</p>
+<p>In order to calculate the average length of an album, we can place a subquery inside the <strong>FROM</strong> clause. This will permit the execution of multiple aggregate functions on a column. This is achieved by breaking down into steps:</p>
+<ul>
+<li>Finding the total length of each album in milliseconds by looking at the <em>milliseconds</em> attribute in the <strong>Track&nbsp;</strong>table.</li>
+<li>The totals are averaged to deduce the average length of the albums in the collection.</li>
+</ul>
+<p>&nbsp;The query to calculate the length of each album is:</p>
+<p class="mps-program"><span style="font-size: 10pt;"><strong>SELECT SUM(milliseconds) AS AlbumLength </strong></span><br><span style="font-size: 10pt;"><strong>FROM Track </strong></span><br><span style="font-size: 10pt;"><strong>GROUP BY AlbumId;</strong></span></p>
+<p>Next, we need to find the average for these results. This is achieved by placing the above query as a subquery in the <strong>FROM</strong> clause.&nbsp;</p>
+<p class="mps-program"><span style="font-size: 10pt;"><strong>SELECT AVG(Album.AlbumLength) AS “Average Album length” </strong></span><br><span style="font-size: 10pt;"><strong>FROM ( </strong></span><br><span style="font-size: 10pt;"><strong>&nbsp; &nbsp; &nbsp; &nbsp;SELECT SUM(milliseconds) AS AlbumLength </strong></span><br><span style="font-size: 10pt;"><strong>&nbsp; &nbsp; &nbsp; &nbsp;FROM Track </strong></span><br><span style="font-size: 10pt;"><strong>&nbsp; &nbsp; &nbsp; &nbsp;GROUP BY AlbumId </strong></span><br><span style="font-size: 10pt;"><strong>) AS Album;</strong></span></p>
+<p>You can see that the ‘outer’ <strong>SELECT</strong> statement specifies that the average is going to be applied to the results of the subquery. The <strong>AS</strong> keyword in the <strong>SELECT</strong> statement renames the column within the subquery whilst in the <strong>FROM</strong> clause it creates a ‘<em>table alias</em>’, which we will discuss later in the module.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/download?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Try It Yourself!</p>
+<p>Following the last example shown in the "Subquery inside FROM" tab,&nbsp; how would you adapt the SQL statement within the example to display the output in minutes?</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p>&nbsp;</p>
+<p><a id="kl_popup_3_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_3_content">Reveal Answer</a></p>
+<div id="kl_popup_3_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>You would divide the calculated average by 1000 (ms to s) and then by 60 (to go from s to min) - or divide the calculated average directly by 60000: .</p>
+<p class="mps-program"><span style="font-size: 10pt;"><strong>SELECT AVG(Album.AlbumLength)/1000/60 AS "Average Album Length (Mins)" </strong></span><br><span style="font-size: 10pt;"><strong>FROM ( </strong></span><br><span style="font-size: 10pt;"><strong>SELECT SUM(milliseconds) AS AlbumLength </strong></span><br><span style="font-size: 10pt;"><strong>FROM Track </strong></span><br><span style="font-size: 10pt;"><strong>GROUP BY AlbumID </strong></span><br><span style="font-size: 10pt;"><strong>) AS Album;</strong></span></p>
+<p>&nbsp;The output should be <strong>~66 minutes</strong>.</p>
+</div>
+<p><strong>&nbsp;</strong></p>
+<h3 class="kl_border_radius_50 mps-page-title">Types of Subqueries</h3>
+<p>&nbsp;</p>
+<p>The most "common" type of subquery is the Single-Row Subquery.</p>
+<p>This returns to the outer query one row of results that consists of one column.</p>
+<p>Click on the tabs to see three specific uses of Single-Row subqueries. All were performed in <strong>SQLite3</strong> on the <strong> <span style="text-decoration: underline;">Just Lee Bookstore</span> </strong> database.</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">Inside WHERE</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802392/download?verifier=DFSX8Fsagxkt0e6ogKpB4ZhZk5hnr5nGiFtcJTEM" alt="M3_L3_SUBQ_SINGLE_WHERE.png" width="721" height="214" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802392" data-api-returntype="File"></p>
+<p>The output from the subquery encased in parentheses, as shown in the figure above, will be the <em>individual cost</em> of the book entitled “Database Implementation”.</p>
+</div>
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">Inside HAVING</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802215/download?verifier=BzdfqCQyxcuQ2r3Buf2vAdrz0yDbzTRAzWnXF65M" alt="M3_L3_SUBQ_SINGLE_HAVING.png" width="717" height="205" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802215" data-api-returntype="File"></p>
+<p>The subquery encased in parentheses, as shown in the figure above, returns the single value of the average profit of the books in the ‘literature’ category of the <strong>Books</strong> table to be compared against the other categories in the <strong>Books</strong> table.</p>
+</div>
+<h3 id="kl_panel_5" class="kl_panel_heading kl_panel_5">Inside SELECT</h3>
+<div id="kl_panel_5_content" class="kl_panel_content kl_panel_5">
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802145/download?verifier=YSa856W2viMXT15SVCkFPCSA8OcRoT0K14NXvQQS" alt="M3_L3_SUBQ_SINGLE_SELECT.png" width="712" height="199" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802145" data-api-returntype="File"></p>
+<p>As expected, the average value is the same for every row in the <strong>Books</strong> table.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Click on the tabs below to see other examples of the types of subqueries available.&nbsp;</p>
+<div id="kl_custom_block_3" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_6" class="kl_panel_heading kl_panel_6">Multiple-Row Subquery</h3>
+<div id="kl_panel_6_content" class="kl_panel_content kl_panel_6">
+<p>Returns to the outer query more than one row of results.</p>
+<p style="text-align: center;"><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802150/download?verifier=Bp47q59PZjTmJa8hdEmtxEXhzQaFnIyaFfsRmC29" alt="M3_L3_SUBQ_MULTI-ROW_WHERE.png" width="705" height="263" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802150" data-api-returntype="File"></p>
+<p>The output from the subquery encased in parentheses, as shown in the figure above, returns maximum retail values for each category in the <strong>Books</strong> table. Similarly, multiple-row subqueries can also be placed in the <strong>HAVING</strong> clause of a <strong>GROUP BY</strong> clause</p>
+</div>
+<h3 id="kl_panel_7" class="kl_panel_heading kl_panel_7">Multiple-Column Subquery</h3>
+<div id="kl_panel_7_content" class="kl_panel_content kl_panel_7">
+<p>Returns to the outer query more than one column of results.</p>
+<p>It is important that the column list on the left side of the operator needs to also <em>be in parentheses</em>. The <strong>IN</strong> operator tends to also be used for the <strong>WHERE</strong> and <strong>HAVING</strong> clauses.</p>
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802347/download?verifier=kABEGacmch1kjlznn9OtQOGgmT9ffr444IkBU1lD" alt="M3_L3_SUBQ_MULTI-COLUMN_WHERE.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802347" data-api-returntype="File"></p>
+<p>The subquery has returned the two columns (category and the maximum of the retail value per category). Only the matching categories and retail values are returned.</p>
+<p>In combination with ‘t<strong>able aliases</strong>’, a multiple column subquery can reside in a <strong>FROM</strong> clause – the output of which forms a <em>temporary table</em> identified by the alias as shown in the figure below.</p>
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802250/download?verifier=UnPCEizxHhBsz5FSinkaRMNTcE0xH15Uf9bK92Pr" alt="M3_L3_SUBQ_MULTI-COLUMN_FROM.png" width="693" height="250" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802250" data-api-returntype="File"></p>
+<p>The <em>temporary table</em> created by the subquery, as shown in the figure above, is labelled as ‘<strong>a</strong>’.</p>
+<p>As can be seen from the first <strong>SELECT</strong> line, the title and retail price values are extracted from the alias ‘<strong>b</strong>’.</p>
+<p>The two category attributes in “tables <strong>a</strong> and <strong>b</strong>” are compared, even though they technically originate from the same table (i.e. <strong>Books</strong>).</p>
+</div>
+<h3 id="kl_panel_8" class="kl_panel_heading kl_panel_8">Correlated Subquery</h3>
+<div id="kl_panel_8_content" class="kl_panel_content kl_panel_8">
+<p>References a column in the outer query, and executes the subquery one for every row in the outer query.</p>
+<p>The correlated subqueries involves the following processes:</p>
+<ul>
+<li>The <em>inner query</em> is executed <em>once</em> for each row that is processed by the outer query.</li>
+<li>The <em>inner query</em> <em>references the row</em> contained in the outer query.</li>
+</ul>
+<p>The figure below illustrates an example of a correlated subquery in which the subquery inside the <strong>FROM</strong> clause is <em>forced</em> to use the data that is processed in the outer query.</p>
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802372/download?verifier=qFfsu745LNTW0Qh1eBbfxABShwEgDEztRDeKLWTB" alt="M3_L3_SUBQ_CORRELATED.png" width="691" height="280" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802372" data-api-returntype="File"></p>
+<p>What makes this a correlated subquery is that the execution of the whole query is <em>reliant</em> upon processing <em>every row</em> in the <strong>Books</strong> table to ascertain whether it also exists in the <strong>Orderitems</strong> table.&nbsp;</p>
+<p>This means that the outer query is executed first (<strong>SELECT</strong> and then <strong>FROM</strong>) and when it reaches the <strong>WHERE</strong> clause, it evaluates whether that row in the <strong>Books</strong> table is TRUE or FALSE.</p>
+<p>If TRUE then the book’s title is displayed.</p>
+<p>Then the process is repeated for the next row in the <strong>Books</strong> table, and so on. Due to the <strong>Books</strong> table not being present in the <strong>FROM</strong> clause of the subquery, it must refer to the data that is processed in the outer query, in other words, the <em>ISBN</em> attribute in the <strong>Books</strong> table.</p>
+</div>
+<h3 id="kl_panel_9" class="kl_panel_heading kl_panel_9">Uncorrelated Subquery</h3>
+<div id="kl_panel_9_content" class="kl_panel_content kl_panel_9">
+<p>Executes the subquery first and passes the value to the outer query.</p>
+<p>This therefore means that single-row subqueries, multiple-row subqueries and multiple-column subqueries are also uncorrelated subqueries!</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
