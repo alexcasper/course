@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<p style="text-align: center;"><span style="font-size: 14pt; color: #e03e2d; background-color: #fbeeb8;"><strong>&lt;&lt; UNPUBLISHED SINCE MERGED WITH M3-L2 &gt;&gt;</strong></span></p>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M3 – L5: Filtering and Sorting: Logical Operators and NULL</h2>
+</div>
+<div id="kl_banner_image"><img class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802109/download?verifier=trcDOjpDqOarrm9HNfNfdbERrwxH0FbFBGkgEeoY" alt="SQL–Table Operations.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802109" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"> </i>Logical Operators and NULL</h3>
+<p>&nbsp;</p>
+<p>Logical operators involve the following: <strong>AND</strong>, <strong>OR</strong>, <strong>NOT</strong>, <strong>BETWEEN</strong>, <strong>IN</strong> and <strong>LIKE</strong>. You have already been introduced to some of these in Module 2. You can revise the types of logical operators.</p>
+<p style="text-align: center;"><span style="font-size: 14pt; background-color: #c2e0f4;"><strong>Please be sure to click on all of the expanding tabs shown on this page.</strong></span></p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_accordion" style="border-width: 1px; border-style: none; margin-right: 30px; margin-left: 30px; background-color: #ffffff; color: #000000;">
+<h3 id="kl_panel_0" class="kl_border_radius_20 kl_panel_heading kl_panel_0" style="background-color: #e3dfda; color: #000000; border-width: 0px;">Logical Operators: Types&nbsp;</h3>
+<div id="kl_panel_0_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_0" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000;">
+<p><strong>AND</strong>:</p>
+<p>This permits the existence of multiple conditions when using the <strong>WHERE</strong> clause.</p>
+<p><strong>OR</strong>:</p>
+<p>This is used to combine multiple conditions when using the <strong>WHERE</strong> clause.</p>
+<p><strong>NOT</strong>:</p>
+<p>This reverses (or ‘negates’) the meaning of the logical operator.</p>
+<ul>
+<li>If TRUE <strong>OR</strong> FALSE <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>"> TRUE then <strong>NOT</strong> makes it FALSE.</li>
+<li>If TRUE <strong>AND</strong> FALSE <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>"> FALSE then <strong>NOT</strong> makes it TRUE.</li>
+</ul>
+<p><strong>BETWEEN</strong>:</p>
+<p>Values are searched in which they sit within a specified range (the minimum and maximum value).</p>
+<p><strong>IN</strong>:</p>
+<p>This permits comparing a value with a list of <em>literal</em> values. If there is a positive match (TRUE) then the value is chosen. It is like having “multiple <strong>OR</strong>s”.</p>
+<p><strong>LIKE</strong>:</p>
+<p>This permits the comparison of a value with similar values using wildcard operators.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="67350" src="https://nulondon.instructure.com/courses/2778/files/802022/download?verifier=cC6ICjWre1EHCvCBkzm2cb2xEGnrwqrEcfa3N2dx" alt="icon_task_list.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802022" data-api-returntype="File">The BETWEEN Clause</p>
+<p>The <strong>BETWEEN </strong>operator can be used in place of relational operators and also other data types.</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander" style="border-width: 1px; border-style: none; margin-right: 30px; margin-left: 30px; background-color: #ffffff; color: #000000;">
+<h3 id="kl_panel_1" class="kl_border_radius_20 kl_panel_heading kl_panel_1" style="background-color: #e3dfda; color: #000000; border-width: 0px;">BETWEEN Operator Instead of Relational Operator&nbsp;</h3>
+<div id="kl_panel_1_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_1" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000;">
+<p>The <strong>BETWEEN </strong>operator can be used in place of relational operators as shown below.</p>
+<p class="mps-program">SELECT CustomerID, InvoiceID, Total <br>FROM Invoice <br>WHERE Total BETWEEN 10 AND 13;</p>
+<p>The figure below compares the outputs of using relational operators and the <strong>BETWEEN</strong> clause, in addition to the effects of using <strong>NOT</strong>. Observe the use of <strong>LIMIT </strong>to restrict the output to only 5 records.</p>
+<p><img id="63455" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802388/download?verifier=tKUnlj0othgGamKZZBNyhAcCBNMViNNqRTQFSlXU" alt="M3_L5_NOT BETWEEN clause.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802388" data-api-returntype="File"> &nbsp;</p>
+<p style="text-align: center;"><em>Comparison of the outputs attained using the relational operators and the BETWEEN clause, including the effect of the NOT clause.&nbsp;</em></p>
+</div>
+<h3 id="kl_panel_2" class="kl_border_radius_20 kl_panel_heading kl_panel_2" style="background-color: #e3dfda; color: #000000; border-width: 0px;">BETWEEN Clause for Data Types</h3>
+<div id="kl_panel_2_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_2" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<p>The <strong>BETWEEN</strong> clause can also be used for other data types such as dates as shown in the figure below.</p>
+<p><img id="63454" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802193/download?verifier=cF2UzmXb6pvQ816AbOBK8ujkDXfTgbd1RQrhXCma" alt="M3_L5_BETWEEN logical operator.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802193" data-api-returntype="File"> &nbsp;&nbsp;</p>
+<p style="text-align: center;"><em>Using the BETWEEN logical operator for date ranges.</em></p>
+</div>
+</div>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="67350" src="https://nulondon.instructure.com/courses/2778/files/802022/download?verifier=cC6ICjWre1EHCvCBkzm2cb2xEGnrwqrEcfa3N2dx" alt="icon_task_list.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802022" data-api-returntype="File">Multiple Logical Operators</p>
+<p>A final point to note is when multiple logical operators are used. Recall that multiplication and division are evaluated first before addition and subtraction, the same also occurs with logical operators.</p>
+<p>The following video will demonstrate how the parentheses affects the order of the logical operators.</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_accordion" style="border-width: 1px; border-style: none; margin-right: 30px; margin-left: 30px; background-color: #ffffff; color: #000000;">
+<h3 id="kl_panel_3" class="kl_border_radius_20 kl_panel_heading kl_panel_3" style="background-color: #e3dfda; color: #000000; border-width: 0px;">Order of Evaluation</h3>
+<div id="kl_panel_3_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_3" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<p>In fact, because the <strong>WHERE</strong> clause can possess multiple types of operators, you need to be aware of the full order in which all of the operators combined are resolved:</p>
+<ul>
+<li><strong>Arithmetic Operators</strong>:
+<ul>
+<li>Multiplication and Division</li>
+<li>Addition and Subtraction</li>
+</ul>
+</li>
+<li><strong>Relational Operators:</strong>
+<ul>
+<li>In no particular order: <strong>&lt;</strong>, <strong>&gt;</strong>, <strong>=</strong>, <strong>LIKE</strong>.</li>
+</ul>
+</li>
+<li><strong>Logical Operators</strong>:
+<ul>
+<li>These tend to be evaluated last and are done so in the order: <strong>NOT</strong>, <strong>AND</strong>, and <strong>OR</strong>.</li>
+</ul>
+</li>
+</ul>
+<p>If you need to change the order of the evaluation, then you make use of <strong><em>parentheses</em></strong> in order to define which operators get resolved first. View the video for an example that illustrates this well including the importance of parentheses.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p style="text-align: center;"><span style="color: #e03e2d;"> <iframe style="width: 720px; height: 405px;" title="Module 3 Parentheses Effects" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3D0deaca22-9518-4211-94a4-acb700d019e2" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe> <br><a class="instructure_file_link instructure_scribd_file" title="M3_Parentheses Effects.pdf" href="https://nulondon.instructure.com/courses/2778/files/802550?verifier=FoIRMvGj9IGY1kIErvFTneOQEiB6pEZMyeAJ0feT&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802550" data-api-returntype="File">Transcript&nbsp;</a> </span></p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64853" src="https://nulondon.instructure.com/courses/2778/files/802124/download?verifier=2mWP4b3CPZlOBr4LYINeDRkVXSnZPwoTxac02r7K" alt="icon_null.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802124" data-api-returntype="File"> NULL</p>
+<p>We have seen in Module 2 when <strong>NOT NULL</strong> is used to specify during table creation that entries into attributes are not ‘blank’, in other words not empty. This is especially the case for attributes that are designated as primary keys.</p>
+<p>We can also use <strong>NULL</strong> in combination with <strong>IS</strong> to check for conditions when using the <strong>WHERE</strong> clause.</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_accordion" style="border-width: 1px; border-style: none; margin-right: 30px; margin-left: 30px; background-color: #ffffff; color: #000000;">
+<h3 id="kl_panel_4" class="kl_border_radius_20 kl_panel_heading kl_panel_4" style="background-color: #e3dfda; color: #000000; border-width: 0px;">NULL Example&nbsp;</h3>
+<div id="kl_panel_4_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_4" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000;">
+<p>For example, not every customer in the Chinook database will have a fax number. Therefore we can enter a query that will find which customers do have fax numbers via <strong>IS NOT NULL</strong>, followed by the number of music tracks that do not have a composer via <strong>IS NULL</strong>. The figure below shows the output.</p>
+<p><img id="63456" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802383/download?verifier=EqPOdwP9BS3ys61ExZvDjurYBKVTutk8LvJitxAs" alt="M3_L5_NULL Example.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802383" data-api-returntype="File"></p>
+<p style="text-align: center;"><em>Utilising the IS NOT NULL and IS NULL keywords to list the customers that do possess fax numbers and the media tracks that have no composers respectively.</em></p>
+</div>
+</div>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
