@@ -1,0 +1,106 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div" style="background-color: #4cb1c5; color: #ffffff; margin: 2px !important 0px !important 10px 0px !important;">
+<h2 style="color: #ffffff; border-top-width: 2px; border-color: #516b7c;">M8 - L7: SQL Keywords: WHERE and ORDER BY</h2>
+</div>
+<div id="kl_banner_image" class="kl_border_radius_20"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802464/download?verifier=MuLgltsjhelYJZNvZhOZWFuvKR6pjWJsMuhyhnC8" alt="Structured-Query-Language.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802464" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<div id="kl_custom_block_1" class="kl_border_radius_20" style="background-color: #ffffff; color: #000000;">
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>WHERE and ORDER BY</h3>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="67350" src="https://nulondon.instructure.com/courses/2778/files/802022/preview?verifier=cC6ICjWre1EHCvCBkzm2cb2xEGnrwqrEcfa3N2dx" alt="icon_task_list.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802022" data-api-returntype="File">The <strong>WHERE</strong> Keyword</p>
+<p>The <strong>WHERE</strong> keyword is very useful for filtering the rows (records) in a table.</p>
+<p>It helps to hone in on the specific piece of information required.</p>
+<p>The <strong>WHERE</strong> keyword can be combined with other keywords such as <strong>IN</strong> and <strong>LIKE</strong> as well as <em>logic operators</em> using <strong>AND</strong> and <strong>OR</strong>.</p>
+<p>In this video, we continue to look at the ‘Just Lee’ bookstore database with <strong>SQLite3</strong>.</p>
+<p style="text-align: center;"><br><br><iframe style="width: 720px; height: 405px;" title="Module 2 The WHERE Clause" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3D42f22dbf-03d7-4a4d-b31b-acb700cc8c15" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe> <br><a class="instructure_file_link instructure_scribd_file" title="M2_The WHERE Clause.pdf" href="https://nulondon.instructure.com/courses/2778/files/802570?verifier=2ckU3zhBSLmmZdQ7BKFePWpTlZ2GSyc6YjoQPuDS&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802570" data-api-returntype="File">Transcript&nbsp;</a></p>
+<p>As shown in the video, pattern matching can also be performed when <strong>WHERE</strong> is being employed.</p>
+<p>For example, if you were interested in the orders that had “Ave” or “Avenue” in the <em>ShipStreet</em> attribute in the <strong>Orders</strong> table (as shown in the video and the figure below), you would use the <strong>LIKE</strong> keyword in combination with two possible pattern matching symbols (please click on both tabs below for examples of usage):</p>
+<div class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0"><strong>%</strong> (the "percent" symbol)</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<ul>
+<li><span>This permits any sequence of 0 or more characters before and after the '<strong>%</strong>' symbol.</span>
+<ul>
+<li><span>Example: With "<strong> <span style="color: #236fa1;">%</span>and<span style="color: #2dc26b;">%</span> </strong>” the '<strong>%</strong>' symbols can be replaced with any number of letters or words such as </span> <span>“<span style="color: #236fa1;"><strong>Laurel</strong> </span><strong>and <span style="color: #169179;">Hardy</span></strong>”, “<strong> <span style="color: #236fa1;">c</span>and<span style="color: #169179;">y</span> </strong>”, “<strong>and</strong>”, “<span style="color: #236fa1;"><strong>wonder</strong>l</span><strong>and</strong>”, “<strong>and<span style="color: #169179;">roid</span></strong>”, etc.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1"><strong>_</strong> (the "underscore" symbol)</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<ul>
+<li><span>Any single character can replace the 'underscore' symbol.</span>
+<ul>
+<li><span>Example: With “<strong> <span style="color: #169179;">_</span>and </strong>” the '<span style="color: #169179;"><strong>_</strong></span>' can be replaced with letters to produce the following:</span> <span>&nbsp;“<strong> <span style="color: #169179;">b</span>and </strong>”, “<strong> <span style="color: #169179;">h</span>and </strong>”, “<strong> <span style="color: #169179;">l</span>and </strong>”, “<strong> <span style="color: #169179;">s</span>and </strong>” and “<strong> <span style="color: #169179;">w</span>and </strong>”.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/preview?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Try It Yourself!</p>
+<p>Now it’s your turn.</p>
+<p>Looking at the <strong>SQLite3</strong> screenshot below, how would you rewrite the query using <strong>OR</strong> in place of <strong>IN</strong>?</p>
+<p><img id="63291" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802342/download?verifier=bMXS4saBxxnf2sqLtN6sNBGgiyyRGeZqNndOAW36" alt="M2-L9_Combining WHERE with IN.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802342" data-api-returntype="File"></p>
+<p style="text-align: center;"><em>Combining <strong>WHERE</strong> with <strong>IN</strong> to select the shipping cities of interest.</em></p>
+<p>&nbsp;</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p><a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>As shown, you would write the following:</p>
+<p class="mps-program"><strong>SELECT * </strong> <br><strong>FROM Orders </strong> <br><strong>WHERE ShipCity = ‘AUSTIN’ OR ShipCity = ‘TRENTON’ OR ShipCity = ‘MACON’;</strong></p>
+<p>As you can see it can be ‘laborious’ to have to keep writing “<strong>OR ShipCity =</strong>” every time.</p>
+<p>The <strong>IN</strong> keyword prevents the need to do so.</p>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/preview?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Try It Yourself!</p>
+<p>Now it’s your turn.</p>
+<p>Look at the <strong>SQLite3</strong> screenshot below. How would you adapt the question to also ignore empty values in the <em>ShipDate</em> attribute?</p>
+<p class="" style="margin-left: 20px;"><img id="63292" class="kl_image_max_fill" src="https://nulondon.instructure.com/courses/2778/files/802340/download?verifier=W87Cud1JiIEUkvCnrrq8zfzMsrgGCEt85f8jynsY" alt="M2-L9_ShipDate attribute.jpg" width="908" height="566" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802340" data-api-returntype="File"></p>
+<p>&nbsp;</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p><a id="kl_popup_1_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_1_content">Reveal Answer</a></p>
+<div id="kl_popup_1_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>We can say the following:</p>
+<p><strong>SELECT *</strong></p>
+<p><strong>FROM Orders</strong></p>
+<p><strong>WHERE ShipStreet LIKE ‘%AVE%’ AND OrderDate IS NOT NULL;</strong></p>
+<p>This produces the following output:</p>
+<p><img id="63293" class="kl_image_max_fill" src="https://nulondon.instructure.com/courses/2778/files/802331/download?verifier=FNaxSn9a8OOS3KLy9Znupzfe6vZ56bR5JKX7k4R2" alt="M2-L9_WHERE keyword with LIKE.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802331" data-api-returntype="File"></p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><em>Combining the <strong>WHERE</strong> keyword with <strong>LIKE</strong>, <strong>AND</strong>, and <strong>IS NOT NULL</strong> keywords.</em></p>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="67350" src="https://nulondon.instructure.com/courses/2778/files/802022/preview?verifier=cC6ICjWre1EHCvCBkzm2cb2xEGnrwqrEcfa3N2dx" alt="icon_task_list.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802022" data-api-returntype="File">The ORDER BY Clause</p>
+<p>The <strong>ORDER BY</strong> clause is very useful if you were interested in displaying the output in ascending or descending order, for example from A to Z or “heaviest” to “lightest”, via a specific attribute (or sequential set of attributes)..</p>
+<p>The <strong>ORDER BY</strong> is usually the last keyword to employ when executing a SQL statement (or query).</p>
+<p>The example below illustrates three queries:</p>
+<ul>
+<li>the first without using <strong>ORDER BY</strong>;</li>
+<li>the second using <strong>ORDER BY</strong> to arrange in ascending order (lowest to highest) via the <em>CustomerNo</em> attribute;</li>
+<li>the third in descending order via the <em>CustomerNo</em> attribute as denoted by the <strong>DESC</strong> clause.</li>
+</ul>
+<div class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">Demonstration of using <strong>ORDER BY</strong> (Click here)</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802100/download?verifier=gXv8NXavpFEdhRamvciykSQQnXqQSKy9hSaUWXYj" alt="M2_L7_ORDER-BY_Example1.png" width="814" height="441" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802100" data-api-returntype="File"></p>
+<p><em><strong>SQL queries illustrating the use of the ORDER BY clause applied to the CustomerNo attribute in the Orders table</strong></em></p>
+</div>
+</div>
+<p>It is also possible to perform multiple column ordering, for example you may want to order by surname, and then for each surname, order by forename.</p>
+<div class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">Demonstration of multiple column sorting using <strong>ORDER BY</strong> (click here)</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802461/download?verifier=qzhd9TsIGxFHi78tMrkWvPZysCp1NxogNffG9hqM" alt="M2_L7_ORDER-BY_Example2.png" width="820" height="751" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802461" data-api-returntype="File"></p>
+<p><em><strong>Multiple column ordering (ShipState in ascending order followed by CustomerNo in descending order)</strong>.</em></p>
+<p><strong><em>We have rearranged the ShipState attribute in ascending order. You can see that there are 5 FL, 4 GA, and so on. In each of these, the CustomerNo has been arranged in descending order. </em></strong></p>
+<p><strong><em>What is interesting to see is that there are duplicate customer numbers but with different addresses (ShipStreet attribute).</em>&nbsp;</strong></p>
+</div>
+</div>
+</div>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
