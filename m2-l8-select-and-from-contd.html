@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<p style="text-align: center;"><span style="font-size: 14pt; color: #e03e2d; background-color: #fbeeb8;"><strong>&lt;&lt; THIS HAS NOW BEEN UNPUBLISHED. NOT REQUIRED. HOWEVER <span style="text-decoration: underline;">NOT</span> TO BE DELETED! &gt;&gt;</strong></span></p>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div" style="background-color: #4cb1c5; color: #ffffff; margin: 2px !important 0px !important 10px 0px !important;">
+<h2 style="color: #ffffff; border-top-width: 2px; border-color: #516b7c;">M2-L8: SELECT and FROM contd.</h2>
+</div>
+<div id="kl_banner_image" class="kl_border_radius_20"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802464/download?verifier=MuLgltsjhelYJZNvZhOZWFuvKR6pjWJsMuhyhnC8" alt="Structured-Query-Language.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802464" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<div id="kl_custom_block_1" class="kl_border_radius_20" style="background-color: #ffffff; color: #000000;">
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"> </i>SELECT and FROM contd.</h3>
+<p>&nbsp;</p>
+<p>Now respond to the following questions on <strong>SELECT and FROM</strong>.</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64847" src="https://nulondon.instructure.com/courses/2778/files/802014/preview?verifier=fcfYScyG8yiZP7UyitAUIkdk84U7Gb2vKgUEPhNg" alt="icon_logic.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802014" data-api-returntype="File"> Think About It!</p>
+<p>By looking closely at the output from the schema, does there appear to be missing information?</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p><img id="63288" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802324/download?verifier=apqyzbiqqMCRC8i3EVCvUeM4Z8h5gFnRmmvmg5Xc" alt="M2-L8_Display_Attributes book table.jpg" width="600" height="527" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802324" data-api-returntype="File"></p>
+<p style="text-align: center;"><em>Figure displaying the attributes contained in the <strong>Books</strong> table using <strong>.schema</strong> followed by extracting the book titles contained within the Books table.</em></p>
+<p><a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>There does not appear to be any authors listed for each of the books.</p>
+<p>This is because information about the authors has been stored in another table called <strong>Authors</strong> (not shown) within the database.</p>
+<p>This is due to the "normalisation" process which tends to be carried out when setting up a more 'efficient database'.</p>
+</div>
+<p>&nbsp;</p>
+<p>You will also observe in the previous image that there are some <em>constraints</em> included such as ensuring that the <em>ISBN</em> attribute is classed as a <strong>Primary Key</strong> inside the <strong>Book</strong> table, and that the <em>PubID</em> attribute in the <strong>Book</strong> table is classed as a <strong>Foreign Key</strong> which references (i.e. is linked with) the <em>PubID</em> attribute which is a <strong>Primary Key</strong> within the <strong>Publisher</strong> table. We will discuss constraints later on in the course.</p>
+<p>Finally, there are currently 14 book titles contained within the <strong>Book</strong> table in the previous figure. It would be more interesting to know when these books were published and how much they cost. We can do this by expanding the SQL query as shown below.</p>
+<p>&nbsp;</p>
+<p><img id="63290" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802291/download?verifier=I64IeWQid9VHs3JPHysZTCwjHOfthH7BUs6WFg0C" alt="M2-L8_Select three attributes.jpg" width="600" height="430" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802291" data-api-returntype="File"></p>
+<p style="text-align: center;"><em>Selecting three attributes (columns) from the Books table.</em></p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64847" src="https://nulondon.instructure.com/courses/2778/files/802014/preview?verifier=fcfYScyG8yiZP7UyitAUIkdk84U7Gb2vKgUEPhNg" alt="icon_logic.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802014" data-api-returntype="File"> Think About It!</p>
+<p>Look at the image below. What would be a better name for the “Price Difference (£)” attribute?</p>
+<p>&nbsp;Once you are done, click Reveal Answer to view the answer.</p>
+<p>&nbsp;</p>
+<p><img id="63287" class="kl_image_max_fill kl_image_full_width" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802339/download?verifier=EagOKFBLE90kgRP2sLp1OaUlcrddVOXb72jbaIea" alt="M2-L8_Arithmetic Calculation.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802339" data-api-returntype="File"></p>
+<p style="text-align: center;"><em>Performing an arithmetic calculation to attain the price difference between the retail price and the cost price. Observe that the AS keyword was also dropped.</em></p>
+<p style="text-align: center;">&nbsp;</p>
+<p><a id="kl_popup_2_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_2_content">Reveal Answer</a></p>
+<div id="kl_popup_2_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>Yes, the “Profit (£)”!</p>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64847" src="https://nulondon.instructure.com/courses/2778/files/802014/preview?verifier=fcfYScyG8yiZP7UyitAUIkdk84U7Gb2vKgUEPhNg" alt="icon_logic.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802014" data-api-returntype="File"> Think About It!</p>
+<p>&nbsp;Look at the image below. How would you rewrite the query so that the calculation was only performed on the books with a discount applied to them?</p>
+<p>&nbsp;Once you are done, click Reveal Answer to view the answer.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><img id="63286" class="kl_image_max_fill kl_image_full_width" src="https://nulondon.instructure.com/courses/2778/files/802336/download?verifier=J6mNADDTRPnvrmMM2t0q0qJID8RGDlIv4fWnYfMR" alt="M2-L8_Arithmetic Calc NULL values.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802336" data-api-returntype="File"></p>
+<p style="text-align: center;"><em>Arithmetic calculations in the presence of NULL values (denoted by empty spaces).</em></p>
+<p style="text-align: center;">&nbsp;</p>
+<p><a id="kl_popup_3_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_3_content">Reveal Answer</a></p>
+<div id="kl_popup_3_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p><img id="63289" class="kl_image_max_fill kl_image_full_width" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802341/download?verifier=WodifE4ZhW6Vw07RoVUMFNwRsc0PlF0xW9cecBNN" alt="M2-L8_Omitting Null Values.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802341" data-api-returntype="File"></p>
+<p style="text-align: center;"><em>Repeating the calculation but omitting the NULL values from the Discount attribute.</em></p>
+<p>&nbsp;The addition of the <strong>WHERE</strong> clause instructing the <strong>SQLite3</strong> application to only take numerical values from the <em>Discount</em> attribute and to ignore the NULL values.</p>
+<p>&nbsp;You can also see how ‘<em>easy to understand</em>’ the logical flow of the query is: “<em>select these columns from the Books table where Discount has no NULL values</em>”. This demonstrates the <u>comparatively simpler approach</u> to programming in 4GL compared to programming in 3GL. <strong>WHERE</strong> will be discussed in the next lesson.</p>
+</div>
+<p><strong>&nbsp;</strong></p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64847" src="https://nulondon.instructure.com/courses/2778/files/802014/preview?verifier=fcfYScyG8yiZP7UyitAUIkdk84U7Gb2vKgUEPhNg" alt="icon_logic.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802014" data-api-returntype="File"> Think About It!</p>
+<p>When mathematical operations are performed containing a mixture of multiplications and additions, for example, multiplication and division are solved first followed by addition and subtraction.</p>
+<p>What answer would you get if you type into <strong>SQLite3</strong> the following statement: <strong>SELECT (2 + 7) * (3 + 5);</strong></p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p><a id="kl_popup_1_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_1_content">Reveal Answer</a></p>
+<div id="kl_popup_1_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>We attain <strong>72</strong> as the answer. The parentheses override that order. Any numbers in brackets are summed first before multiplying the two sums together.</p>
+<p>In short, any numbers in brackets are processed first. If you have nested brackets, then the inner most brackets are dealt with first before dealing with any numbers in the outer brackets, and so on and so forth!<strong> <br></strong></p>
+</div>
+</div>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
