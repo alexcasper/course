@@ -1,0 +1,248 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M11 – L1: PL/SQL</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802194/download?verifier=ZObkZbVZgDFz47mh6nmsNoFa1G3gw05QSHE3V9Bi" alt="SQL-Introducing-Advanced-Features.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802194"></div>
+<div id="kl_custom_block_0" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Introducing PL/SQL</h3>
+<p>&nbsp;</p>
+<p><strong><em>Note: </em><em>You do not need to copy any of the SQL code into SQLite3 or Oracle Live SQL. </em></strong></p>
+<p>Most high-level languages such as C, Python and R are procedural languages which tend to process one row of data at a time.</p>
+<p>SQL is a declarative (non-procedural) language which can handle multiple rows of data. It comes with built-in data types such as <em>Date</em> which is not available in more traditional programming languages – in the case of the latter, specific conversions are required to establish the data type which consume resources and programming effort.</p>
+<p>There has been great interest in bringing SQL “in line” with the other high level programming languages when it comes to declaring variables, executing code that will process the variables, and raising exceptions if an error occurs.</p>
+<p>As a result, Oracle developed their extension to SQL called <strong>PL/SQL</strong> (“<strong>Procedural Language SQL</strong>”).</p>
+<p>The PL/SQL is said to be similar in concept to modern programming languages due to:</p>
+<ul>
+<li>Declaring constants and variables.</li>
+<li>Control structures.</li>
+<li>Exception handling.</li>
+<li>Modularisation.</li>
+</ul>
+<p>PL/SQL is said to be a <em>block-structured language</em> in which blocks can either be:</p>
+<ul>
+<li>Separate from one another.</li>
+<li>Nested within one another.</li>
+</ul>
+<p>A PL/SQL block tends to generally have up to three parts. Be sure to click the tabs below to learn more.</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">Declaration</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<ul>
+<li>This is optional.</li>
+<li>It permits the definition of variables, constants and exceptions.
+<ul>
+<li>Any or all of these can also be initialized to specific values.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">Execution</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<ul>
+<li>This is mandatory.</li>
+<li>The items defined (and initialized) in the declaration can be referenced and therefore processed.</li>
+</ul>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">Exceptions</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<ul>
+<li>This is optional.</li>
+<li>Any errors that occur during the execution can be handled here.</li>
+</ul>
+</div>
+</div>
+<p>Let's see how these can fit together to form the PL/SQL block.</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/download?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> The Declaration</p>
+<p>Click on the tabs below to see examples of declaring variables.</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_6" class="kl_panel_heading kl_panel_6">Declaring the data type of a variable</h3>
+<div id="kl_panel_6_content" class="kl_panel_content kl_panel_6">
+<p><span style="text-decoration: underline;">Example</span>: <strong>vCustoNo VARCHAR2(6);</strong></p>
+<ul>
+<li>The data type is&nbsp; a variable character with a limit of 6 characters.</li>
+</ul>
+</div>
+<h3 id="kl_panel_7" class="kl_panel_heading kl_panel_7">Declaring the data type and default value of a variable along with constraints</h3>
+<div id="kl_panel_7_content" class="kl_panel_content kl_panel_7">
+<p><span style="text-decoration: underline;">Example</span>: <strong>vRetail DOUBLE(3,2) NOT NULL := 30.00;</strong></p>
+<ul>
+<li>The numerical value will be displayed with two decimal places and must never be NULL.</li>
+</ul>
+</div>
+<h3 id="kl_panel_8" class="kl_panel_heading kl_panel_8">Declaring a constant</h3>
+<div id="kl_panel_8_content" class="kl_panel_content kl_panel_8">
+<p><span style="text-decoration: underline;">Example</span>: <strong>Max_Books CONSTANT INTEGER:= 25;</strong></p>
+<ul>
+<li>The numerical value is a constant integer and cannot be changed.</li>
+</ul>
+</div>
+<h3 id="kl_panel_9" class="kl_panel_heading kl_panel_9">Assigning previously declared variables</h3>
+<div id="kl_panel_9_content" class="kl_panel_content kl_panel_9">
+<p><span style="text-decoration: underline;">Example 1</span>: <strong>vCustNo := 'C001'</strong>;</p>
+<p><span style="text-decoration: underline;">Example 2</span>: <strong>vRetail := 40.25;</strong></p>
+<p><span style="text-decoration: underline;">Example 3</span>: <strong>SELECT COUNT(*) INTO x FROM Books WHERE PubId = '4';</strong></p>
+<ul>
+<li>The variable <strong>x</strong> is set to the result of the number of books in the <strong>Books</strong> table that have a <em>PubId</em> value of 4.</li>
+</ul>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/download?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> The Execution</p>
+<p>This is the part of the block that handles execution via a number of control statements which will establish conditions or iterations.</p>
+<p>For conditions, there could be a series of IF...ELSIF...ELSE... and/or CASE statements.</p>
+<p>For iterations, there could be a series of&nbsp; loops involving FOR, WHILE and REPEAT.</p>
+<p>Click on the tabs below to view examples.</p>
+<div id="kl_custom_block_3" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_10" class="kl_panel_heading kl_panel_10">Conditions: IF...ELSIF...ELSE</h3>
+<div id="kl_panel_10_content" class="kl_panel_content kl_panel_10">
+<p>Defines what action to take if a condition is determined to be TRUE or FALSE.</p>
+<p><span style="text-decoration: underline;">Example</span>:&nbsp;</p>
+<p><strong>IF (position = ‘Supervisor’) THEN</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp; Salary = Salary * 1.27</strong></p>
+<p><strong>ELSEIF (position = 'Assistant Supervisor" THEN</strong></p>
+<p><strong>&nbsp; &nbsp; Salary = Salary * 1.18</strong></p>
+<p><strong>ELSE</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp; Salary = Salary * 1.09</strong></p>
+<p><strong>END IF;&nbsp;</strong></p>
+</div>
+<h3 id="kl_panel_11" class="kl_panel_heading kl_panel_11">Conditions: CASE</h3>
+<div id="kl_panel_11_content" class="kl_panel_content kl_panel_11">
+<p>Execution occurs when one of the defined situations meets a condition or has a specific value.</p>
+<p><span style="text-decoration: underline;">Example 1</span>:</p>
+<p><strong>CASE lowercase(x)</strong></p>
+<p><strong>&nbsp;&nbsp; WHEN ‘a’ THEN x := 1;</strong></p>
+<p><strong>&nbsp;&nbsp; WHEN ‘b’ THEN x := 2;</strong></p>
+<p><strong>&nbsp;&nbsp; WHEN ‘default’ THEN x := 3;</strong></p>
+<p><strong>END;</strong></p>
+<p><span style="text-decoration: underline;">Example 2</span>:</p>
+<p><strong>UPDATE Books</strong></p>
+<p><strong>SET Retail = CASE</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp; WHEN Category = ‘COMPUTER’</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THEN Retail = Retail * 1.15</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp; WHEN Category = ‘CHILDREN’</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THEN Retail = Retail * 1.10</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp; ELSE</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THEN Retail = Retail * 1.05</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp; END;</strong></p>
+</div>
+<h3 id="kl_panel_12" class="kl_panel_heading kl_panel_12">Iterations: LOOP</h3>
+<div id="kl_panel_12_content" class="kl_panel_content kl_panel_12">
+<p>The looping occurs until a condition is met, and the execution of the remainder of the statement/program resumes.</p>
+<p><span style="text-decoration: underline;">Example</span>:</p>
+<p><strong>x:=1;</strong></p>
+<p><strong>myLoop:</strong></p>
+<p><strong>LOOP</strong></p>
+<p><strong>&nbsp;&nbsp; x:=x+1;</strong></p>
+<p><strong>&nbsp;&nbsp; IF (x &gt; 3) THEN</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EXIT myLoop;</strong></p>
+<p><strong>END LOOP myLoop;</strong></p>
+<p><strong>y:=2; --- execution continues on from here.</strong></p>
+</div>
+<h3 id="kl_panel_13" class="kl_panel_heading kl_panel_13">Iterations: WHILE</h3>
+<div id="kl_panel_13_content" class="kl_panel_content kl_panel_13">
+<p>WHILE loops occur in PL/SQL and ‘normal’ SQL also.</p>
+<p>Just like in other programming languages, the <strong>WHILE</strong> loop continues until a condition is met such as a variable reaching or exceeding a specific value.</p>
+<p><span style="text-decoration: underline;">Example 1 (PL/SQL)</span>:</p>
+<p><strong>WHILE (SUM(Retail) &lt; 1000) LOOP</strong></p>
+<p><strong>&nbsp;&nbsp; INSERT INTO Books (…,…,Retail)</strong></p>
+<p><strong>&nbsp;&nbsp; VALUES (…,…,17)</strong></p>
+<p><strong>END LOOP;</strong></p>
+<p><span style="text-decoration: underline;">Example 2 (SQL):</span></p>
+<p><strong>WHILE (SUM(Retail) &lt; 1000) DO</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp; INSERT INTO Books (…,…,Retail)</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp; VALUES (…,…,17)</strong></p>
+<p><strong>END WHILE;</strong></p>
+<p>Can you see slight differences between the PL/SQL and SQL approaches?&nbsp;</p>
+</div>
+<h3 id="kl_panel_14" class="kl_panel_heading kl_panel_14">Iterations: REPEAT</h3>
+<div id="kl_panel_14_content" class="kl_panel_content kl_panel_14">
+<p>Works in a similar manner to WHILE but cannot be employed in PL/SQL.</p>
+<p><span style="text-decoration: underline;">Example (SQL only)</span>:</p>
+<p><strong>REPEAT</strong></p>
+<p><strong>&nbsp;&nbsp; INSERT INTO Books (…,…,Retail)</strong></p>
+<p><strong>&nbsp;&nbsp; VALUES (…,…,17)</strong></p>
+<p><strong>UNTIL (SUM(Retail) &gt; 1000)</strong></p>
+<p><strong>END REPEAT;</strong></p>
+</div>
+<h3 id="kl_panel_15" class="kl_panel_heading kl_panel_15">Iterations: FOR</h3>
+<div id="kl_panel_15_content" class="kl_panel_content kl_panel_15">
+<p>As in other programming languages, a process will iterate a specific number of times.</p>
+<p><span style="text-decoration: underline;">Example 1 (PL/SQL):</span></p>
+<p><strong>DECLARE</strong></p>
+<p><strong>&nbsp;&nbsp; numberBooks NUMBER;</strong></p>
+<p><strong>SELECT COUNT(*) INTO numberBooks</strong></p>
+<p><strong>FROM Books</strong></p>
+<p><strong>WHERE PubID &gt; 5; myLoop1:</strong></p>
+<p><strong>FOR iBook IN 1 .. numberBooks LOOP</strong></p>
+<p><strong>&nbsp;&nbsp; SELECT Retail * 1.15 AS NewRetail</strong></p>
+<p><strong>&nbsp;&nbsp; FROM Books;</strong></p>
+<p><strong>END LOOP</strong></p>
+<p><strong>myLoop1;</strong></p>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline;">Example 2 (SQL)</span>:</p>
+<p><strong>myLoop1:</strong></p>
+<p><strong>FOR iBook</strong></p>
+<p><strong>&nbsp;&nbsp; AS SELECT COUNT(*) FROM Books WHERE PubID &gt; 5 DO</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp; SELECT Retail * 1.15 AS NewRetail</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp; FROM Books;</strong></p>
+<p><strong>END FOR myLoop1;</strong></p>
+<p>Can you see slight differences between the PL/SQL and SQL approaches?&nbsp;</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/download?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> The Exception</p>
+<p>If an error occurs during the main execution, such as could be caused by a ‘breach’ in a constraint, the exception is “raised”, and an error message can be displayed.&nbsp;</p>
+<p>The error message can be defined when setting up the exception, or if not defined, then the default message is employed.&nbsp;</p>
+<p>Following the raising of an exception, the main execution block is halted and cannot continue.</p>
+<p>Note that a user defined exception needs to be declared alongside the declaration of the variables and constants.</p>
+<p>Click on the tab to view an example of SQL code that enables an exception to be raised along with default error messages.</p>
+<div id="kl_custom_block_4" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_16" class="kl_panel_heading kl_panel_16">Exception Example</h3>
+<div id="kl_panel_16_content" class="kl_panel_content kl_panel_16">
+<p><strong>DECLARE</strong></p>
+<p><strong>&nbsp;&nbsp; B_pid Books.pubid%type := 4;</strong></p>
+<p><strong>&nbsp;&nbsp; B_title Books.title%type;</strong></p>
+<p><strong>&nbsp;&nbsp; B_cost Books.cost%type;</strong></p>
+<p><strong>BEGIN</strong></p>
+<p><strong>&nbsp;&nbsp; SELECT title, cost INTO B_title, B_cost</strong></p>
+<p><strong>&nbsp;&nbsp; FROM Books</strong></p>
+<p><strong>&nbsp;&nbsp; WHERE pubid = B_pid;</strong></p>
+<p><strong>&nbsp;&nbsp; DBMS_OUTPUT.PUT_LINE (‘Title: ‘ || B_title);</strong></p>
+<p><strong>&nbsp;&nbsp; DBMS_OUTPUT.PUT_LINE (‘Cost: ‘ || B_cost);</strong></p>
+<p><strong>EXCEPTION</strong></p>
+<p><strong>&nbsp;&nbsp; WHEN no_data_found THEN</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBMS_OUTPUT.PUT_LINE(‘No such publisher.’);</strong></p>
+<p><strong>&nbsp;&nbsp; WHEN others THEN</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBMS_OUTPUT.PUT_LINE(‘Error!’);</strong></p>
+<p><strong>END;</strong></p>
+</div>
+</div>
+<p>We declare three variables (<strong>B_pid</strong>, <strong>B_title</strong>, and <strong>B_cost</strong>) pertaining to the publisher id, title and cost attributes within the <strong>Books</strong> table respectively.</p>
+<p>The SQL statement after <strong>BEGIN</strong> extracts the values and transfers to the <strong>B_title</strong> and <strong>B_cost</strong> variables based on the value of the required publisher id.</p>
+<p>If the ID is not present in the <strong>Books</strong> table then an exception is raised with the message “<strong>No such publisher</strong>”.</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/preview?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Try It Yourself!</p>
+<p>Write an example of a conditional <strong>IF</strong> statement in which if the <em>Category</em> in the <strong>Books</strong> table is “COMPUTER”, the retail price increases by 15% else if the category is “CHILDREN”, the retail price increases by 10%, but for all other categories, the retail price increases by 5%.</p>
+<p>Once you are done, click <strong>Reveal Answer</strong> to view the answer.</p>
+<p><a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Answer</h4>
+<p class="mps-program"><span style="font-size: 10pt;"><strong>IF (Category = ‘COMPUTER’) THEN </strong></span> <br><span style="font-size: 10pt;"><strong>&nbsp;&nbsp; Retail = Retail * 1.15; </strong></span> <br><span style="font-size: 10pt;"><strong>ELSIF (Category = ‘CHILDREN’) THEN </strong></span> <br><span style="font-size: 10pt;"><strong>&nbsp;&nbsp; Retail = Retail * 1.1; </strong></span> <br><span style="font-size: 10pt;"><strong>ELSE </strong></span> <br><span style="font-size: 10pt;"><strong>&nbsp;&nbsp; Retail = Retail * 1.05; </strong></span> <br><span style="font-size: 10pt;"><strong>END IF;</strong></span></p>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/preview?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Try It Yourself!</p>
+<p>Write an example of a loop in which when <strong>x</strong> exceeds 3, the loop terminates. The first line must assign <strong>x</strong> to be equal to 1.</p>
+<p>Once you are done, click <strong>Reveal Answer</strong> to view the answer.</p>
+<p><a id="kl_popup_1_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_1_content">Reveal Answer</a></p>
+<p>&nbsp;</p>
+<div id="kl_popup_1_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Answer</h4>
+<p class="mps-program"><span style="font-size: 10pt;"><strong>x:=1; </strong></span> <br><span style="font-size: 10pt;"><strong>myLoop: </strong></span> <br><span style="font-size: 10pt;"><strong>LOOP </strong></span> <br><span style="font-size: 10pt;"><strong>x := x + 1; </strong></span> <br><span style="font-size: 10pt;"><strong>EXIT myLoop WHEN x &gt; 3; </strong></span> <br><span style="font-size: 10pt;"><strong>END LOOP myLoop;</strong></span></p>
+</div>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
