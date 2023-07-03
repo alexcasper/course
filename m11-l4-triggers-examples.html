@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M11 – L4: Triggers: Examples</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802194/download?verifier=ZObkZbVZgDFz47mh6nmsNoFa1G3gw05QSHE3V9Bi" alt="SQL-Introducing-Advanced-Features.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802194"></div>
+<div id="kl_custom_block_0" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Types of Triggers</h3>
+<p>The typical trigger types to be presented are <strong>AFTER</strong> and <strong>BEFORE</strong>. Other trigger types will also be introduced.</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/download?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> The AFTER Trigger</p>
+<p>An example of a SQL statement that initiates an “after row-level trigger” is shown below for use in <strong>Oracle Live SQL</strong>&nbsp;for the ‘<strong><em>Just Lee Bookstore</em></strong>’ database.</p>
+<p><strong><span style="color: #843fa1;">CREATE TRIGGER</span> CustomerAfterInsert</strong></p>
+<p><strong><span style="color: #843fa1;">AFTER INSERT ON</span> Customers</strong></p>
+<p><strong><span style="color: #843fa1;">REFERENCING NEW AS</span> NewC</strong></p>
+<p><span style="color: #843fa1;"><strong>FOR EACH ROW</strong></span></p>
+<p><span style="color: #843fa1;"><strong>BEGIN</strong></span></p>
+<p><strong><span style="color: #843fa1;">INSERT INTO </span>CustomerAudit</strong></p>
+<p><strong><span style="color: #843fa1;">VALUES</span> (:NewC.Customer#, :NewC.LastName, :NewC.FirstName, :NewC.Address, :NewC:City, :NewC.State, :NewC:Zip, :NewC.Referred, :NewC.Region, :NewC.Email);</strong></p>
+<p><span style="color: #843fa1;"><strong>END;</strong></span></p>
+<p>The purpose of this AFTER trigger is to keep an "audit trail" of the new customers inserted into the <strong>Customers</strong> table.</p>
+<p style="text-align: left;">The colon symbol (<strong>:</strong>) shown above within the <strong>VALUES()</strong> line is known in SQL as a "bind variable". It can be seen as a 'tag' for a labelled query item, and generally does not form part of the main syntax of the query. This 'tag' will get replaced with a specific value within the code so that the 'proper' query is generated before it gets executed.</p>
+<p style="text-align: left;">&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/download?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Try It Yourself!</p>
+<p>You want to copy the code given in the figure above into <strong>Oracle Live SQL</strong>. You need to first create a new table called <strong>CustomerAudit</strong> and make it a copy of the <strong>Customers</strong> table. How can you do this?</p>
+<p>&nbsp;</p>
+<p>Once you are done, click <strong>Reveal Answer</strong> to view the answer.</p>
+<p><a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Answer</h4>
+<p>Before you enter any SQL commands following logging into the platform, you must go to <strong>My Scripts</strong> and rerun the ‘JLDB’ script so that the tables can be regenerated.&nbsp;</p>
+<p>Then check the if tables are present by clicking on <strong>Schema</strong>. If so, then click on <strong>SQL Worksheet</strong> and type:</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>CREATE TABLE CustomerAudit AS </strong></span><br><span style="font-size: 12pt;"><strong>SELECT * FROM Customers;</strong></span></p>
+</div>
+<p>This video will show you how to create an <strong>AFTER</strong> row-level trigger in <strong>Oracle Live SQL</strong>.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><iframe style="width: 720px; height: 405px;" title="Module 5 The AFTER Trigger" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3D7aa4a165-2def-42f6-ae95-acb700db93a0" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe> <br><a class="instructure_file_link instructure_scribd_file" title="M5_The AFTER Trigger.pdf" href="https://nulondon.instructure.com/courses/2778/files/802443?verifier=89lHRR6Dg9SKgSG3Y9HIlRNmhHI4a7DO5cJRv60I&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802443" data-api-returntype="File">Transcript</a></p>
+<p>&nbsp;</p>
+<p>Now that the trigger is active, we can attempt to insert a new record into the <strong>Customers</strong> table and then see if the <strong>CustomerAudit</strong> table is automatically updated.</p>
+<p>Click on the numbered tabs below in the correct order to see how this is achieved.</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">1. Current Content of <strong>Customers</strong> and <strong>CustomerAudit</strong> Tables</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802240/download?verifier=2FgqxqxQkwPpSKpZW4XF9mfHH9GwZRXBLtq3vA8r" alt="M5_L4_AFTER_Example_1.png" width="815" height="542" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802240" data-api-returntype="File"></p>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">2. Insertion of New Record into <strong>Customers</strong> Table</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802465/preview?verifier=nbNMe20ynGPDvKgcZWge0gszXQZ3pxmtdWUyJXP0" alt="M5_L4_AFTER_Example_2.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802465" data-api-returntype="File"></p>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">3. Current Contents of <strong>CustomerAudit</strong> Table</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802361/download?verifier=ZsfpjdzW7ywrcdms0IbEpjeN7WrTzuoEOM1aGrML" alt="M5_L4_AFTER_Example_3.png" width="804" height="712" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802361" data-api-returntype="File"></p>
+<p>By inserting the new record into the <strong>Customers</strong> table, the AFTER trigger has caused the same record to be automatically inserted into the <strong>CustomerAudit</strong> table (CUSTOMER# 1021).</p>
+</div>
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">4. Deletion of New Record from <strong>Customers</strong> Table</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802306/download?verifier=P0mEsPlpH7GxYLE3GciFmZElFUUg7z6wkEAwwHqn" alt="M5_L4_AFTER_Example_4.png" width="818" height="743" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802306" data-api-returntype="File"></p>
+</div>
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">5. Current Contents of <strong>CustomerAudit</strong> Table</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802356/download?verifier=LKHm6frMAzvazy8jX0gIkrGV17rKm5MB4dBe8QEo" alt="M5_L4_AFTER_Example_5.png" width="790" height="668" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802356" data-api-returntype="File"></p>
+<p>Although the new record was deleted from the <strong>Customers</strong> table, it has remained in the <strong>CustomerAudit</strong> table.&nbsp;</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/download?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> The BEFORE Trigger</p>
+<p>This video will show you how to set up a <strong>BEFORE</strong> trigger in <strong>Oracle Live SQL</strong>.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><iframe style="width: 720px; height: 405px;" title="Module 5 The BEFORE Trigger" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3Dec736382-d3de-437e-bd0f-acb700dc1332" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe> <br><a class="instructure_file_link instructure_scribd_file" title="M5_The BEFORE Trigger.pdf" href="https://nulondon.instructure.com/courses/2778/files/802139?verifier=kdl2zYgHtBhobX0eiMYxxrb4nuvI3XuuR4FZ2dUC&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802139" data-api-returntype="File">Transcript</a></p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/download?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> Other Triggers</p>
+<p>The previous sections have demonstrated the setup of fairly “simple” triggers.</p>
+<p>However, the setting up and use of triggers can be very complex.</p>
+<p>For example triggers can be employed to enforce referential integrity when Foreign Keys are involved. This is especially the case if there are “parent” and “child” tables.</p>
+<p>When an action is performed on a “parent” table, that same action can be performed on a “child” table using the <strong>CASCADE</strong> keyword.</p>
+<p>Although the following SQL commands are enforced “naturally” such as <strong>ON DELETE NO ACTION</strong>, <strong>ON UPDATE NO ACTION</strong>, and <strong>ON DELETE CASCADE</strong>, there is currently no <strong>ON UPDATE CASCADE</strong>.</p>
+<p>Similarly, there is no <strong>SET DEFAULT</strong> and <strong>SET NULL</strong> actions.</p>
+<p>To overcome these <em>limitations</em>, triggers can be established.</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/download?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> Dropping Triggers</p>
+<p>Just like with tables, sequences, indexes and views, triggers can also be dropped.</p>
+<p>For example to drop the two triggers established in the previous sections, we can simply say:&nbsp;</p>
+<p class="mps-program" style="margin-bottom: 30px;"><span style="font-size: 12pt;"><strong>DROP TRIGGER CustomerAfterInsert;</strong></span><br><span style="font-size: 12pt;"><strong>DROP TRIGGER StaffNotHandlingTooMuch;</strong></span></p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
