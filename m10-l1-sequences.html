@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M10 – L1: Sequences</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802399/download?verifier=sEGCpa2wTsxSUFQQsbPamlSWTC7IQp2rOZaGAb34" alt="SQL-Database-Objects-and-Functions.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802399"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Sequences</h3>
+<p>&nbsp;</p>
+<p><span>The sequence objects in short generate sequential integers that can assist in auditing. These are employed for internal control purposes, and they generate&nbsp;</span><em>unique values</em> <span>&nbsp;for columns that have been designated as&nbsp;</span><em>primary keys</em> <span>. </span></p>
+<p><span>If multiple database users are updating tables by inserting new records, sequences will ensure that no two records end up with the same primary key. </span></p>
+<p><span>This leads to&nbsp;</span><em>two distinctions</em> <span> of the primary key:&nbsp;</span></p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">Surrogate Key</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p>An integer value for the assigned primary key which increases sequentially as a new record is inserted.</p>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">Natural Key</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p>When existing data is designated as a primary key, such as the ISBN in the ‘Just Lee Bookstore’ database, or a person’s National Insurance (NI) number.</p>
+</div>
+</div>
+<p>The use of sequences can be especially important as they can be used as control mechanisms so as to minimize the risk of ‘faulty transactions’, embezzlement and ‘innocent’ accounting errors.</p>
+<p>The majority of business organisations tend to use sequential numbers to track bank cheques, purchase orders, invoices and other financially-related transactions.</p>
+<p>The use of such sequential numbers can assist an auditor to determine whether such items as cheques and invoices are missing due to accounting problems within the business or due to ‘fraudulent’ employees.&nbsp;</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20" style="margin-left: 40px; margin-right: 40px; background-color: #fbe5b8; padding: 20px; margin-bottom: 40px;"><span style="color: #e03e2d;"> <span style="color: #000000;">You will be working with the <em><strong>Just Lee Bookstore</strong></em> database (JLDB) as used in Module 2</span> </span>. For convenience the database file is supplied again should you prefer to 'start afresh' with this database:&nbsp;&nbsp; <br>- For <strong>SQLite3</strong>, please click <a class="inline_disabled" title="JLDB.db" href="https://nulondon.instructure.com/courses/2778/files/802149?verifier=rgskOKsrlct46eR3VZu0yytaBu2gNEpYtry7lgpe&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802149" data-api-returntype="File">here</a> to download the <a class="inline_disabled" title="JLDB.db" href="https://nulondon.instructure.com/courses/2778/files/802149?verifier=rgskOKsrlct46eR3VZu0yytaBu2gNEpYtry7lgpe&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802149" data-api-returntype="File">JLDB.db</a> data file. <br>- For <strong>Oracle Live SQL</strong>, please click <a class="inline_disabled" title="JLDB_Build.sql" href="https://nulondon.instructure.com/courses/2778/files/802477?verifier=fUBGjzbjVoi2ivFCvA8T0tGaerTCFaEPFbywduwU&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802477" data-api-returntype="File">here</a> to download the <a class="inline_disabled" title="JLDB_Build.sql" href="https://nulondon.instructure.com/courses/2778/files/802477?verifier=fUBGjzbjVoi2ivFCvA8T0tGaerTCFaEPFbywduwU&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802477" data-api-returntype="File">JLDB_Build.sql</a> script for upload on to <strong>Oracle Live SQL</strong>. <br><br>In order to upload the <strong>JLDB_BUILD.sql</strong> file to <strong>Oracle Live SQL</strong>, you go to '<strong>My Scripts</strong>' after logging in, and select "<strong>Upload Script</strong>". <br><br>In the pop-up window, you browse to and select the <strong>JLDB_BUILD.sql</strong> file, you enter a name in the '<strong>Script Name</strong>' field, e.g. "<strong>JLDB_1</strong>", a brief description in the '<strong>Description</strong>' field, and then click '<strong>Upload Script</strong>'. <br><br>After a few seconds, you will see the script displayed in segments on the screen based on SQL statements. Then you click on '<strong>Run Script</strong>'. <br><br>The database should then be generated for use in <strong>Oracle Live SQL</strong>. A message should advise that the script ran correctly and you can then proceed to the '<strong>SQL Worksheet</strong>'.&nbsp; <br><br>Please note that once you have uploaded a database to <strong>Oracle Live SQL</strong>, you generally do not need to upload it again when you log back in because it should be available in the '<strong>My Scripts</strong>' section. When you enter it, select the database script, click on "<strong>Run Script</strong>" and wait for the confirmation message. <br><br>Once successful you can go to '<strong>SQL Worksheet</strong>' to query the database.</p>
+<p>Let’s now look at how to create a sequence, insert records using a sequence and alter and drop a sequence.</p>
+<p><strong>It is essential that you click the tabs to learn more:</strong></p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">Creating a Sequence</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p>You may recall when <strong>AUTOINCREMENT</strong> was used in <strong>SQLite3</strong>, or the equivalent in <strong>Oracle Live SQL</strong>, that additional “tables” appeared to be generated alongside the actual tables.</p>
+<p>These additional “tables” were sequences to keep track of the integer values of the primary key inside the table that the sequence was linked with.</p>
+<p>However, it is also possible to generate sequences, just like you can generate tables.</p>
+<p>The generic command is:</p>
+<p><strong>CREATE SEQUENCE sequenceName</strong></p>
+<p><strong>[INCREMENT BY value]</strong></p>
+<p><strong>[START WITH value]</strong></p>
+<p><strong>[{MAXVALUE value | NOMAXVALUE}]</strong></p>
+<p><strong>[{MINVALUE value | NOMINVALUE}]</strong></p>
+<p><strong>[{CYCLE | NOCYCLE}]</strong></p>
+<p><strong>[{ORDER | NOORDER}]</strong></p>
+<p><strong>[{CACHE value | NOCACHE}];</strong>&nbsp;</p>
+<p>The presence of the square brackets (<strong>[...]</strong>) indicates that no additional input from the user is required in that all the user needs to do is provide a name for the sequence, and all other values can be <em>defaults</em>.</p>
+<p>A brief explanation of the last three options:</p>
+<ul>
+<li><strong>CYCLE</strong>: The same integer values are used once the maximum or minimum values have been surpassed.</li>
+<li><strong>ORDER</strong>: Ensures the sequence values are returned in the same order as the requests received from multiple users.</li>
+<li><strong>CACHE</strong>: The specific number of sequence numbers stored in memory for efficient processing - default is 20.</li>
+</ul>
+<p>Let us generate a sequence for the 'Just Lee Bookstore' database in <strong>Oracle Live SQL</strong>:</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>CREATE SEQUENCE orders_orderno_seq</strong></span><br><span style="font-size: 12pt;"><strong>INCREMENT BY 1</strong></span><br><span style="font-size: 12pt;"><strong>START WITH 1021</strong></span><br><span style="font-size: 12pt;"><strong>NOCYCLE</strong></span><br><span style="font-size: 12pt;"><strong>NOCACHE;&nbsp;</strong></span></p>
+<p>Following execution of the SQL statement, if you click on <strong>Schema</strong>, you should see the <strong>ORDERS_ORDERNO_SEQ</strong> sequence object alongside the tables within the database.</p>
+<p>Clicking on the sequence object will open a window confirming the properties of the sequence, e.g. "Cache Size" set to 0 and the "Last Number" set at 1021.</p>
+</div>
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">Inserting Records Using a Sequence</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p>We can insert a record into the <strong>Orders</strong> table by using the sequence to generate the order number.&nbsp;</p>
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802357/preview?verifier=JRZvetHEapk0px8qB3dqY5yzOK5bEAsOU6Hpg3me" alt="M4_L1_SEQs_Insert-1.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802357" data-api-returntype="File"></p>
+<p>The corresponding output confirms the entry in the <strong>Orders</strong> table (Order# 1021 on last line):</p>
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802412/preview?verifier=I8erqrnJsg6XXzR7H9VSiL62z4C33uzE6AG2Gg0y" alt="M4_L1_SEQs_Output-1.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802412" data-api-returntype="File"></p>
+<p>The integer (i.e. 1021) has been generated by the <strong>NEXTVAL</strong> suffix appended to the sequence name.</p>
+<p>We can also use the same sequence to update another table – this time the <strong>Orderitems</strong> table so that the <em>order#</em> attribute will match with the same one in the <strong>Orders</strong> table.</p>
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802491/preview?verifier=jyFdZlYIEOVB5RSaKX3BEsadplEPTFEjH3Y1UE9v" alt="M4_L1_SEQs_Insert-2.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802491" data-api-returntype="File"></p>
+<p>The corresponding output confirms the entry in the Orderitems table (Order# 1021 on the last line):</p>
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802521/preview?verifier=1RAAPC3TjhelBhbCOpqb9aVlmXXQaEC1bGTiYcqY" alt="M4_L1_SEQs_Output-2.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802521" data-api-returntype="File"></p>
+<p>We have used the same sequence to also update the <strong>Orderitems</strong> table.</p>
+<p>In order to ensure consistency, we have used the <strong>CURRVAL</strong> suffix so that ‘order number 1021’ in the <strong>Orderitems</strong> table will correspond with the same order number in the <strong>Orders</strong> table.</p>
+</div>
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">Altering and Dropping a Sequence</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<p>Just like tables can be altered, we can also alter sequences should it be necessary to make changes to the settings.</p>
+<p>However, the changes that are to be made cannot make the current integer values invalid. As expected, the <strong>START WITH</strong> value cannot be altered. However the <strong>INCREMENT BY</strong> value can be altered:&nbsp;</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>ALTER SEQUENCE orders_orderno_seq </strong></span><br><span style="font-size: 12pt;"><strong>INCREMENT BY 10;&nbsp;</strong></span></p>
+<p>And just like tables can be dropped, so can sequences:&nbsp;</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>DROP SEQUENCE orders_orderno_seq;</strong>&nbsp;&nbsp;</span></p>
+<p>The previous values that were generated by the sequence, for example order number 1021 in the <strong>Orders</strong> table, will not be affected when the sequence is removed from the database.&nbsp;</p>
+<p>Finally, an alternative to employing sequences is to create an identity column via <strong>GENERATED AS IDENTITY PRIMARY KEY</strong> during the creation of a table. We first saw this in Module 2.</p>
+<p>As you will recall, the statement can also be expanded to include the starting and increment values.</p>
+<p>It is also not possible to insert a value into a “generated always identity column” because the system knows this is automatically generated.</p>
+</div>
+</div>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
