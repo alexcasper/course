@@ -1,0 +1,110 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M10 – L8: Single-Row Functions: Processing Strings&nbsp;</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802202/download?verifier=osl3iE7ceBPArdVNB7Bp6R0FOEuOyFeZyO82uz7i" alt="SQL-Database-Objects-and-Functions.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802202"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Functions for Processing Strings</h3>
+<p>&nbsp;</p>
+<p>The processing of strings involves the manipulation of the characters within a string permitting the alteration of data such as extracting substrings, counting the number of characters in a string, replacing words in a string, and so on.&nbsp;</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/download?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> The SUBSTR and INSTR Functions</p>
+<p>This video illustrates the use of the <strong>SUBSTR</strong> function to extract a portion of a string.&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><iframe style="width: 720px; height: 405px;" title="Module 4 The SUBSTR Function" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3Dbc4cba9c-8fde-4755-8a8a-acb700d8fadd" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe><br><a class="instructure_file_link instructure_scribd_file" title="M4_The SUBSTR Function.pdf" href="https://nulondon.instructure.com/courses/2778/files/802693?verifier=C8qpmS2l0b9fyZdotBKZiMCUVFZ33S12L47APE4J&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802693" data-api-returntype="File">Transcript</a>&nbsp;<br><br></p>
+<p>The <strong>INSTR</strong> function can give the positions of specific characters, letters or numbers within a string.&nbsp;</p>
+<p>The <strong>Oracle Live SQL</strong> screenshot contained in the tab below demonstrates the use of the <strong>INSTR()</strong> function to achieve this.</p>
+<p>&nbsp;</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">Example of the INSTR() Function in Oracle Live SQL</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802528/download?verifier=ioZlED11DpizwQWn8S6mJokafzJhpc8hMmp9YimJ" alt="M4_L8_INSTR_Example.png" width="555" height="482" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802528" data-api-returntype="File"></p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>By looking at the last column of the output table as shown in the figure, we can see that the position of the dot is in <strong><em>relation to the start of the string</em></strong> regardless of where the position in that string starts from.</p>
+<p>In <strong>SQLite3</strong>, the <strong>INSTR</strong> function only accepts one input – the character(s) of interest – and returns the position of the first occurrence of that character, for example the ‘First dot’ column as shown in the figure above.</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/download?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> Nested Functions Involving SUBSTR and INSTR</p>
+<p>The <strong>SUBSTR</strong> and <strong>INSTR</strong> functions can work together as “<strong><em>nested functions</em></strong>”.</p>
+<p>For example, if a substring is required after the occurrence of a word or a ‘comma’, then <strong>INSTR</strong> can be employed to locate the ‘comma’, and then <strong>SUBSTR</strong> extracts that word after the ‘comma’.</p>
+<p>If you had a collection of sentences which were consistent in that the name of a person always resided between the first two commas in that sentence, you could use the <strong>SUBSTR</strong> and <strong>INSTR</strong> functions to extract the names of the persons from those sentences during a SQL query in the following (generic) way:</p>
+<p style="text-align: center;"><span style="font-size: 14pt;"><strong>SUBSTR(Sentence, <span style="color: #843fa1;">INSTR(Sentence, ‘,’) </span><span style="color: #ba372a;">+1</span>, <span style="color: #169179;">INSTR(Sentence, ‘,’, 1,2)</span> – <span style="color: #843fa1;">INSTR(Sentence, ‘,’)</span> <span style="color: #236fa1;">– 1</span>) <span style="color: #e67e23;">FullName</span></strong></span></p>
+<p>Let us now break down this nested function:</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1"><strong>SUBSTR(Sentence, (<span style="color: #843fa1;">A </span><span style="color: #ba372a;">+ 1</span>), (<span style="color: #169179;">B</span> – <span style="color: #843fa1;">A</span> <span style="color: #236fa1;">– 1</span>))</strong></h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<ul>
+<li>This is the ‘outer’ function and is looking to extract the names of the persons at start position <strong><span style="color: #843fa1;">A</span> <span style="color: #ba372a;">+ 1</span></strong> with a character length of <span style="color: #169179;"><strong>B </strong></span>– <span style="color: #843fa1;"><strong>A</strong></span> <span style="color: #236fa1;">– 1</span> within the string called <strong>Sentence</strong>.
+<ul>
+<li>We say <span style="color: #ba372a;"><strong>+1</strong></span> because we want the position of the <strong><em>first</em></strong> letter of the person’s name, and not the position of the first comma.</li>
+<li>We say <span style="color: #236fa1;"><strong>-1</strong></span> because we want the length (i.e. number of characters) in the person’s name but excluding the second comma.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2"><span style="color: #843fa1;"><strong>INSTR(Sentence, ‘,’)</strong></span></h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p>This returns the location of the occurrence of the <strong>first</strong> comma in <strong>Sentence.</strong></p>
+</div>
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3"><span style="color: #169179;"><strong>INSTR(Sentence, ‘,’, 1,2)</strong></span></h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p>This returns the location of the occurrence of the <strong>second</strong> comma (<span style="color: #169179;"><strong>2</strong></span>) starting from the beginning (<strong><span style="color: #169179;">1</span>)</strong> of <strong>Sentence</strong></p>
+</div>
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4"><span style="color: #169179;"><strong>INSTR(Sentence, ‘,’, 1,2)</strong> </span><span style="color: #843fa1;"><strong>–</strong> <strong>INSTR(Sentence, ‘,’)</strong></span></h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<ul>
+<li>This subtracts the position of the <strong>first</strong> comma from the position of the <strong>second</strong>
+<ul>
+<li>The number of characters <em>includes<u> </u></em>the <strong>second</strong> comma which is why <span style="color: #236fa1;"><strong>– 1</strong></span> is used in the <strong>SUBSTR</strong> function.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_5" class="kl_panel_heading kl_panel_5"><span style="color: #e67e23;"><strong>FullName</strong></span></h3>
+<div id="kl_panel_5_content" class="kl_panel_content kl_panel_5">
+<p>This is simply the name of the column in the output table that will contain the persons’ names extracted from the respective sentences once the SQL statement is completed.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/download?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> The LENGTH Function</p>
+<p>The <strong>LENGTH</strong> function counts the number of characters in a string. See figure below.&nbsp;</p>
+<p><img id="63479" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802143/download?verifier=Y1Zd3TvRNr7oiMcIpRch7kI1OyGeBqnb9zcopexN" alt="M4_L12_Example of LENGTH Function.jpg" width="439" height="280" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802143" data-api-returntype="File"></p>
+<p style="text-align: center;">&nbsp;<em>Example of the LENGTH function to count the number of characters in a string.</em>&nbsp;</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/download?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> Additional String Functions</p>
+<p>&nbsp;</p>
+<p>Other string functions include <strong>LPAD</strong>/<strong>RPAD</strong>, <strong>LTRIM</strong>/<strong>RTRIM</strong>, <strong>REPLACE</strong> and <strong>TRANSLATE</strong>. Click on the tabs below to view the respective examples.</p>
+<div id="kl_custom_block_3" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_6" class="kl_panel_heading kl_panel_6"><strong>LPAD </strong>and <strong>RPAD</strong></h3>
+<div id="kl_panel_6_content" class="kl_panel_content kl_panel_6">
+<p>The <strong>LPAD</strong> and <strong>RPAD</strong> functions are employed to fill in a character string to a fixed width. The characters can be ‘*’, ‘+’, or spaces.</p>
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802520/download?verifier=1NTstWBSqbb5fhsDyLTYbEgPoZmMFP7YZCQoTJ9a" alt="M4_L8_LPAD-RPAD_Example.png" width="722" height="294" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802520" data-api-returntype="File"></p>
+<p>We can see in the figure above that the width of the columns are 12 and the <strong>+</strong> have been padded from the left, whilst the <strong>*</strong> have been padded from the right in the <em>LEFTPAD</em> and <em>RIGHTPAD</em> columns of the output table respectively.</p>
+</div>
+<h3 id="kl_panel_7" class="kl_panel_heading kl_panel_7"><strong>LTRIM</strong> and <strong>RTRIM</strong></h3>
+<div id="kl_panel_7_content" class="kl_panel_content kl_panel_7">
+<p>The <strong>LTRIM</strong> and <strong>RTRIM</strong> functions remove a specific string of characters from the start (left) or end (right) of the string respectively.</p>
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802446/download?verifier=8cuqfNCn8ceCC56BVsQcDVgfElYej4cwXX7YfBIx" alt="M4_L8_LTRIM-RTRIM_Example.png" width="719" height="435" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802446" data-api-returntype="File"></p>
+<p>We can see that the ‘P.O.’ letters have been removed from the left side of the <em>Addresses</em> attribute (in the ‘LTRIM’ column of the output table).</p>
+<p>We can see that ‘AVENUE’ has been removed from the right side of the <em>Addresses</em> attribute (from the addresses that contain the word ‘AVENUE’).</p>
+<p>Any addresses that did not contain those substrings have been untouched.</p>
+</div>
+<h3 id="kl_panel_8" class="kl_panel_heading kl_panel_8"><strong>REPLACE</strong>, <strong>TRANSLATE</strong> and <strong>CONCAT</strong></h3>
+<div id="kl_panel_8_content" class="kl_panel_content kl_panel_8">
+<p>The <strong>REPLACE</strong> function permits the replacement of a word or sentence within a string with another word or string of different lengths.</p>
+<p>The <strong>TRANSLATE</strong> function will swap out <strong><em>one single character</em></strong> for another. This means that any words containing the letters to be swapped out will be changed to the incoming letters.</p>
+<p>The <strong>CONCAT</strong> function permits concatenation of two or more words/sentences together.</p>
+<p>All three functions are illustrated in the figure below</p>
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802455/download?verifier=PInpU7Gvq6JAbejO4qDuRd6nkS35wvAnfQOD7ui6" alt="M4_L8_REPLACE-TRANSLATE-CONCAT_Example.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802455" data-api-returntype="File">.</p>
+<p>The <strong>REPLACE</strong> function has replaced ‘P.O.’ with ‘Post Office’.</p>
+<p>The <strong>TRANSLATE</strong> function has replaced any ‘B’s with ‘C’s, any ‘O’s with ‘A’s, any ‘X’s with ‘S’s and any ‘1’s with ‘E’s throughout the <em>Address</em> attribute, for example “P.<strong>O</strong>.<strong>Box 1</strong>37” has become “P.<strong>A</strong>. <strong>CAS</strong> <strong>E</strong>37”.</p>
+<p>The <strong>CONCAT</strong> function has placed the customer number values after the words “Customer No:”.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
