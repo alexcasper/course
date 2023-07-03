@@ -1,0 +1,157 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M11 – L6: Transaction Support&nbsp;</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802194/download?verifier=ZObkZbVZgDFz47mh6nmsNoFa1G3gw05QSHE3V9Bi" alt="SQL-Introducing-Advanced-Features.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802194"></div>
+<div id="kl_custom_block_0" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Transaction Support</h3>
+<p>&nbsp;</p>
+<p>A transaction can be seen as a “<em>logical unit of work</em>” carried out on the database.</p>
+<p>It could range from a single SQL statement, such as an<span>&nbsp;</span><strong>UPDATE</strong><span>&nbsp;</span>or<span>&nbsp;</span><strong>INSERT</strong>, up to a complete (complex) program which could involve numerous operations carried out on the database.</p>
+<p>The application program in use could perform a series of transactions on the database, with<span>&nbsp;</span><em>non-database processing</em><span>&nbsp;</span>taking place in between, such as altering the value of an existing variable in memory that was previously extracted from a table in a database.</p>
+<p>The transaction will inevitably transform the database from one consistent state into another consistent state.&nbsp;</p>
+<p>Watch this video to learn about the transaction subsystem in the database architecture.</p>
+<p style="text-align: center;"><iframe style="border: 1px solid #464646;" title="embedded content" src="https://northeastern.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=cce95f77-ad6b-4a8a-b5b6-acb800d394b9&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" width="720" height="405" allowfullscreen="allowfullscreen" allow="autoplay"></iframe> <br><a class="instructure_file_link instructure_scribd_file" title="M5_DBMS Transactions.pdf" href="https://nulondon.instructure.com/courses/2778/files/802569?verifier=4Va4lElpTY4Mw3BaqaMDyVpDRrki9mTBQHCnPsSe&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802569" data-api-returntype="File">Transcript</a></p>
+<p>Click on the two tabs below to see pseudo-coded examples of a "simple" and a "complicated" transaction.</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">A Simple Transaction</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p><span style="text-decoration: underline;">Pseudo-code</span>:</p>
+<p><strong>read(staffNo = x, salary)</strong></p>
+<p><strong>new_salary = salary * 1.1</strong></p>
+<p><strong>write(staffNo = x, new_salary)</strong></p>
+<p>The read() and write() pull out and push in information to the database respectively.</p>
+<p>The second line is called a non-database process as it takes place "in memory" and not within the database.</p>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">A Complicated Transaction</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p><span style="text-decoration: underline;">Pseudo-code</span>:</p>
+<p><strong>delete(staffNo = x)</strong></p>
+<p><strong>for all PropertyForRent records, pno</strong></p>
+<p><strong>begin</strong></p>
+<p><strong>&nbsp; &nbsp; read(propertyNo = pno, staffNo)</strong></p>
+<p><strong>&nbsp; &nbsp; if (staffNo = x) then</strong></p>
+<p><strong>&nbsp; &nbsp; begin</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; staffNo = newStaffNo</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; write(propertyNo = pno, staffNo)</strong></p>
+<p><strong>&nbsp; &nbsp; end</strong></p>
+<p><strong>end</strong></p>
+<p>When the staff number <strong><em>x</em></strong> is deleted from the <strong>Staff </strong>table, it is therefore necessary to update other tables that contain that staff number.</p>
+<p>The <strong>ProperyForRent </strong>table in the database will contain the staff number <strong><em>x</em></strong> that had been assigned to manage the properties. These properties therefore need to be assigned to another staff number, and the pseudo-code shown does this.</p>
+<p>The <strong>IF</strong> clause checks to see if the value of <em>staffNo</em> is equal to <strong><em>x</em></strong>, and if TRUE then the value of <em>staffNo</em> is updated to <em>newStaffNo</em>, leading to update the database with the new staff number.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>The ‘complicated’ transaction shown above is at risk of “crashing” halfway through the transaction which means that the remainder of the table, and thus the database, will not be updated.</p>
+<p>This implies that some of the properties in the<span>&nbsp;</span><strong>PropertyForRent</strong><span>&nbsp;</span>table may still be managed by the staff member who was deleted previously from the<span>&nbsp;</span><strong>Staff</strong><span>&nbsp;</span>table.</p>
+<p>This therefore could leave the database in an “inconsistent” state.&nbsp;</p>
+<p>Please be sure to click on the two tabs below to distinguish between 'Transaction Outcomes' and 'Transaction Guidelines'.</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">Transactions: Outcomes</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p>We have one of two possible outcomes:</p>
+<p><strong>Success</strong></p>
+<p>The transaction goes to completion and the database has reached a new consistent state.</p>
+<ul>
+<li>The changes made to the database are<span>&nbsp;</span><em>committed</em><span>&nbsp;</span>(<strong>COMMIT</strong>).</li>
+<li>A “committed transaction”<span>&nbsp;</span><strong>cannot</strong><span>&nbsp;</span>be<span>&nbsp;</span><em>undone</em>!</li>
+</ul>
+<p><strong>Failure</strong></p>
+<ul>
+<li>The transaction is interrupted (or aborted) and therefore fails to go to completion.</li>
+<li>Any changes made to the tables in the database(s) are restored back to their original values.
+<ul>
+<li>The changes made to the database are<span>&nbsp;</span><em>undone</em><span>&nbsp;</span>or “rolled back” (<strong>ROLLBACK</strong>).</li>
+</ul>
+</li>
+<li>The transaction can be repeated to see if it will go to completion.<br><br></li>
+</ul>
+<p>We can visualise the "flow of a transaction" as shown below.</p>
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802422/preview?verifier=G3NEZtbx0PPuHFLFB28Qck67PwDoxs2fTHFVT5rl" alt="M5_03_Transactions_Flow  .jpg" width="714" height="231" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802422" data-api-returntype="File">.&nbsp;</p>
+</div>
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">Transactions: Guidelines</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p>If a program representing a transaction is quite large, for example, involving many SQL statements, it is feasible to employ ‘delimiters’ to split the large program into sections.</p>
+<p>At the start and end of these sections, are<span>&nbsp;</span><strong>BEGIN TRANSACTION</strong>,<span>&nbsp;</span><strong>COMMIT</strong><span>&nbsp;</span>and<span>&nbsp;</span><strong>ROLLBACK</strong>.</p>
+<p>If no errors occur at the end of a section, then a<span>&nbsp;</span><strong>COMMIT</strong><span>&nbsp;</span>is performed. Then the next section is executed; if no errors or violations, then perform another<span>&nbsp;</span><strong>COMMIT</strong>.</p>
+<p>However, if there is then a violation or error, then a<span>&nbsp;</span><strong>ROLLBACK</strong><span>&nbsp;</span>can occur to the values from the previous section – or the original values in the tables depending on which tables are being modified.</p>
+<p>If no sections/boundaries have been defined, then this implies the large program is being executed in one go.</p>
+<ul>
+<li>If successful, then<span>&nbsp;</span><strong>COMMIT</strong>;</li>
+<li>If not successful, then<span>&nbsp;</span><strong>ROLLBACK</strong><span>&nbsp;</span>all the way ‘<em>back to the beginning</em>’!&nbsp;</li>
+</ul>
+<p>Let us focus some more on the<span>&nbsp;</span><strong>COMMIT</strong><span>&nbsp;</span>keyword, which can be “<em>implicit</em>” or “<em>explicit</em>”.</p>
+<ul>
+<li>We say "<strong>explicit</strong>" when the actual<span>&nbsp;</span><strong>COMMT</strong><span>&nbsp;</span>command is entered and executed.</li>
+<li>We say “<strong>implicit</strong>”<span>&nbsp; meaning the </span><strong>COMMIT</strong><span>&nbsp;</span>occurs when you log out of a session. As you leave, it will<span>&nbsp;</span><strong>COMMIT</strong><span>&nbsp;</span>any<span>&nbsp;</span><em>data manipulation language</em><span>&nbsp;</span>(DML) commands like<span>&nbsp;</span><strong>INSERT INTO</strong><span>&nbsp;</span>and<span>&nbsp;</span><strong>UPDATE</strong>.
+<ul>
+<li>It will also take place if a<span>&nbsp;</span><em>data definition language</em><span>&nbsp;</span>(DDL) command is given such as<span>&nbsp;</span><strong>CREATE</strong><span>&nbsp;</span>or<span>&nbsp;</span><strong>ALTER TABLE</strong>.&nbsp;&nbsp;</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/download?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> Restore Points</p>
+<p>In the case of the “boundaries” mentioned previously in the "Transactions: Guidelines" tab, it is possible to establish “restore points”.</p>
+<p>The SQL command is called<span>&nbsp;</span><strong>SAVEPOINT</strong><span>&nbsp;</span>and then the name of the “restore point”.</p>
+<p>The video below shows an example of inserting an entry into the<span>&nbsp;</span><strong>acctmanager</strong><span>&nbsp;</span>table in the ‘<strong><em>Just Lee Bookstore</em></strong>’ database, creating a “restore point”, making a change and then “rolling back”.&nbsp;<br><br></p>
+<p class="mps-highlight"><strong>Note 1:</strong><span>&nbsp;</span>In<span>&nbsp;</span><strong>Oracle Live SQL</strong>, you need to say “<strong>EXEC SAVEPOINT name;</strong>”.&nbsp;</p>
+<p class="mps-highlight"><strong>Note 2:</strong><span>&nbsp;</span>In<span>&nbsp;</span><strong>Oracle Live SQL</strong>, a “<strong>ROLLBACK</strong>” may not appear to work because<span>&nbsp;</span><strong>Oracle Live SQL</strong><span>&nbsp;</span>could be in “<strong><em>auto-commit</em></strong>” mode which means that a “<strong>COMMIT</strong>” is performed after each SQL statement. In other (Oracle) systems it is possible to<span>&nbsp;</span><strong>deactivate</strong><span>&nbsp;</span>the “<strong><em>auto-commit</em></strong>” option.<strong>&nbsp;</strong></p>
+<p>&nbsp;</p>
+<p>Now watch this video to learn how to set a “restore point”, make a change and then “roll back” to the original value.&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><iframe style="width: 720px; height: 405px;" title="Module 5 The RESTORE Point" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3D9294bc84-90ad-4810-a9dc-acb700dd4fe0" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe><br><a class="instructure_file_link instructure_scribd_file" title="M5_The RESTORE Point.pdf" href="https://nulondon.instructure.com/courses/2778/files/802384?verifier=Cw3IZndg2rRsd8xBrtayJui1fXLgOMcmxrIo244g&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802384" data-api-returntype="File">Transcript</a><br><br></p>
+<p>The employment of “restore points” can be beneficial such as to save on processing time and maintain consistency in the database.</p>
+<p>If no ‘boundaries’ are defined, the entire program runs as a single transaction, and if successful, it will<span>&nbsp;</span><strong>COMMIT</strong>, otherwise it will<span>&nbsp;</span><strong>ROLLBACK</strong><span>&nbsp;</span>following ‘failure’.&nbsp;</p>
+<p>Crucially, a “rollback”<span>&nbsp;</span><strong>cannot</strong><span>&nbsp;</span>be performed on a DDL.&nbsp;</p>
+<p>The<span>&nbsp;</span><em>properties</em><span>&nbsp;</span>of a transaction can thus be defined by the acronym “<strong>ACID</strong>” (please be sure to click on the four tabs below for comparison):</p>
+<div id="kl_custom_block_3" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">Atomicity (A)</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<ul>
+<li>An “all or nothing” property.</li>
+<li>The transaction itself, whether as a whole program or a section of a program, is considered to be an indivisible unit, i.e. it cannot be split, and so will either be carried out completely or not carried out at all.</li>
+<li>The recovery subsystem pertaining to the DBMS tends to ensure<span>&nbsp;</span><em>atomicity</em>.</li>
+</ul>
+</div>
+<h3 id="kl_panel_5" class="kl_panel_heading kl_panel_5">Consistency (C)</h3>
+<div id="kl_panel_5_content" class="kl_panel_content kl_panel_5">
+<ul>
+<li>The database must be transformed from one consistent state into another consistent state.</li>
+<li>The DBMS and the application developers are responsible for ensuring consistency.
+<ul>
+<li>The DBMS guarantees consistency by making sure all of the constraints, such as <em>integrity constraints </em>described in the database schema, are enforced.
+<ul>
+<li>The DBMS will not be able to detect an error entered by a user (or an application developer), for example debiting an account by £1000 and crediting that value into the wrong account.</li>
+</ul>
+</li>
+<li>The application developer should ensure programs and statements will be correctly handled.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_6" class="kl_panel_heading kl_panel_6">Isolation (I)</h3>
+<div id="kl_panel_6_content" class="kl_panel_content kl_panel_6">
+<ul>
+<li>Transactions that are still running (e.g. 70% through their run), and which have made a number of changes to tables in a database, should not be seen by other transactions.
+<ul>
+<li>Another transaction is not going to pull out an altered value from a table with the risk that the value gets restored should the original transaction fail.</li>
+</ul>
+</li>
+<li>This is overseen by the <em>concurrency control service</em>.</li>
+</ul>
+</div>
+<h3 id="kl_panel_7" class="kl_panel_heading kl_panel_7">Durability (D)</h3>
+<div id="kl_panel_7_content" class="kl_panel_content kl_panel_7">
+<ul>
+<li>The effects of a committed transaction are deemed permanent since they have been recorded in the database, and should not be lost because of a failure that occurs later down the line.</li>
+<li>This is overseen by the <em>recovery subsystem.</em></li>
+</ul>
+</div>
+</div>
+<p>Taking into account how transactions will be carried out via a DBMS, it is important to carefully consider the database systems development lifecycle (discussed next).&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
