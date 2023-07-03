@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M9 – L10: Table Joins: Set Operators</h2>
+</div>
+<div id="kl_banner_image"><img class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802109/download?verifier=trcDOjpDqOarrm9HNfNfdbERrwxH0FbFBGkgEeoY" alt="SQL–Table Operations.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802109" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Set Operators</h3>
+<p><br>We have seen how tables can be joined via columns (attributes) using the INNER and OUTER joins.</p>
+<p>It is also possible to join tables via rows.</p>
+<p>This can involve carrying out the same queries we did for joining via columns, but then also combining the output with another output from a similar set of queries.</p>
+<p>The key point to note here is that the <em>number of column</em>s, and the <em>datatypes</em> (domains) of the columns must be the same.</p>
+<p>In other words, think of it as stacking one output table on top of another one, but in which, for example the different datatypes being used in columns 1 to 10 in the first output table must also ‘align’ with columns 1 to 10 in the second output table, and then the third output table, and so on.</p>
+<p>Overall, the tables must be “<em>union compatible</em>”.</p>
+<p>In essence, the set operators employed permit the combination of two or more <strong>SELECT</strong> statements.</p>
+<p>There are three main keywords that permit these ‘set operations’. They are: <strong>UNION</strong>, <strong>INTERSECT</strong> and <strong>DIFFERENCE</strong>. These set operators combine the results of two or more queries into a single output result table.&nbsp;</p>
+<p>Please click on all of the tabs below to learn more:</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">UNION</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p>When <strong>UNION</strong> is used to combine two output tables A and B, then the resulting output table will either contain all the rows in A or B or both. Any duplicates are removed.</p>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">INTERSECT</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p>Panel ContentWhen <strong>INTERSECT</strong> is used to combine two output tables A and B, all the rows that are common to both A and B will be produced in the resulting output table.</p>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">DIFFERENCE</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<ul>
+<li>When <strong>DIFFERENCE </strong>is used to combine two output tables A and B, the resulting output table will contain all the rows that are in table A but not in table B.</li>
+<ul>
+<li>In other words, table B’s query results are ‘subtracted’ from table A’s query results if table B’s query results also appear in table A’s query results.</li>
+</ul>
+<li><strong>DIFFERENCE</strong> can also be known as <strong>MINUS</strong> or <strong>EXCEPT</strong> depending on the database system/software application being employed.</li>
+</ul>
+</div>
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">Additional Clauses</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p>In some cases there may be additional clauses which are used in conjunction with the set operators. The generic SQL statement is as follows, where <strong>op</strong> is one of the set operators, e.g. <strong>UNION</strong>):</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>op [ALL] [ CORRESPONDING [BY {column1 [, …]}]]”</strong></span></p>
+<ul>
+<li><strong>ALL:</strong> This leads to duplicate rows produced in the final output table, e.g. if <strong>UNION ALL</strong> is used.</li>
+<li><strong>CORRESPONDING BY:</strong> The set operation is carried out on the named column(s).</li>
+<li><strong>CORRESPONDING</strong>: The set operation is carried out on the common columns.</li>
+</ul>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>The following figure illustrates the actions and resulting outputs of the three set operators.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;">&nbsp; <img id="64291" class="kl_image_max_fill kl_image_full_width" src="https://nulondon.instructure.com/courses/2778/files/802228/download?verifier=X2QKmbgHfJixLvRpepgLduYuGbboCPxMipCniIyF" alt="M3_L13_Three_Set_Operators.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802228" data-api-returntype="File"> &nbsp;</p>
+<p style="text-align: center;"><em>The resulting output tables following the set operations <strong>UNION</strong> (a), <strong>INTERSECT</strong> (b) and <strong>DIFFERENCE</strong> (c)</em>.</p>
+<p>&nbsp;</p>
+<p>Now let's take a look at the different outputs attained by the set operators expressed in the accompanying SQL statements on the <strong><em>Just Lee Bookstore</em></strong>&nbsp;database.</p>
+<p>Click on the four tabs below to see specific examples.</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_8" class="kl_panel_heading kl_panel_8">No Set Operations</h3>
+<div id="kl_panel_8_content" class="kl_panel_content kl_panel_8">
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802374/download?verifier=sxc4N3KXGhyhZlBtuBJUa6BQUscQEpQXaUW2ZSBS" alt="M3_L10_SetOps_NoSetOps.png" width="562" height="309" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802374" data-api-returntype="File"></p>
+<p>We first perform two separate SQL statements so that we can see what author ID values (from the <strong>bookauthor</strong> table) each statement produces.</p>
+<p>Both statements involve an <strong><em>inner join</em></strong> of two tables – the <strong>books</strong> table and the <strong>bookauthor</strong> table – via the <em>isbn</em> attribute so that we can attain the values corresponding to the respective chosen categories (inside the <strong>books</strong> table).</p>
+<p>We can see that the first output table produces the following values of J100, B100, F100 and R100.</p>
+<p>The second SQL statement has produced the second output table containing R100 and K100.</p>
+</div>
+<h3 id="kl_panel_9" class="kl_panel_heading kl_panel_9">UNION (and UNION ALL) Set Operator</h3>
+<div id="kl_panel_9_content" class="kl_panel_content kl_panel_9">
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802389/download?verifier=G2RJsinUDOM0e5qA9LrCmyAE8VRXpiD3RTmoXpAz" alt="M3_L10_SetOps_UNION.png" width="466" height="471" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802389" data-api-returntype="File"></p>
+<p>When we use the <strong>UNION</strong> set operator, the combined output tables show J100, B100, F100, R100 and K100.</p>
+<p>The second R100 value is omitted because duplicates are not allowed.</p>
+<p>However when we use the <strong>UNION ALL</strong> operators, we see that the second R100 value is also displayed – this is because of the <strong>ALL</strong> keyword.</p>
+</div>
+<h3 id="kl_panel_10" class="kl_panel_heading kl_panel_10">INTERSECT Set Operator</h3>
+<div id="kl_panel_10_content" class="kl_panel_content kl_panel_10">
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802440/download?verifier=fvh3X6pJCuIvHiLDyTqxExSxyxj8MvwSrivSNn6k" alt="M3_L10_SetOps_INTERSECT.png" width="583" height="210" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802440" data-api-returntype="File"></p>
+<p>The <strong>INTERSECT</strong> set operator has produced the output table with only one value: R100.</p>
+<p>This is because it is present in both the output tables we saw earlier when the two SQL statements were individually run (No Set Operations).</p>
+<p>Recall that we also saw R100 appear twice following the <strong>UNION ALL</strong> set operation.</p>
+</div>
+<h3 id="kl_panel_11" class="kl_panel_heading kl_panel_11">DIFFERENCE (or EXCEPT) Set Operator</h3>
+<div id="kl_panel_11_content" class="kl_panel_content kl_panel_11">
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802350/download?verifier=4KLs91HjVrfQUEI6SS04n7Kpvx7adJQQdwJTqIgf" alt="M3_L10_SetOps_DIFFERENCE.png" width="537" height="224" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802350" data-api-returntype="File"></p>
+<p>The <strong>EXCEPT</strong> set operator has only retained the J100, B100 and F100 values because these were in the first output table.</p>
+<p>The R100 and K100 values have been omitted because they were in the second output table, regardless of the fact that R100 was also in the first output table.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
