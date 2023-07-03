@@ -1,0 +1,276 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M10 – L7: Single-Row Functions: Numeric and Date&nbsp;</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802202/download?verifier=osl3iE7ceBPArdVNB7Bp6R0FOEuOyFeZyO82uz7i" alt="SQL-Database-Objects-and-Functions.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802202"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Numeric Functions</h3>
+<p>The numeric functions permit the manipulation of numerical data values.</p>
+<p>Let's take a look at some examples (please be sure to click on all of the tabs below):</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">ROUND</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<ul>
+<li>Rounding a numerical value to the required precision (e.g. integer, decimal place).</li>
+<li>For example:
+<ul>
+<li><strong>ROUND(34.7)</strong> <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>">&nbsp;35</li>
+<li><strong>ROUND(34.7, 0) <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>"> </strong>&nbsp;35</li>
+<li><strong>ROUND(34.7, 1) <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>"> </strong>&nbsp;34.7</li>
+<li><strong>ROUND(34.7, -1</strong>)<strong> <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>"> </strong>&nbsp;30</li>
+<li><strong>ROUND(38.7, -1) <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>"> </strong>&nbsp;40</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">TRUNC</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<ul>
+<li>Truncating sets the number of decimal places to allow after the decimal <span>point</span>.</li>
+<li>For example:
+<ul>
+<li><strong>TRUNC(65.873,1)</strong> <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>">&nbsp;65.9</li>
+<li><strong>TRUNC(65.873,0) <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>"> </strong>66</li>
+<li><strong>TRUNC(65.873,2) <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>"> </strong>65.87</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">POWER</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<ul>
+<li>This takes a number and raises it to a required power value.</li>
+<li>For example:
+<ul>
+<li><strong>POWER(4,3)</strong> <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>">&nbsp;64 (i.e. 4×4×4 = 64)</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">MOD</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<ul>
+<li>The modulus gives the “remainder” following a division.</li>
+<li>For example:
+<ul>
+<li><strong>MOD(9,7) <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>"> </strong>&nbsp;7 goes into 9 <strong>once </strong>with a <em>remainder</em> of 2 <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>">&nbsp;modulus output of 2).</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">ABS</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<ul>
+<li>The absolute value converts any negative numerical value into a positive value.
+<ul>
+<li><strong>ABS(-24.6) <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>"> </strong>24.6.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64847" src="https://nulondon.instructure.com/courses/2778/files/802014/preview?verifier=fcfYScyG8yiZP7UyitAUIkdk84U7Gb2vKgUEPhNg" alt="icon_logic.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802014" data-api-returntype="File"> Think About It!</p>
+<p>How would you calculate the square root of 64 using the <strong>POWER</strong> function and can you think of a scale that is not negative and is therefore ‘absolute’?</p>
+<p>&nbsp;</p>
+<p><a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Answer</h4>
+<p>The square root of 64 can be calculated using the <strong>POWER</strong> function as: <strong>POWER(64, 0.5)</strong> <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>"> 8.</p>
+<p>&nbsp;</p>
+<p>The Kelvin scale is absolute. Absolute Zero (at 0°K) is the lowest temperature attainable. The boiling point of helium is ~4°K (~-269°C). You should never attain -6°K, in other words any value lower than 0°K.</p>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/preview?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> The ROUND Function</p>
+<p>Click on the tab below to reveal an illustration of the effects of precision on using the <strong>ROUND()</strong> function in <strong>Oracle Live SQL</strong>.</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_10" class="kl_panel_heading kl_panel_10">Example outputs employing the ROUND() Function</h3>
+<div id="kl_panel_10_content" class="kl_panel_content kl_panel_10">
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802460/download?verifier=UrR38sdhE5gM3FGRk7sL7Qc3aLOiIRNY246E7l4f" alt="M4_L7_ROUND.png" width="838" height="535" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802460" data-api-returntype="File"></p>
+</div>
+</div>
+<p>When you study the output from the ROUND() function, you should observe:</p>
+<ul>
+<li>If the precision is 0, it rounds to the nearest integer, else if 1 then to the first decimal place, else if 2 then to the second decimal place.</li>
+<li>If precision is -1 then it rounds the unit to 0 and the tens to the nearest integer depending on the value of the unit, so
+<ul>
+<li>if we have 26, the 6 is changed to a zero, and the 2 is rounded up to a 3.</li>
+<li>If we have 24, then the 4 is changed to a zero, and the ten remains at 2.</li>
+</ul>
+</li>
+<li>If the precision is -2, then it rounds the units and tens to zero and rounds the hundreds to the nearest integer depending on the values of the tens.</li>
+</ul>
+<p>In <strong>SQLite3</strong>, the <strong>ROUND</strong> function appears to only round to the nearest integer (but displays to one decimal place, e.g. 14.0); setting the precision appears to have no effect on the output, in contrast to what was shown in the PDF.</p>
+<p><strong>&nbsp;</strong></p>
+<h3 class="kl_border_radius_50 mps-page-title">Date Functions</h3>
+<p>The date functions can be employed to carry out date calculations or to format date values.</p>
+<p>Dates can be subtracted from one another in order to attain the difference in days as shown in the figure below.&nbsp;</p>
+<p><img id="63480" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802271/download?verifier=5EteqvY2x3Ys9THH6UuCaIa8LYopZxAOf3s4b85K" alt="M4_L14_Calculating Difference in Dates.jpg" width="540" height="109" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802271" data-api-returntype="File"></p>
+<p style="text-align: center;"><em>Calculating the difference in dates.</em>&nbsp;</p>
+<p>As the function name suggests, the <strong>MONTHS_BETWEEN</strong> enables the calculation of the number of months between two given dates as shown in the figure below.&nbsp;</p>
+<p><img id="63481" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802285/download?verifier=L3FIT9VRDvyQO7VDpH29VpTlXkcGZDPBn4eOfvoI" alt="M4_L14_MONTHS_BETWEEN Function.jpg" width="473" height="318" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802285" data-api-returntype="File"></p>
+<p style="text-align: center;"><em>Using the MONTHS_BETWEEN function to calculate </em><em>the number of months between two given dates.</em>&nbsp;</p>
+<p>In the figure above, we can see that two <strong>INNER JOINS</strong> were performed to combine the three tables (<strong>Books</strong>, <strong>Orderitems</strong> and <strong>Orders</strong>) in order to hone in on which customer had ordered a particular title. The <em>PubDate</em> attribute is from the <strong>Books</strong> table whilst the <em>OrderDate</em> attribute is from the <strong>Orders</strong> table. The <strong>Orderitems</strong> table links the two tables together via the <em>ISBN</em> and the Order Number (<em>Order#</em>) attributes.&nbsp;</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64847" src="https://nulondon.instructure.com/courses/2778/files/802014/preview?verifier=fcfYScyG8yiZP7UyitAUIkdk84U7Gb2vKgUEPhNg" alt="icon_logic.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802014" data-api-returntype="File"> Think About It!</p>
+<p>What function can we use to represent the "MTHS" result more reader-friendly?&nbsp;</p>
+<p><a id="kl_popup_1_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_1_content">Reveal Answer</a></p>
+<p>&nbsp;</p>
+<div id="kl_popup_1_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Answer</h4>
+<p>We could use the <strong>ROUND()</strong> or <strong>TRUNC()</strong> functions to round to the nearest integer, e.g. 56 months.</p>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/preview?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> Additional Date Functions</p>
+<p>Click on the tabs below to view more examples of date functions that can be employed in <strong>Oracle Live SQL</strong>.</p>
+<p>&nbsp;</p>
+<div id="kl_custom_block_3" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_11" class="kl_panel_heading kl_panel_11">ADD_MONTHS</h3>
+<div id="kl_panel_11_content" class="kl_panel_content kl_panel_11">
+<ul>
+<li>Add a specified number of months to a given date.</li>
+<li>For example:
+<ul>
+<li>If the current date is Monday 8<sup>th</sup> June, and you want to add 4 months to it, then the<strong> ADD_MONTHS()</strong> function can be used as follows: <strong>ADD_MONTHS(08-06-20,4)</strong>.
+<ul>
+<li>The output should be 08-10-20 (8<sup>th</sup> October).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_12" class="kl_panel_heading kl_panel_12">NEXT_DAY</h3>
+<div id="kl_panel_12_content" class="kl_panel_content kl_panel_12">
+<ul>
+<li>This function works out what the next date will be given a specific day of the week.</li>
+<li>For example:
+<ul>
+<li>If the current date is Monday 8<sup>th</sup> June, and you want to know the date of the Thursday coming, you can use the <strong>NEXT_DAY()</strong> function as follows: <strong>NEXT_DAY(current_date, ‘THURSDAY’)</strong>.
+<ul>
+<li>The output should be 11<sup>th</sup>&nbsp; June.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_13" class="kl_panel_heading kl_panel_13">TO_DATE</h3>
+<div id="kl_panel_13_content" class="kl_panel_content kl_panel_13">
+<ul>
+<li>This converts various date formats to the <em>internal date format</em> (DD-MON-YY).</li>
+<li>For example:
+<ul>
+<li>To convert the ‘June 30, 2008’ to the internal date format, you would say <strong>TO_DATE(‘March 31, 2008’, ‘Month DD, YYYY’)</strong>.
+<ul>
+<li>The output should be 30-MAR-08.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_14" class="kl_panel_heading kl_panel_14">LAST_DAY</h3>
+<div id="kl_panel_14_content" class="kl_panel_content kl_panel_14">
+<ul>
+<li>Gives the last numerical day of the month.</li>
+<li>For example:
+<ul>
+<li>If the month is May then <strong>LAST_DAY</strong> gives 31.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_15" class="kl_panel_heading kl_panel_15">SYSDATE and CURRENT_DATE</h3>
+<div id="kl_panel_15_content" class="kl_panel_content kl_panel_15">
+<p>Give the current date according to the system hosting the database, and the current date based on the “locale” respectively.</p>
+</div>
+</div>
+<p>&nbsp;The tab below contains a screenshot of the <strong>ADD_MONTHS()</strong>, <strong>NEXT_DAY()</strong> and <strong>TO_DATE()</strong> functions employed in <strong>Oracle Live SQL</strong>.</p>
+<div id="kl_custom_block_4" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_16" class="kl_panel_heading kl_panel_16">Date Function Examples (and Outputs) using Oracle Live SQL</h3>
+<div id="kl_panel_16_content" class="kl_panel_content kl_panel_16">
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802510/preview?verifier=9402rd97bzEWOpvOAebdZchspKacW64JOZQSzHwE" alt="M4_L7_DATE_Examples.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802510" data-api-returntype="File"></p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>The TO_DATE() function consists of a number of formats that can be employed to display the date in the required output.</p>
+<p>These are shown in the table below.</p>
+<table style="border-collapse: collapse; width: 97.0315%;" border="1">
+<tbody>
+<tr>
+<td style="width: 12.3158%; text-align: center;"><strong>Element</strong></td>
+<td style="width: 68.178%; text-align: center;"><strong>Description</strong></td>
+<td style="width: 19.4106%; text-align: center;"><strong>Example</strong></td>
+</tr>
+<tr>
+<td style="width: 12.3158%; text-align: center;">MONTH</td>
+<td style="width: 68.178%;">Name of the month spelled out and padded with blank spaces to a total width of 9 characters.</td>
+<td style="width: 19.4106%; text-align: center;">APRIL</td>
+</tr>
+<tr>
+<td style="width: 12.3158%; text-align: center;">MON</td>
+<td style="width: 68.178%;">Three-letter abbreviation for the name of the month.&nbsp;</td>
+<td style="width: 19.4106%; text-align: center;">APR</td>
+</tr>
+<tr>
+<td style="width: 12.3158%; text-align: center;">MM</td>
+<td style="width: 68.178%;">Two-digit numeric value for the month.</td>
+<td style="width: 19.4106%; text-align: center;">04</td>
+</tr>
+<tr>
+<td style="width: 12.3158%; text-align: center;">RM</td>
+<td style="width: 68.178%;">Roman numeral representing the month.</td>
+<td style="width: 19.4106%; text-align: center;">IV</td>
+</tr>
+<tr>
+<td style="width: 12.3158%; text-align: center;">D</td>
+<td style="width: 68.178%;">Numeric value for the day of the week.</td>
+<td style="width: 19.4106%; text-align: center;">Wednesday = 4</td>
+</tr>
+<tr>
+<td style="width: 12.3158%; text-align: center;">DD</td>
+<td style="width: 68.178%;">Numeric value for the day of the month.</td>
+<td style="width: 19.4106%; text-align: center;">28</td>
+</tr>
+<tr>
+<td style="width: 12.3158%; text-align: center;">DDD</td>
+<td style="width: 68.178%;">Numeric value for the day of the year.</td>
+<td style="width: 19.4106%; text-align: center;">31 December = 365</td>
+</tr>
+<tr>
+<td style="width: 12.3158%; text-align: center;">DAY</td>
+<td style="width: 68.178%;">Name of the day of the week, padded with blank spaces to a length of 9 characters.</td>
+<td style="width: 19.4106%; text-align: center;">WEDNESDAY</td>
+</tr>
+</tbody>
+</table>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
