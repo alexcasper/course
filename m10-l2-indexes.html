@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M10 – L2: Indexes</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802202/download?verifier=osl3iE7ceBPArdVNB7Bp6R0FOEuOyFeZyO82uz7i" alt="SQL-Database-Objects-and-Functions.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802202"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Introducing Indexes</h3>
+<p>&nbsp;</p>
+<p>The purpose for setting up indexes is to permit users to<span>&nbsp;</span><em>quickly locate and access specific records</em>.</p>
+<p>The index therefore stores frequently referenced values and ROWIDs corresponding to the rows within a table. ROWIDs are in fact physical addresses of table rows.</p>
+<p>The index can be likened to the index pages normally found at the back of a text book. If you are looking for a particular topic, you can look it up in the index pages and then once found, quickly go to the pages.</p>
+<p>If there was no index pages at the back of a text book, it would take much longer and be more laborious to locate the topic of interest – you would have to scan through the whole book!! And this is what SQL normally does in effect – scanning through entire tables.&nbsp;</p>
+<p>This leads to the common challenge found in managing databases. How does one improve the speed of data retrieval?</p>
+<p>As tables grow in size, query operations involving<span>&nbsp;</span><strong>WHERE</strong>,<span>&nbsp;</span><strong>JOIN</strong>s and<span>&nbsp;</span><strong>ORDER BY</strong>, can increase in duration and decrease efficiency, in part due to the accessing of the physical disk drive(s) that the database resides on.&nbsp;</p>
+<p>When a table is created, it can be classified as a “<em>heap-organised table”</em>, which means that it is an unordered collection of data.</p>
+<p>When data is inserted into a table, they are physically added to the table in no special order.</p>
+<p>If a record is deleted from a table, a new record can be inserted in its place.</p>
+<p>However, every time a search condition is requested by a<span>&nbsp;</span><strong>WHERE</strong> <span>&nbsp;</span>clause from a<span>&nbsp;</span><strong>SELECT</strong> <span>&nbsp;</span>statement, the full table is searched.</p>
+<p>This means that each row of the table is read into memory and processed, even if the table had millions of rows.</p>
+<p>As you can see this is not very efficient.&nbsp;</p>
+<p>Key concerns which warrant the use of indexes are (click on the tabs below):&nbsp;&nbsp;</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">Disk Input/Output (I/O)</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<ul>
+<li>This tends to be the major concern and thus the largest factor in the total execution time of a query when a search is being carried out.</li>
+<li>Using indexes will reduce the ‘strain’ on the disk I/O.<strong style="background-color: #ffffff;">&nbsp;</strong></li>
+</ul>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">High Selectivity or Cardinality</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<ul>
+<li>This relates to there being a large number of distinct values.</li>
+<li>It could be that 100 rows out 10 million rows only contain the required items of information, but a full table scan of all of the 10 million rows will still be carried out.</li>
+</ul>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">Buffer Pool Space</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<ul>
+<li>This is where the full table is temporarily stored and is the database server’s shared cache memory area.
+<ul>
+<li>This means that other users use it.</li>
+<li>If the full table is too large this can affect system performance, and affect other users.</li>
+</ul>
+</li>
+<li>As tables from new queries come in, tables from old queries are cleared out.
+<ul>
+<li>If a large table comes in, many old tables will be cleared out resulting in other users experiencing delayed processing.</li>
+<li>This can negate the advantages of data caching.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title">The Balanced Tree Indexes</h3>
+<p><span>The balanced tree index (also known as&nbsp;</span><strong>B-tree</strong> <span>) is commonly employed in database systems using Oracle. </span></p>
+<p><span>The ‘basic’ SQL statement&nbsp;</span><strong>CREATE INDEX</strong> <span>&nbsp;will generate a&nbsp;</span><strong><em>B-tree</em></strong> <span>&nbsp;index. </span></p>
+<p><span>For example, if a zip code in the ‘</span><strong><em>Just Lee bookstore</em></strong> <span>’ database is being searched, the index can help locate the position(s) far more rapidly. </span></p>
+<p><span>Before we can take advantage of this we need to create the appropriate index.</span></p>
+<p><span>Please be sure to click on both of the tabs below:</span></p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">CREATE INDEX</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p class="mps-program"><span style="font-size: 12pt;"><strong>CREATE INDEX customers_zip_idx</strong> </span><br><span style="font-size: 12pt;"><strong>ON Customers (Zip);</strong></span></p>
+<p>As you can see the name of the index refers to the table, then the attribute, then the <strong>_idx</strong> ending to represent an index (just like <strong>_seq</strong> represented a sequence).</p>
+<p>In reality, you can call the index anything you like, but it makes sense to give it a name that can help identify what table it belongs to and which attribute, and the fact that it is indeed an index.</p>
+</div>
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">Creating Index in SQLite3</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<p>Creating an index is permissible in <strong>SQLite3</strong>, and so the remainder of any examples will be shown with this.</p>
+<p>Therefore start up the Command Prompt window, change the directory to the location of the <strong>SQLite3.exe</strong> file, and then start the application, e.g. <span style="font-family: 'courier new', courier;"><strong>sqlite3 jldb.db</strong></span>.&nbsp;</p>
+<p>Remember to state <span style="font-family: 'courier new', courier;"><strong>.tables</strong></span> to check that the database has loaded correctly. Then type in at the prompt <span style="font-family: 'courier new', courier;"><strong>.header</strong> <strong>on</strong></span> and <span style="font-family: 'courier new', courier;"><strong>.mode column</strong></span>.</p>
+<p>After you have created the index shown above (in the previous tab), you can type <span style="font-family: 'courier new', courier;"><strong>.indexes</strong></span> or <span style="font-family: 'courier new', courier;"><strong>.indexes customers</strong></span> and you should see the indexes that are current in the loaded database as shown in the figure below.&nbsp;</p>
+<p style="text-align: center;"><span style="color: #e03e2d;"><strong> <img id="63482" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802263/download?verifier=Ygx2sLcsg1JqDgvWunWcg1FmS0LtNxGCvIHoqOhB" alt="M4_L3_Creating a New Index.jpg" width="628" height="176" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802263" data-api-returntype="File">&nbsp; </strong></span><em>Viewing the indexes present in the loaded database in SQLite3 and focusing on the Customers table. Observe the newly created index: customers_zip_idx</em>.</p>
+</div>
+</div>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64847" src="https://nulondon.instructure.com/courses/2778/files/802014/preview?verifier=fcfYScyG8yiZP7UyitAUIkdk84U7Gb2vKgUEPhNg" alt="icon_logic.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802014" data-api-returntype="File"> Think About It!</p>
+<p>It appears that all the tables have an “autoindex” associated with them. Can you suggest where these have come from?&nbsp;</p>
+<p>Once you are done, click <strong>Reveal Answer</strong> to view the answer.</p>
+<p><a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Answer</h4>
+<p><span>These “autoindexes” have come from the generation of Primary Keys when the tables that require them are first created.</span></p>
+</div>
+<p>Watch this video for an example of a B-tree index.</p>
+<p style="text-align: center;"><iframe style="border: 1px solid #464646;" title="embedded content" src="https://northeastern.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ecb1e930-952f-4d52-ab8a-acb800d08303&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" width="720" height="405" allowfullscreen="allowfullscreen" allow="autoplay" data-mce-fragment="1"></iframe> <br><a class="instructure_file_link instructure_scribd_file" title="M4_B-tree Index Example.pdf" href="https://nulondon.instructure.com/courses/2778/files/802562?verifier=ahqOarLzKflIuVT0VBSNmVR0pf6OqvsUXvwSUVjr&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802562" data-api-returntype="File">Transcript</a></p>
+<p style="text-align: left;">The maximum number of columns that can be present in a B-tree index is 32.</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
