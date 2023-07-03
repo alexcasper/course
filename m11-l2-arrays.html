@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M11 – L2: Arrays</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802194/download?verifier=ZObkZbVZgDFz47mh6nmsNoFa1G3gw05QSHE3V9Bi" alt="SQL-Introducing-Advanced-Features.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802194"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Arrays</h3>
+<p>&nbsp;</p>
+<p>In SQL, we can make use of <strong><em>collections</em></strong> which permit the storage of <em>multiple values</em> of the same data type into a single column of a table.</p>
+<p>This means that we can have “nested tables” in which a table ends up containing another table within it.</p>
+<p>This further means that a table can hold more pertinent information than it was originally intended.</p>
+<p>This therefore implies that collections enable <em>flexibility</em> in the design of the physical database structure.</p>
+<p>There are four types or classes of collections:</p>
+<p>Please be sure to click on the four tabs to learn more.</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">Array</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p>An ordered collection in the form of a <em>one dimensional array</em> with a maximum number of elements that can hold only one datatype.</p>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">List</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p>An ordered collection that permits duplicates, but can hold elements of different datatypes.</p>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">Set</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p>An unordered collection that does not permit duplicates, and can hold elements of different datatypes.</p>
+</div>
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">Multiset</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p>An unordered collection that does permit duplicates and holds elements of the same datatype.</p>
+</div>
+</div>
+<p>An array does not need to contain distinct values.</p>
+<p>The elements in an array can be referenced by their ordinal position in the array. This means that if there are 6 elements in an array, and you are interested in accessing the fourth element, then you would just need to include this number in your SQL statement.</p>
+<p>An array can be set up at the same time as when the variable is being declared.</p>
+<p>Normally, the data type and the cardinality (i.e. the total number of elements in the array) are expressed.</p>
+<p>Later on, the elements of the array can be accessed by using an index which starts from 1 and increases by 1 until the maximum number of elements in the array is reached.</p>
+<p>Two arrays can be paired if they have the same number of elements and every ordinal pair of elements is exactly the same.</p>
+<p>Arrays can be initialized in two distinctive ways:</p>
+<p>Click the tabs to learn more.</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">As an Empty Array</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<p>This has a specified data type and cardinality.</p>
+<ul>
+<li>For example: <strong>Hobbies</strong> <strong>VARCHAR(25) ARRAY[7]</strong>
+<ul>
+<li>Variable character with a maximum of 25 characters in each of the 7 elements within the array called ‘Hobbies’.</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+</div>
+<h3 id="kl_panel_5" class="kl_panel_heading kl_panel_5">As an Array Type Constructor</h3>
+<div id="kl_panel_5_content" class="kl_panel_content kl_panel_5">
+<p>Here the data type and cardinality are deduced from the data supplied to the array.</p>
+<ul>
+<li><strong>Enumeration </strong>of the elements as a comma-separated list which is enclosed in square brackets.
+<ul>
+<li>Example: <strong>ARRAY [‘Mary’, ‘Peter’, ‘Anne’, ‘John’, ‘Alan’]</strong></li>
+</ul>
+</li>
+<li>A <strong>SQL statement</strong> but in which only one column is selected.
+<ul>
+<li>Example: <strong>ARRAY (SELECT Title FROM Books)</strong></li>
+</ul>
+</li>
+</ul>
+<p><span style="text-decoration: underline;"><strong>Note</strong></span>: The above two examples are for information purposes only as they are "snippets" from longer SQL statements, and will <strong>not</strong> work in <strong>SQLite3</strong> and <strong>Oracle Live SQL</strong> in their current state.</p>
+<p>Let’s look at the <strong>Publisher</strong> table in the ‘<strong><em>Just Lee Bookstore</em></strong>’ database. If the <em>Phone</em> attribute was set up as an array with 3 elements, in to each was stored telephone numbers, we would be able to access some or all of those numbers for all or a particular publisher as:&nbsp;</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>SELECT Phone[1], Phone[3]</strong></span><br><span style="font-size: 12pt;"><strong>FROM Publisher;</strong></span></p>
+<p>As can be seen here, the first and third (in this example, last) phone numbers were extracted from the <strong>Publisher</strong> table for all publishers.</p>
+<p>If you were not sure how many elements were in the array but you wanted the second and last telephone numbers for the publisher with Publisher ID 2, what would be the SQL statement?</p>
+<p>You could say:<span>&nbsp;</span></p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>SELECT Phone[2],Phone[CARDINALITY(Phone)] </strong></span><br><span style="font-size: 12pt;"><strong>FROM Publisher </strong></span><br><span style="font-size: 12pt;"><strong>WHERE PubID = 2;&nbsp;</strong></span></p>
+<p><span>The <strong>CARDINALITY </strong>keyword gives the <em>maximum number of elements</em> in the array.</span></p>
+</div>
+</div>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/preview?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> Using a FOR Loop to Access an ARRAY</p>
+<p>We can demonstrate the employment of a FOR loop to access the elements contained in an array.</p>
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802433/preview?verifier=D3bibOOsCnI62uO5WpfSNawj4ED38jT0yTyyxeu0" alt="M5_L2_ARRAY_Example1.JPG" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802433" data-api-returntype="File"></p>
+<p>In this instance, the array created which we called ‘<strong>ExtraContacts</strong>’ is a “variable array” and has 5 elements within, all of which have the ‘variable character’ data type with a limit of 25 characters.&nbsp;</p>
+<p>We have declared a variable called ‘<strong>PubConNames</strong>’ to be of data type ‘<strong>ExtraContacts</strong>’ which is <em>assigned</em> as the array type created earlier called ‘<strong>ExtraContacts</strong>’.</p>
+<p>This makes ‘<strong>PubConNames</strong>’ our array! We then ensure that there are 5 elements by using the <strong>.EXTEND</strong> suffix.</p>
+<p>We then populate the elements of the ‘<strong>PubConNames</strong>’ array from one with “Eli” to five with “Jake”.</p>
+<p>We then set up the <strong>FOR</strong> loop to iterate from <strong>1</strong> to the number of elements present in the ‘<strong>PubConNames</strong>’ array – which should be <strong>5</strong>.</p>
+<p><strong>LOOP</strong> starts the iteration, and each time this occurs, the name contained in the accessed element from the array is printed to the screen via the <strong>DBMS_OUTPUT.put_line</strong> command.</p>
+<p>The <strong>LOOP</strong> is ended following all 5 iterations and then the execution is formally ended.</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
