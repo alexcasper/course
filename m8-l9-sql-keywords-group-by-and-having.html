@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M8 - L9: SQL Keywords: GROUP BY and HAVING</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802464/download?verifier=MuLgltsjhelYJZNvZhOZWFuvKR6pjWJsMuhyhnC8" alt="Structured-Query-Language.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802464" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>GROUP BY and HAVING</h3>
+<p>&nbsp;</p>
+<p>The use of the <strong>GROUP BY</strong> clause permits attaining sub-totals. It happens to be closely integrated with the <strong>SELECT</strong> keyword in that each item in the <strong>SELECT</strong> list must be <strong><em>single-valued per group</em></strong>.</p>
+<p>The <strong>SELECT</strong> clause may only contain:</p>
+<ul>
+<li>Column names</li>
+<li>Aggregate functions</li>
+<li>Constants</li>
+<li>Expressions that involve combinations of the above</li>
+</ul>
+<p>One very important criterion is that <strong><em>all column names</em></strong> in the <strong>SELECT</strong> list must <strong><em>also appear</em></strong> in the <strong>GROUP BY</strong> clause unless an attribute is being employed in an aggregate function as shown in the figure below.</p>
+<p>The <strong>GROUP BY</strong> clause typically follows the <strong>WHERE</strong> clause meaning that once the rows have been filtered using <strong>WHERE</strong>, the groups are formed from the remaining rows that satisfy the predicate.</p>
+<p>The <strong>HAVING</strong> clause can be used alongside <strong>GROUP BY</strong> to restrict the groups that appear in the final result. Any attribute names that appear in the <strong>HAVING </strong>clause must also appear in the <strong>GROUP BY</strong> list or be contained within an aggregate function.</p>
+<p>&nbsp;</p>
+<p><img id="63294" class="kl_image_max_fill" src="https://nulondon.instructure.com/courses/2778/files/802344/download?verifier=gQrhKryEJPitf139DM0DOifKMQJnCug0DyDxe3fh" alt="M2-L11_Using GROUP BY and HAVING.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802344" data-api-returntype="File"></p>
+<p style="text-align: center;"><em>Combination of using GROUP BY and HAVING clauses.</em></p>
+<p>&nbsp;</p>
+<p>Finally, NULL values are considered to be equal for <strong>GROUP BY</strong> clauses.</p>
+<p>How and where could we incorporate a <strong>WHERE</strong> clause in the previous SQL statement if we wanted to ignore the records that had no shipping date?</p>
+<p>Have a go in <strong>SQLite3</strong> before revealing the answer.</p>
+<p>&nbsp;</p>
+<p><a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<p>&nbsp;</p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p style="text-align: center;"><span style="color: #e03e2d;"><img id="92719" src="https://nulondon.instructure.com/courses/2778/files/802166/preview?verifier=CXWyhbCtpCMOFxnfFzkBBOPgU0clcbQXmt2Rh8PO" alt="M2_L11_Reveal_WHERE_GROUP-BY.JPG" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802166" data-api-returntype="File">&nbsp;<br></span></p>
+<p style="text-align: center;">&nbsp;<em>The expected SQL query and resulting output.</em></p>
+<p>Observe that the sum for FL and GA has changed but ID, IL and TX have remained the same. We appear to have lost MI.<em></em></p>
+<p>This is because the <strong>WHERE</strong> keyword has caused records that did not contain shipping dates to be ignored.</p>
+<p>When you look again at the previous figure, you will see that the record corresponding to the MI shipping state did not have a shipping date.</p>
+</div>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
