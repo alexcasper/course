@@ -1,0 +1,185 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div" style="background-color: #4cb1c5; color: #ffffff; margin: 2px !important 0px !important 10px 0px !important;">
+<h2 style="color: #ffffff; border-top-width: 2px; border-color: #516b7c;">M7 - L4: Database Architecture and Languages</h2>
+</div>
+<div id="kl_banner_image" class="kl_border_radius_20"><img id="57362" src="https://nulondon.instructure.com/courses/2778/files/802023/download?verifier=v3hm2TBRYiYHEeuQi3vrzcCcNIPRiXqJEyE5Vxit" alt="Theory-of-Relational-Databases.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802023"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<div id="kl_custom_block_1" class="kl_border_radius_20" style="background-color: #ffffff; color: #000000;">
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Database Architecture and Languages</h3>
+<p style="margin-left: 40px; margin-right: 40px;">&nbsp;</p>
+<p style="margin-left: 40px; margin-right: 40px;">A database system (a DBMS along with physical files and related application software) should be able to provide registered users an abstract view of the data in which certain details on how the data is stored and manipulated are hidden from them.</p>
+<p style="margin-left: 40px; margin-right: 40px;">For example, users do not need to know the physical database storage details.&nbsp;</p>
+<p style="margin-left: 40px; margin-right: 40px;">&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="67350" src="https://nulondon.instructure.com/courses/2778/files/802022/preview?verifier=cC6ICjWre1EHCvCBkzm2cb2xEGnrwqrEcfa3N2dx" alt="icon_task_list.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802022" data-api-returntype="File"> Database Architecture</p>
+<p>When designing a database, the general description and information requirements of the business organization must be considered and be correctly represented within the database.</p>
+<p>Given that the database will be a shared resource, each user may require a different view of the data held in the database.</p>
+<p>In order to satisfy these requirements, the architecture of the database management system (DBMS) should conform to the “<strong>ANSI-SPARC</strong>” architecture, which contains three key levels (click on the tabs to learn more):</p>
+<div class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">External</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<ul>
+<li><span>The registered users’ views of the database.</span></li>
+<li>A description of that section of the database that is most relevant to a particular user or group of users.</li>
+</ul>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">Conceptual</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<ul>
+<li><span>Can be considered to be a ‘community view’ of the database by describing the type of data stored in the database and the corresponding relationships among the data. </span></li>
+<li>It can provide a mapping and independence between the external and internal levels.</li>
+</ul>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">Internal</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<ul>
+<li><span>This is the physical representation of the database on the PC server or mainframe.</span></li>
+<li>This is where and how the data is stored using the data structures and file organisations.</li>
+</ul>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><strong>ANSI</strong> stands for "American National Standards Institute".</p>
+<p><strong>SPARC</strong> stands for "Standards Planning and Requirements Committee".</p>
+<p>We can visualise the <strong>ANSI-SPARC</strong> architecture as follows:</p>
+<p style="text-align: center;"><img id="140507" src="https://nulondon.instructure.com/courses/2778/files/802567/preview?verifier=5HOXofiPpJAMCb0ApTkYHauLpRZNRPt1r4cbg1nR" alt="M103ANSISPARCA CVER.png" width="689" height="538" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802567" data-api-returntype="File"></p>
+<p>&nbsp;</p>
+<p>To place into context, the figure below illustrates the three levels by using a sample of information from a database.</p>
+<p>The external levels (we can also call "schemas") are different for the two registered users – their “views” having been ‘extracted’ from the conceptual level containing the entire table of interest.</p>
+<p>How the table was constructed and stored is described in the internal level (or "schema").</p>
+<p style="text-align: center;"><img id="140508" src="https://nulondon.instructure.com/courses/2778/files/802436/preview?verifier=G4JWEuWXMVHBLFjNDzgPHIcJcsZE7zbn0m9prQOI" alt="M105ANSISPARC-C CVER.png" width="764" height="437" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802436" data-api-returntype="File"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="67350" src="https://nulondon.instructure.com/courses/2778/files/802022/preview?verifier=cC6ICjWre1EHCvCBkzm2cb2xEGnrwqrEcfa3N2dx" alt="icon_task_list.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802022" data-api-returntype="File"> Database Languages</p>
+<p>Data access language has two parts.&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%; border-color: #ffffff;" border="1">
+<tbody>
+<tr>
+<td style="width: 50%; background-color: #e3dfda; color: #3b5b72; padding-top: 10px; padding-bottom: 10px; height: 45px; border-color: #ffffff; font-family: helvetica; padding-left: 10px;"><strong>Data Definition Language (DDL)</strong></td>
+<td style="width: 50%; background-color: #e3dfda; color: #3b5b72; padding-top: 10px; padding-bottom: 10px; height: 45px; border-color: #ffffff; font-family: helvetica; padding-left: 10px;"><strong>Data Manipulation Language (DML)</strong></td>
+</tr>
+<tr>
+<td style="width: 50%; background-color: #f5eede; color: #000000; height: 69px; border-color: #ffffff; font-family: helvetica; padding: 10px 5px 10px 10px; vertical-align: top;">
+<p>The <strong>DDL</strong> is used to specify/define the database schema including:&nbsp;</p>
+<ul>
+<li>Data types,</li>
+<li>Structures and</li>
+<li>Any Data constraints.</li>
+</ul>
+<p>All appropriate specifications are thus stored in the database.&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</td>
+<td class="" style="width: 50%; background-color: #f5eede; color: #000000; height: 69px; border-color: #ffffff; font-family: helvetica; padding: 10px 5px 10px 10px; vertical-align: top;">
+<p class="">The <strong>DML</strong> is used to both read and update the database including:&nbsp;</p>
+<ul>
+<li>‘Querying’ and thus retrieving of the data&nbsp;</li>
+<li>Updating of the information within the database including&nbsp;
+<ul>
+<li>Deletion of items,</li>
+<li>Addition of new items, or&nbsp;</li>
+<li>Updating of current items</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%; background-color: #f5eede; color: #000000; border-color: #ffffff; font-family: helvetica; padding: 10px 5px 10px 10px; vertical-align: top;">
+<p><span style="text-decoration: underline;">ANALOGY</span></p>
+<p>Purchase of bedroom furniture consisting of wardrobe, chest of drawers, bed and dressing table.</p>
+<p>Constraint 1: Socks, briefs, shorts, and T-shirts to be located in chest of drawers.</p>
+<p>Constraint 2: Shirts, jackets, dressing gowns and suits to be located in wardrobe.</p>
+<p>...</p>
+</td>
+<td style="width: 50%; background-color: #f5eede; color: #000000; border-color: #ffffff; font-family: helvetica; padding: 10px 5px 10px 10px; vertical-align: top;">
+<p><span style="text-decoration: underline;">ANALOGY</span></p>
+<p>Items of clothing purchased to populate (i.e. "add to") the chest of drawers and wardrobe.</p>
+<p>Later, 3 pairs of socks inside chest of drawers have holes so repair items or replace with new pairs of socks.</p>
+<p>Going to a job interview: Need to "join" one selection of each item of t-shirt, briefs, and pairs of socks from chest of drawers with shirt and suit from wardrobe.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>The DDL and DML are typically known as <em>sub-languages </em>because they can be called by a ‘host language’ in order to retrieve and process data from a database.</p>
+<p>For example, a ‘host language’ program written in C++, Java, Python or R, may contain embedded SQL code, or a function/module to permit interaction with a database server.</p>
+<p>Any conditions or iterations are carried out in the ‘host language’ program leaving the SQL code to focus on solely interacting with the database, and return the output (results) to the calling program.</p>
+<p>We can extend the DML to two sub-topics: procedural and non-procedural. Please click on the tabs below to learn more.</p>
+<div class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">Procedural DML</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p>This permits the user to instruct the system <strong>what data</strong> is needed, and <strong>exactly how to retrieve</strong> that data.</p>
+<p>The instructions must be clearly ‘understood’ by the system in order to return to the user exactly what data/information was requested.</p>
+</div>
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">Non-Procedural DML</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<p>This permits the user to instruct the system on <strong>what data</strong> is needed.</p>
+<p>The user <strong>does not need to specify</strong> on how to retrieve it.</p>
+<p>The DBMS translates the DML statement into a series of procedures that will internally retrieve the requested information from the database.</p>
+<p>The user is not concerned with any data structures since the DBMS will contend with them in the background, and therefore the user attains a considerable degree of data independence.</p>
+</div>
+</div>
+</div>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="97158" src="https://nulondon.instructure.com/courses/2778/files/801991/preview?verifier=J8MpW4zot2ltdbLrQDYIVHkxMKWqgHlGtLYOJKG3" alt="icon_knowledge.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/801991" data-api-returntype="File">Think About It!</p>
+<p>A customer is asking a clerk in a shop for the availability of a specific item.</p>
+<p>The clerk advises the customer that she will "double check whether it is in stock".</p>
+<p>What does the clerk interact with to find out the information?</p>
+<p>Select only one of the possible responses below:</p>
+<div id="kl_quick_check_0" class="kl_quick_check kl_quick_check_0_content" style="border-style: none; background-color: #ffffff; color: #000000;">
+<div class="kl_quick_check_answers">
+<div class="kl_quick_check_answer_wrapper">
+<div class="kl_quick_check_answer">
+<p>A database.</p>
+</div>
+<div class="kl_quick_check_response">
+<p><span>Not quite.</span></p>
+</div>
+</div>
+<div class="kl_quick_check_answer_wrapper">
+<div class="kl_quick_check_answer">
+<p>A DBMS.</p>
+</div>
+<div class="kl_quick_check_response">
+<p><span>Not quite.</span></p>
+</div>
+</div>
+<div class="kl_quick_check_answer_wrapper">
+<div class="kl_quick_check_answer">
+<p>A table.</p>
+</div>
+<div class="kl_quick_check_response">
+<p><span>Not quite.</span></p>
+</div>
+</div>
+<div class="kl_quick_check_answer_wrapper kl_quick_check_correct_answer">
+<div class="kl_quick_check_answer">
+<p>An interface that incorporates all of the above.</p>
+</div>
+<div class="kl_quick_check_response">
+<p>You got it right!</p>
+</div>
+</div>
+<div class="kl_quick_check_answer_wrapper">
+<div class="kl_quick_check_answer">
+<p>None of the above.</p>
+</div>
+<div class="kl_quick_check_response">
+<p><span>Not quite.</span></p>
+</div>
+</div>
+<div class="kl_quick_check_answer_wrapper">
+<div class="kl_quick_check_answer">
+<p>A web page.</p>
+</div>
+<div class="kl_quick_check_response">
+<p><span>Not quite.</span></p>
+</div>
+</div>
+</div>
+<p style="clear: both;"><a class="Button Button--primary kl_quick_check_submit" role="button" href="#">Check Answer</a></p>
+</div>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
