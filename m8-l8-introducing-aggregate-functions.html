@@ -1,1 +1,59 @@
-more tests
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M8 - L8: Introducing Aggregate <span>Functions</span></h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802464/download?verifier=MuLgltsjhelYJZNvZhOZWFuvKR6pjWJsMuhyhnC8" alt="Structured-Query-Language.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802464" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>SELECT Statements Containing Aggregate <span>Functions</span></h3>
+<p>&nbsp;</p>
+<p>There are typically five aggregate functions that are used within a <strong>SELECT</strong> statement.</p>
+<p>Be sure to click on each tab to learn more about the aggregate functions.</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">COUNT</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<ul>
+<li>This returns the number of values in a specified column.</li>
+<li>Can be applied to both numeric and non-numeric fields.</li>
+</ul>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">SUM</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<ul>
+<li>This returns the sum of the values in a specified column.</li>
+<li>Can only be applied to numeric fields.</li>
+</ul>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">AVG</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<ul>
+<li>This returns the average (i.e. arithmetic mean) of the values in a specified column.</li>
+<li>Can only be applied to numeric fields.</li>
+</ul>
+</div>
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">MIN</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<ul>
+<li>This returns the smallest (i.e. lowest) value in a specified column.</li>
+<li>Can be applied to both numeric and non-numeric fields.</li>
+</ul>
+</div>
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">MAX</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<ul>
+<li>This returns the largest (i.e. highest) value in a specified column.</li>
+<li>Can be applied to both numeric and non-numeric fields.</li>
+</ul>
+</div>
+</div>
+<p>Each of these aggregate functions operates on a <em>single column</em> of a table and will <em>return a single value</em>.</p>
+<p>With the exception of <strong>COUNT(*)</strong>, each function will eliminate any NULL values first and will then operate on any non-NULL values that remain.</p>
+<p>The <strong>COUNT(*)</strong> function will count all of the rows of a table irrespective of the presence of NULL values or duplicates.</p>
+<p>It is possible to use <strong>DISTINCT</strong> before the column name in order to eliminate any duplicates. However, the <strong>DISTINCT</strong> keyword will not have any effect with <strong>MIN</strong> and <strong>MAX</strong>, but it may have an effect on <strong>SUM</strong> and <strong>AVG</strong>.</p>
+<p>In addition to the <strong>SELECT</strong> keyword, aggregate functions can also be used in the <strong>HAVING</strong> clause (which is used alongside the <strong>GROUP BY</strong> clause). It will <em>restrict the groups</em> that appear in the final table. <strong>HAVING</strong> is similar to the <strong>WHERE</strong> clause but whereas the latter filters individual rows, the former filters the groups.</p>
+<p>&nbsp;This video illustrates some examples of the use of aggregate functions applied to the ‘Just Lee’ bookstore database.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><iframe style="width: 720px; height: 405px;" title="Module 2 Aggregate Functions" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3Db087dd58-6fe0-46a9-b315-acb700cdb273" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe><br><a class="instructure_file_link instructure_scribd_file" title="M2_Aggregate Functions.pdf" href="https://nulondon.instructure.com/courses/2778/files/802430?verifier=dhfEvedVyRqOJGSGWPZLxgfQtPW3DTLpZ2tWWXp5&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802430" data-api-returntype="File">Transcript</a><br>&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
