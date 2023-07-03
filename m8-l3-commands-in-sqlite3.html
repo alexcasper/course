@@ -1,0 +1,302 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M8 - L3: Commands in SQLite3</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802464/download?verifier=MuLgltsjhelYJZNvZhOZWFuvKR6pjWJsMuhyhnC8" alt="Structured-Query-Language.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802464" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>General SQL Commands in SQLite3</h3>
+<p>&nbsp;</p>
+<p>The general SQL commands employed in <strong>SQLite3</strong> (and in most SQL applications) are: <strong>SELECT</strong>, <strong>FROM</strong> and <strong>WHERE</strong>.</p>
+<p>Let’s say you have a database called <strong>MyDB1</strong> containing three tables (<strong>A</strong>, <strong>B</strong>, <strong>C</strong>), each with differing numbers of rows and columns.</p>
+<p>If you were interested in the contents of table <strong>A</strong>, then the three SQL commands can be employed as follows (be sure to click on the three tabs below in succession):</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">SELECT</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p>This is used to <strong><em>select the attributes</em></strong> (columns) from the table, or tables, of interest.</p>
+<ul>
+<li>For example, you would either:
+<ul>
+<li>Choose the required attribute(s) from table <strong>A</strong> by writing the name of the attributes.</li>
+<li>Choose <strong>all</strong> of the attributes by using the <strong>*</strong> symbol.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">FROM</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p>This is used to&nbsp;<strong><em>select the table(s)</em></strong>&nbsp;that the attributes are stored in.</p>
+<p>For example,&nbsp;<strong>FROM A</strong>&nbsp;if table <strong>A</strong> was the table of interest.</p>
+<p>For multiple tables, special “joining” SQL commands are employed which we will see later.</p>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">WHERE</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p>This is used to <em>apply a condition</em>, especially if you do not want all of the content of the chosen attribute(s).</p>
+<p>For example, if there was a “Gender” attribute in table <strong>A</strong>, in which three entries were present (‘M’ for “male”; ‘F’ for “female’; ‘U’ for “unspecified”), and you were only interested in which persons did not specify their gender, then the full SQL query would be:</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>SELECT *</strong> </span><br><span style="font-size: 12pt;"><strong>FROM A</strong> </span><br><span style="font-size: 12pt;"><strong>WHERE Gender = ‘U’;</strong></span></p>
+<p>We have opted to “<em><u>select</u> <strong>all columns</strong> <u>from</u> <strong>table A</strong> <u>where</u> ‘<strong>unspecified</strong>’ was entered into the Gender attribute</em>”.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>When you look at a SQL query, it is always terminated by a <em>semi-colon</em> (‘<strong>;</strong>’). The semicolon therefore instructs the SQL application program that the end of the query has been reached and it can be executed/processed.</p>
+<p>This is because the SQL query itself is, in reality, <strong><em>one very long line</em>!</strong></p>
+<p>However, for ease of reading (by humans) the line can be broken up into numerous lines which helps in following the logic of the query, especially when the query becomes complex. In some cases, indentations will also be applied in some instances to help in following the logic much better – similar to coding in Python (and other 3GL programming languages!).</p>
+<p>Let us imagine the table below is contained inside a database. The name of the table is <strong>Hair</strong>.</p>
+<table style="border-collapse: collapse; width: 97.0315%;" border="1">
+<tbody>
+<tr>
+<td style="width: 16.65%; text-align: center;"><strong>Sample</strong></td>
+<td style="width: 16.65%; text-align: center;"><strong>T1</strong></td>
+<td style="width: 16.65%; text-align: center;"><strong>T2</strong></td>
+<td style="width: 16.65%; text-align: center;"><strong>T3</strong></td>
+<td style="width: 16.65%; text-align: center;"><strong>T4</strong></td>
+<td style="width: 16.6544%; text-align: center;"><strong>T5</strong></td>
+</tr>
+<tr>
+<td style="width: 16.65%; text-align: center;"><strong>R</strong></td>
+<td style="width: 16.65%; text-align: center;">9.2</td>
+<td style="width: 16.65%; text-align: center;">0.30</td>
+<td style="width: 16.65%; text-align: center;">1730</td>
+<td style="width: 16.65%; text-align: center;">12.0</td>
+<td style="width: 16.6544%; text-align: center;">3.6</td>
+</tr>
+<tr>
+<td style="width: 16.65%; text-align: center;"><strong>L</strong></td>
+<td style="width: 16.65%; text-align: center;">12.4</td>
+<td style="width: 16.65%; text-align: center;">0.39</td>
+<td style="width: 16.65%; text-align: center;">930</td>
+<td style="width: 16.65%; text-align: center;">50.0</td>
+<td style="width: 16.6544%; text-align: center;">2.3</td>
+</tr>
+<tr>
+<td style="width: 16.65%; text-align: center;"><strong>N</strong></td>
+<td style="width: 16.65%; text-align: center;">7.2</td>
+<td style="width: 16.65%; text-align: center;">0.32</td>
+<td style="width: 16.65%; text-align: center;">2750</td>
+<td style="width: 16.65%; text-align: center;">65.3</td>
+<td style="width: 16.6544%; text-align: center;">3.4</td>
+</tr>
+<tr>
+<td style="width: 16.65%; text-align: center;"><strong>R</strong></td>
+<td style="width: 16.65%; text-align: center;">12.0</td>
+<td style="width: 16.65%; text-align: center;">0.36</td>
+<td style="width: 16.65%; text-align: center;">1500</td>
+<td style="width: 16.65%; text-align: center;">3.4</td>
+<td style="width: 16.6544%; text-align: center;">5.3</td>
+</tr>
+<tr>
+<td style="width: 16.65%; text-align: center;"><strong>L</strong></td>
+<td style="width: 16.65%; text-align: center;">10.1</td>
+<td style="width: 16.65%; text-align: center;">0.50</td>
+<td style="width: 16.65%; text-align: center;">1040</td>
+<td style="width: 16.65%; text-align: center;">39.2</td>
+<td style="width: 16.6544%; text-align: center;">1.9</td>
+</tr>
+<tr>
+<td style="width: 16.65%; text-align: center;"><strong>N</strong></td>
+<td style="width: 16.65%; text-align: center;">6.5</td>
+<td style="width: 16.65%; text-align: center;">0.20</td>
+<td style="width: 16.65%; text-align: center;">2490</td>
+<td style="width: 16.65%; text-align: center;">90.0</td>
+<td style="width: 16.6544%; text-align: center;">4.6</td>
+</tr>
+<tr>
+<td style="width: 16.65%; text-align: center;"><strong>N</strong></td>
+<td style="width: 16.65%; text-align: center;">5.6</td>
+<td style="width: 16.65%; text-align: center;">0.29</td>
+<td style="width: 16.65%; text-align: center;">2940</td>
+<td style="width: 16.65%; text-align: center;">88.0</td>
+<td style="width: 16.6544%; text-align: center;">5.6</td>
+</tr>
+<tr>
+<td style="width: 16.65%; text-align: center;"><strong>L</strong></td>
+<td style="width: 16.65%; text-align: center;">11.8</td>
+<td style="width: 16.65%; text-align: center;">0.42</td>
+<td style="width: 16.65%; text-align: center;">867</td>
+<td style="width: 16.65%; text-align: center;">43.1</td>
+<td style="width: 16.6544%; text-align: center;">1.5</td>
+</tr>
+<tr>
+<td style="width: 16.65%; text-align: center;"><strong>R</strong></td>
+<td style="width: 16.65%; text-align: center;">8.5</td>
+<td style="width: 16.65%; text-align: center;">0.25</td>
+<td style="width: 16.65%; text-align: center;">1620</td>
+<td style="width: 16.65%; text-align: center;">5.2</td>
+<td style="width: 16.6544%; text-align: center;">6.2</td>
+</tr>
+</tbody>
+</table>
+<p>The table contains 9 rows and 5 columns. It consists of scientific measurements made of hair samples using different analytical techniques (T) labelled <strong>T1</strong> to <strong>T5</strong> for the detection of different components within the hair samples, for example, copper. The hair samples are labelled <strong>R</strong> for ‘red’, <strong>L</strong> for ‘blonde’, and <strong>N</strong> for ‘brunette’.&nbsp;</p>
+<p>Click on the tabs below for specific examples of using SQL to access the <strong>Hair</strong> table:</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">The entire table</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p><strong>SELECT *</strong></p>
+<p><strong>FROM Hair;</strong></p>
+<p>The output would be the entire table as shown above.</p>
+</div>
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">All rows in columns T2 and T4</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<p><strong>SELECT T2, T4</strong></p>
+<p><strong>FROM Hair;</strong></p>
+<p>The output would be:</p>
+<table style="border-collapse: collapse; width: 65.0316%;" border="1">
+<tbody>
+<tr>
+<td style="width: 33.2981%; text-align: center;"><strong>Sample</strong></td>
+<td style="width: 33.2981%; text-align: center;"><strong>T2</strong></td>
+<td style="width: 33.2981%; text-align: center;"><strong>T4</strong></td>
+</tr>
+<tr>
+<td style="width: 33.2981%; text-align: center;">R</td>
+<td style="width: 33.2981%; text-align: center;">0.30</td>
+<td style="width: 33.2981%; text-align: center;">12.0</td>
+</tr>
+<tr>
+<td style="width: 33.2981%; text-align: center;">L</td>
+<td style="width: 33.2981%; text-align: center;">0.39</td>
+<td style="width: 33.2981%; text-align: center;">50.0</td>
+</tr>
+<tr>
+<td style="width: 33.2981%; text-align: center;">N</td>
+<td style="width: 33.2981%; text-align: center;">0.32</td>
+<td style="width: 33.2981%; text-align: center;">65.3</td>
+</tr>
+<tr>
+<td style="width: 33.2981%; text-align: center;">R</td>
+<td style="width: 33.2981%; text-align: center;">0.36</td>
+<td style="width: 33.2981%; text-align: center;">3.4</td>
+</tr>
+<tr>
+<td style="width: 33.2981%; text-align: center;">L</td>
+<td style="width: 33.2981%; text-align: center;">0.50</td>
+<td style="width: 33.2981%; text-align: center;">39.2</td>
+</tr>
+<tr>
+<td style="width: 33.2981%; text-align: center;">N</td>
+<td style="width: 33.2981%; text-align: center;">0.20</td>
+<td style="width: 33.2981%; text-align: center;">90.0</td>
+</tr>
+<tr>
+<td style="width: 33.2981%; text-align: center;">N</td>
+<td style="width: 33.2981%; text-align: center;">0.29</td>
+<td style="width: 33.2981%; text-align: center;">88.0</td>
+</tr>
+<tr>
+<td style="width: 33.2981%; text-align: center;">L</td>
+<td style="width: 33.2981%; text-align: center;">0.42</td>
+<td style="width: 33.2981%; text-align: center;">43.1</td>
+</tr>
+<tr>
+<td style="width: 33.2981%; text-align: center;">R</td>
+<td style="width: 33.2981%; text-align: center;">0.25</td>
+<td style="width: 33.2981%; text-align: center;">5.2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="kl_panel_5" class="kl_panel_heading kl_panel_5">The red-heads (R) in columns T1, T3 and T5</h3>
+<div id="kl_panel_5_content" class="kl_panel_content kl_panel_5">
+<p><strong>SELECT T1, T3, T5</strong></p>
+<p><strong>FROM Hair</strong></p>
+<p><strong>WHERE Sample = "R";</strong></p>
+<p>The output would be:</p>
+<table style="border-collapse: collapse; width: 71.598%;" border="1">
+<tbody>
+<tr>
+<td style="width: 24.9736%; text-align: center;"><strong>Sample</strong></td>
+<td style="width: 24.9736%; text-align: center;"><strong>T1</strong></td>
+<td style="width: 24.9736%; text-align: center;"><strong>T3</strong></td>
+<td style="width: 24.9736%; text-align: center;"><strong>T5</strong></td>
+</tr>
+<tr>
+<td style="width: 24.9736%; text-align: center;">R</td>
+<td style="width: 24.9736%; text-align: center;">9.2</td>
+<td style="width: 24.9736%; text-align: center;">1730</td>
+<td style="width: 24.9736%; text-align: center;">3.6</td>
+</tr>
+<tr>
+<td style="width: 24.9736%; text-align: center;">R</td>
+<td style="width: 24.9736%; text-align: center;">12.0</td>
+<td style="width: 24.9736%; text-align: center;">1500</td>
+<td style="width: 24.9736%; text-align: center;">5.3</td>
+</tr>
+<tr>
+<td style="width: 24.9736%; text-align: center;">R</td>
+<td style="width: 24.9736%; text-align: center;">8.5</td>
+<td style="width: 24.9736%; text-align: center;">1620</td>
+<td style="width: 24.9736%; text-align: center;">6.2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>You can see that the SQL commands appear to be "straight forward" - we say <strong>SELECT ... FROM ... WHERE</strong>.</p>
+<p>If you would like to have a go using <strong>SQLite3</strong>, you can download the <a class="instructure_file_link instructure_scribd_file inline_disabled" title="Hair1.csv" href="https://nulondon.instructure.com/courses/2778/files/802674?verifier=HxCXWAY1DN8wLEBDSEJho9S7VqVxgnYtSEDz4qWZ&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802674" data-api-returntype="File"><strong>Hair1.csv</strong></a> file to your <em><strong>preferred working directory</strong></em>, and import it into <strong>SQLite3.</strong></p>
+<p><strong>First</strong>, ensure the <strong>SQLite3 </strong>application program and the downloaded Hair1.csv file are in the<strong> same location</strong>, i.e. <em><strong>your preferred working directory</strong></em>.</p>
+<p><strong>Second</strong>, open a command console (e.g. Windows MS-DOS) and navigate to the preferred working directory.</p>
+<p><strong>Third</strong>, type at the prompt: <strong>sqlite3 MyFirstDB.db</strong>. This will create a database called <strong>MyFirstDB</strong> or if it already exists, will open it.</p>
+<p>You can now import the CSV file as shown below:</p>
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802413/download?verifier=ygvmWPaHvDbIsL7vj4Xc1dRSNxhytX2yNhgcmFR3" alt="M2_L3_Import-Hair-into-SQLite3.png" width="482" height="388" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802413" data-api-returntype="File">&nbsp;</p>
+<p>&nbsp;Click on the tabs below to learn more about the SQL commands but also the built-in dot (<strong>.</strong>) commands available in <strong>SQLite3</strong>:</p>
+<div id="kl_custom_block_3" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_6" class="kl_panel_heading kl_panel_6"><strong>.mode csv</strong></h3>
+<div id="kl_panel_6_content" class="kl_panel_content kl_panel_6">
+<p>This instructs <strong>SQLite3</strong> not to see the CSV file as a list of commands and to treat it as a data source.</p>
+<p>It is being “prepped” for importing (or exporting) a CSV file.</p>
+</div>
+<h3 id="kl_panel_7" class="kl_panel_heading kl_panel_7"><strong>.import Hair1.csv Hair</strong></h3>
+<div id="kl_panel_7_content" class="kl_panel_content kl_panel_7">
+<p>This imports the CSV file and converts it into a table called <strong>Hair</strong> and places it into the <strong><u>MyFirstDB</u></strong> database.</p>
+</div>
+<h3 id="kl_panel_8" class="kl_panel_heading kl_panel_8"><strong>.mode column</strong></h3>
+<div id="kl_panel_8_content" class="kl_panel_content kl_panel_8">
+<p>Instructs <strong>SQLite3</strong> that the output should be as a series of aligned columns.</p>
+</div>
+<h3 id="kl_panel_9" class="kl_panel_heading kl_panel_9"><strong>.header on</strong></h3>
+<div id="kl_panel_9_content" class="kl_panel_content kl_panel_9">
+<p>Instructs <strong>SQLite3</strong> that the 'output table' should show the column headers.</p>
+</div>
+<h3 id="kl_panel_10" class="kl_panel_heading kl_panel_10"><strong>SELECT *</strong></h3>
+<div id="kl_panel_10_content" class="kl_panel_content kl_panel_10">
+<p>This is the SQL command to choose <strong>all</strong> of the columns (denoted by <strong>*</strong>).</p>
+</div>
+<h3 id="kl_panel_11" class="kl_panel_heading kl_panel_11"><strong>FROM Hair;</strong></h3>
+<div id="kl_panel_11_content" class="kl_panel_content kl_panel_11">
+<p>This is the SQL command to state which table the columns are to be extracted from.</p>
+</div>
+</div>
+<p>Two very useful<span>&nbsp;</span><strong>SQLite3</strong><span>&nbsp;</span>dot ("<strong>.</strong>") commands are<span>&nbsp;</span><strong>.tables</strong><span>&nbsp;</span>and<span>&nbsp;</span><strong>.schema</strong>:</p>
+<ul>
+<li><strong>.tables</strong><span>&nbsp;</span>lists the names of the tables that are inside the current database.
+<ul>
+<li>Note that can also use <strong>.table</strong>.</li>
+</ul>
+</li>
+<li><strong>.schema</strong><span>&nbsp;</span>shows the attributes inside the tables along with their data types (or ‘domains’).
+<ul>
+<li>This means we can see how the table was constructed, what each data type the attributes have, and whether there are any constraints.</li>
+</ul>
+</li>
+</ul>
+<p><span>Finally, to exit <strong>SQLite3</strong>, simply type in <strong>.quit</strong> or <strong>.exit </strong>at the prompt. The database will be automatically saved.</span></p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/preview?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File"> Try It Yourself!</p>
+<p>Now it’s your turn.</p>
+<p>Referring to the <strong>Hair</strong> table in the <span style="text-decoration: underline;"><strong>MyFirstDB</strong></span> database, you are asked to also display the Sample attribute alongside T2, T4 and T5, but for the blondes (L) and the brunettes (N). How would you rewrite the SQL query?</p>
+<p>Have a go in <strong>SQLite3</strong> and see what you get. You may need to make use of a logical operator.</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p><a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<p>&nbsp;</p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p><span style="color: #e03e2d;"><img id="63295" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802338/preview?verifier=42Lwh7xZrw0riRM6kGmsjQU5nDPsuBGbZsAM4mxw" alt="DDM_M2-L3_expected SQL query.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802338" data-api-returntype="File"> </span></p>
+<p style="text-align: center;">&nbsp;<em>The expected SQL query and resulting output.</em></p>
+<p>Observe the use of the logic <strong>OR</strong> function so that we can see the result for blondes <em>or</em> brunettes. What happens if you replace “OR” with “AND”?</p>
+<p>Do you get the same result or something completely different? Why?</p>
+<p><em>No formal response is required here, but please feel free to place any responses/suggestions in the Discussion thread.</em></p>
+</div>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
