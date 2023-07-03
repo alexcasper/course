@@ -1,0 +1,105 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M9 – L1: Filtering and Sorting Data&nbsp;</h2>
+</div>
+<div id="kl_banner_image"><img class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802109/download?verifier=trcDOjpDqOarrm9HNfNfdbERrwxH0FbFBGkgEeoY" alt="SQL–Table Operations.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802109" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Filtering and Sorting Data</h3>
+<p>&nbsp;</p>
+<p>Filtering and sorting tend to go hand in hand when retrieving information from tables in a database.</p>
+<p>These are very useful when you are attempting to focus on a particular piece of information that happens to be contained in a very large database – for example when tables have thousands of rows.</p>
+<p>On some occasions, it will be necessary to gain information from another table in order to help fine-tune the current search for that requested item of information.</p>
+<p>We will be using a combination of the SQL keywords: <strong>SELECT</strong>, <strong>FROM</strong>, <strong>WHERE</strong>, <strong>GROUP BY</strong>, <strong>HAVING</strong> and <strong>ORDER BY</strong> along with other keywords and approaches that will be presented during this module.</p>
+<p>We will be applying the majority of the queries to the <strong><em>Chinook database</em></strong>. This is a ‘sample database’ typically employed to assist in understanding how to implement SQL code to databases. It is actually available in different formats such as for <strong>SQLite3</strong> and Oracle.</p>
+<p>The Chinook database simulates an online digital multimedia store and contains tables for the artists, albums, media tracks, customers and invoices. You have already seen the schema in Module 1 and it is included below for reference.</p>
+<p class="mps-highlight">We will be employing <strong>SQLite3 </strong>to work with the database. You can download the database file from this link: <a class="instructure_file_link" title="Chinook_Sqlite.sqlite" href="https://nulondon.instructure.com/courses/2778/files/802165/preview?verifier=jUYfF4Tsyq9PH4rXqRUc3JGQq1cGFK4U2TcXBbhy" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802165" data-api-returntype="File">Chinook_SQLite.sqlite</a> <span style="color: #e03e2d;">&nbsp;</span> <br>Ensure you download the database file to the same location as <strong>SQLite3</strong> application program.</p>
+<p style="text-align: center;"><span style="color: #e03e2d;"> <img id="63447" class="kl_image_max_fill kl_image_full_width" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802395/download?verifier=JKOrqkWC52GWuKAY55RribvkGCrbshBo3HOW9qQS" alt="M3_L1_Chinook-schema.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802395" data-api-returntype="File">&nbsp; </span><em>The database schema for the Chinook database representing a digital multi-media store.</em></p>
+<p><em><strong>When you are shown SQL commands, you can elect to copy the SQL commands into the command console as shown, or to read on following the examples. Either way, you will better understand the logic of the queries/statements being made.</strong></em></p>
+<p><em><strong>If you elect to copy the SQL commands into SQLite3, and errors appear to be persistent, please contact your peers directly or the designated course leader.</strong></em></p>
+<p>To import the database into <strong>SQLite3</strong>, type at the prompt: <strong>SQLite3 chinook_SQLite.sqlite</strong>. Then type in <strong>.tables</strong> as shown below in the screenshot.&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><span style="color: #e03e2d;"> <img id="63448" class="kl_image_max_fill kl_image_full_width" src="https://nulondon.instructure.com/courses/2778/files/802317/download?verifier=FH8RiIWYABRicHuMULyE0m64RGr0B6UUX3sPMdDq" alt="M3_L1_Import Chinook in SQLite3.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802317" data-api-returntype="File"> </span></p>
+<p style="text-align: center;"><em>Importing the Chinook database into SQLite3 and viewing the tables (relations) present.</em></p>
+<p><em>&nbsp;</em>There are 11 tables which match the 11 tables shown in the figure above.</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64847" src="https://nulondon.instructure.com/courses/2778/files/802014/download?verifier=fcfYScyG8yiZP7UyitAUIkdk84U7Gb2vKgUEPhNg" alt="icon_logic.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802014" data-api-returntype="File"> Think About It!</p>
+<p>Refer to the database and then respond to the following.</p>
+<p>How many rows are there in the <strong>Customer</strong> table?</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p><a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<p>&nbsp;</p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>If you use <strong>SELECT COUNT(*) FROM Customer;</strong> you should get 59, i.e. there are 59 customers (rows) contained in the <strong>Customer </strong>table.</p>
+</div>
+</div>
+<div class="kl_flat_sections kl_wrapper mps-page-content">
+<h3 class="kl_border_radius_50 mps-page-title" style="text-align: center;">Limiting Outputs</h3>
+<p>&nbsp;</p>
+<p>Let's take a look at using the <strong>LIMIT</strong> keyword used in <strong>SQLite3</strong>.</p>
+<p>Assume you want to see the first names of the customers in the Customer table, you can type:</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>SELECT FirstName FROM Customer;</strong></span></p>
+<p>However, this will give you a long list of names, and if there are thousands of first names then the scrolling can take some time – and waste time and resources!</p>
+<p>You can reduce the output by using the following commands (please ensure you click on all of the tabs):</p>
+<div class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">LIMIT Keyword</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p class="mps-program"><span style="font-size: 12pt;"><strong>SELECT FirstName </strong></span><br><span style="font-size: 12pt;"><strong>FROM Customer </strong></span><br><span style="font-size: 12pt;"><strong>LIMIT 10;</strong></span></p>
+<p><span style="font-family: LatoWeb, 'Helvetica Neue', Helvetica, Arial, sans-serif;">This will limit the output to 10 rows; it will in fact only display the first 10 records within the <strong>Customer </strong>table.</span></p>
+<p>&nbsp;</p>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">LIMIT and OFFSET</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p>If you were however, interested in the names from records 11 to 20, you could make use of the <strong>OFFSET </strong>keyword in conjunction with <strong>LIMIT</strong>. You should then see records 11 to 20.&nbsp;</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>SELECT FirstName </strong></span><br><span style="font-size: 12pt;"><strong>FROM Customer </strong></span><br><span style="font-size: 12pt;"><strong>LIMIT 10 OFFSET 10;</strong></span></p>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">LIMIT and OFFSET Example</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p>The figure below illustrates the use of the <strong>LIMIT</strong> and <strong>OFFSET</strong> keywords on the same attribute. Observe how when <strong>OFFSET</strong> is set to 3, the fourth name from the table is shown along with the four names that follow it (<strong>LIMIT 5</strong>).</p>
+<p><span style="color: #e03e2d;"> <img id="63449" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802315/download?verifier=GtV6xMQnmSC4BpRAF5z8850Wvv10t1zHvI8Y9LCD" alt="M3_L2_LIMIT OFFSET Exg.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802315" data-api-returntype="File"> </span></p>
+<p style="text-align: center;"><em>Using LIMIT and OFFSET to display a specific number of records in the output table.</em></p>
+</div>
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">DISTINCT</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p>Although there are 59 customers in the <strong>Customer </strong>table from all over the world, this does not necessarily mean that there are 59 countries listed in the table. There could simply be 5 customers from one country. To find the list of countries, you can use <strong>DISTINCT</strong>. &nbsp;</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>SELECT DISTINCT Country </strong></span><br><span style="font-size: 12pt;"><strong>FROM Customer;&nbsp;</strong></span></p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/preview?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Try It Yourself!</p>
+<p>What if you wanted to see all of the attributes in a table but did not know want to use the <strong>.schema</strong> function or did not have access to the ERD? What SQL query could you use?</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p><em>Remember, the semi-colon (;) denotes the end of the query!</em></p>
+<p><a id="kl_popup_1_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_1_content">Reveal Answer</a></p>
+<div id="kl_popup_1_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>You could say:</p>
+<p class="mps-program"><span style="font-size: 10pt;"><strong>SELECT * FROM Customer LIMIT 1;</strong></span></p>
+<p>Only one record would be displayed but at least you see the attribute names (as long as <strong>.header on</strong> has been stated earlier).</p>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/preview?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Try It Yourself!</p>
+<p>How many individual countries are there from the 59 records of the <strong>Customer </strong>table? Call the column “Num Countries”. What is the SQL query?</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p><a id="kl_popup_2_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_2_content">Reveal Answer</a></p>
+<div id="kl_popup_2_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>The SQL query would be as follows.</p>
+<p class="mps-program"><span style="font-size: 10pt;"><strong>SELECT COUNT(DISTINCT Country) “Num Countries” FROM Customer;</strong></span></p>
+<p>&nbsp;The output should be <strong>24</strong>.</p>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/preview?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Try It Yourself!</p>
+<p>The countries are listed in the order they appear first in the table, e.g. Brazil, Germany, Canada, etc.</p>
+<p>How can we rearrange the list of countries in ascending order but list the first 12 countries only, and then repeat again for the next 12 countries?</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p><a id="kl_popup_3_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_3_content">Reveal Answer</a></p>
+<div id="kl_popup_3_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p class="mps-program"><span style="font-size: 10pt;"><strong>SELECT DISTINCT Country </strong></span><br><span style="font-size: 10pt;"><strong>FROM Customer </strong></span><br><span style="font-size: 10pt;"><strong>ORDER BY Country </strong></span><br><span style="font-size: 10pt;"><strong>LIMIT 12; </strong></span><br><br><span style="font-size: 10pt;"><strong>SELECT DISTINCT Country </strong></span><br><span style="font-size: 10pt;"><strong>FROM Customer </strong></span><br><span style="font-size: 10pt;"><strong>ORDER BY Country </strong></span><br><span style="font-size: 10pt;"><strong>LIMIT 12 OFFSET 12;</strong></span></p>
+</div>
+<p><strong>&nbsp;</strong></p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
