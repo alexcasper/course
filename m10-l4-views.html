@@ -1,0 +1,126 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M10 – L4: Views</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802202/download?verifier=osl3iE7ceBPArdVNB7Bp6R0FOEuOyFeZyO82uz7i" alt="SQL-Database-Objects-and-Functions.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802202"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Introducing Simple and Complex Views</h3>
+<p>&nbsp;</p>
+<p><span>Another important database object is a&nbsp;</span><strong>view</strong> <span>. </span></p>
+<p><span>This can be seen as a “</span><em>virtual table</em> <span>” which does not exist in the database. </span></p>
+<p><span>It can be generated during a query and can incorporate elements from numerous tables within the database. </span></p>
+<p><span>One key role is to&nbsp;</span><em>simplify</em> <span>&nbsp;what could be a very complex query. In other words, instead of creating a query that performs joins from multiple tables under particular conditions, a view can be created from which ‘simpler queries’ can be performed. </span></p>
+<p><span>An additional benefit to employing views is that it should restrict access to sensitive data. For example, the database administrator can restrict access to some attributes within some tables by creating the appropriate views for that registered user.</span></p>
+<p>There are <strong><em>four types</em></strong> of view (please be sure to click on all 4 tabs below):<strong>&nbsp;</strong></p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">Simple</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<ul>
+<li>A simple view is based on a subquery that only refers to<span>&nbsp;</span><strong><em>one table</em></strong>.</li>
+<li>There are no group functions (meaning aggregate or other multiple-row functions) expressions employed.</li>
+<li>The<span>&nbsp;</span><strong>GROUP BY</strong> <span>&nbsp;</span>clause<span>&nbsp;</span><strong><em>cannot</em>&nbsp;be</strong> employed.</li>
+</ul>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">Complex</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<ul>
+<li>A complex view is based on a subquery that attains or derives data from <strong><em>one or more tables</em></strong>.</li>
+<li>The use of group functions (meaning aggregate or other multiple-row functions) is permitted.</li>
+<li>The <strong>GROUP BY</strong> clause <em><strong>is</strong> </em>permitted</li>
+</ul>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">Inline</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<ul>
+<li>The inline view is a subquery that sits in the<span>&nbsp;</span><strong>FROM</strong> <span>&nbsp;</span>clause of a<span>&nbsp;</span><strong>SELECT </strong>statement.</li>
+<li>A “temporary table” is created which can be referenced by the outer<span>&nbsp;</span><strong>SELECT</strong> <span>&nbsp;</span>and<span>&nbsp;</span><strong>WHERE </strong>clauses.</li>
+</ul>
+</div>
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">Materialised</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p>This is a view which <em>contains replicated data</em> from the physically stored results of the view query.</p>
+</div>
+</div>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61387" src="https://nulondon.instructure.com/courses/2778/files/802017/preview?verifier=Ycdr73GNQez9DsYRv8aZFitybPsWDwck6Uz0QW2I" alt="icon_examples.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802017" data-api-returntype="File"> Creating a Simple View</p>
+<p>With reference to the ‘<strong><em>Just Lee bookstore</em></strong>’ database, a simple view can be created in <strong>SQLite3</strong>.&nbsp;</p>
+<p>However, in <strong>SQLite3</strong>, the View is <em>defaulted </em>to <strong><em>Read Only</em></strong> which means that it cannot be updated/changed.</p>
+<p>In Oracle database systems, changes can be made to a view. However, it is possible to prevent any changes being made to the view by also including <strong>WITH READ ONLY</strong> at the end of the SQL statement when creating the view.</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61387" src="https://nulondon.instructure.com/courses/2778/files/802017/preview?verifier=Ycdr73GNQez9DsYRv8aZFitybPsWDwck6Uz0QW2I" alt="icon_examples.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802017" data-api-returntype="File"> Creating a Complex View</p>
+<p>A complex view can be created from data from multiple tables or when using the <strong>GROUP BY</strong> clause, functions or expressions.</p>
+<p>This video illustrates <span>and compares </span>the creation of a <span>simple and a </span>complex view along with some queries carried out.</p>
+<p style="text-align: center;"><iframe style="width: 720px; height: 405px;" title="Module 4 Simple and Complex Views" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3Db16c986e-8027-45e3-977e-acb700d7a9fb" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *" data-mce-fragment="1"></iframe> <br><a class="instructure_file_link instructure_scribd_file" title="M4_Simple and Complex Views.pdf" href="https://nulondon.instructure.com/courses/2778/files/802222?verifier=GV0bmBUoLHNVDrUym30Gh4BmsFYUKDINg0j5Eq4a&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802222" data-api-returntype="File">Transcript</a></p>
+<p>&nbsp;</p>
+<p>Let’s look at how to delete a record, add a record and update two or more tables. Please be sure to click on all of the tabs below:</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">Deleting a Record</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<p>If an attempt is made to delete a record (row) from a view, it will be possible, providing that there are <em>no constraints </em>in the original table.</p>
+<p>Examples of constraints are Primary Keys, Foreign Keys, Unique and ‘Not Nulls’ established on the original table(s).</p>
+<p>If, for example, there is a Foreign Key on one or two of the original tables, then these need to be “disabled” on those tables via an <strong>ALTER TABLE</strong> and <strong>DISABLE CONSTRAINT</strong> SQL statement before the particular record can be deleted from the view.</p>
+<p>After deletion of the record(s), the constraints can be “re-enabled”.</p>
+</div>
+<h3 id="kl_panel_5" class="kl_panel_heading kl_panel_5">Adding a Record</h3>
+<div id="kl_panel_5_content" class="kl_panel_content kl_panel_5">
+<p>New records can be inserted into views, provided the items contained in the <strong>VALUES</strong> keyword match the number of attributes and their respective datatypes in the view.</p>
+<p>However, if one of the attributes is actually an <em>arithmetic expression</em>, it will not accept a numeric value because the value automatically gets calculated once the <em>Retail</em> value has been inserted.</p>
+<p>Therefore when using the <strong>INSERT INTO</strong> keywords, you would not specify the <em>Profit</em> attribute in the Prices view.</p>
+<p>When new records are inserted into the View, providing no further constraints, the original <strong>Books</strong> table will be updated automatically.</p>
+</div>
+<h3 id="kl_panel_6" class="kl_panel_heading kl_panel_6">Updating Two or More Tables</h3>
+<div id="kl_panel_6_content" class="kl_panel_content kl_panel_6">
+<p>What happens if the View is made up from two or more tables?</p>
+<p>Let us assume that the <strong>Prices</strong> view was (re-)created as follows:</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>CREATE OR REPLACE VIEW Prices</strong> </span><br><span style="font-size: 12pt;"><strong>AS SELECT ISBN, Title, Cost, Retail, Retail-Cost Profit, Name</strong> </span><br><span style="font-size: 12pt;"><strong>FROM Books JOIN Publisher USING(PubId);</strong></span></p>
+<p>First, you will notice that the statement begins with <strong>CREATE OR REPLACE VIEW</strong>. This is required because if the view already exists and you try to create another view that has the same name as an existing view, then an error occurs. Using this statement permits the view to be replaced if it already exists.</p>
+<p>The <strong>Prices</strong> view has been created from the joining of two tables via the PubId attribute.</p>
+</div>
+</div>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/download?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Try It Yourself!</p>
+<p>In the example shown in the previous tab, an <strong>INNER JOIN </strong>was carried out. How do we know this is an <strong>INNER JOIN</strong>?</p>
+<p><a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Answer</h4>
+<p>We know this is an <strong>INNER JOIN</strong> because the <strong>JOIN</strong> keyword is used by itself and this usually <strong><em>implies</em></strong> an <strong>INNER JOIN</strong>.</p>
+<p>&nbsp;</p>
+<p>If we saw <strong>LEFT JOIN</strong>, or <strong>RIGHT JOIN</strong> or <strong>FULL JOIN</strong>, then we would know that this is an <strong>OUTER JOIN</strong>.</p>
+<p>&nbsp;</p>
+<p>In both cases, there has been no need to use the <strong>INNER</strong> or <strong>OUTER</strong> keywords due to the above implications, but you can still include them for confirmation, for example, <strong>INNER JOIN</strong> or <strong>LEFT OUTER JOIN</strong>.</p>
+</div>
+<p>&nbsp;</p>
+<p>Remaining with that same example, the <strong>Books </strong>and the <strong>Publisher </strong>tables have been “joined” by the <em>PubId</em> attribute in both tables.</p>
+<p>If we wanted to update the <em>Retail </em>value for one of the book titles in the new <strong>Prices </strong>view, this would be feasible.</p>
+<p>However if we attempted to update the name of one of the publishers, this would not be feasible and would therefore result in an error.</p>
+<p><em><strong>Why is this the case?</strong></em></p>
+<p>This is because the <strong>Books</strong> table contains a primary key which is being used as a reference by a foreign key in another table. The view is thus using this primary key to “uniquely” identify the records it is displaying.</p>
+<p>The <strong>Books</strong> table is therefore known as the <strong><em>key-preserved table</em></strong>, which is why we can update the <em>Retail</em> attribute of a record if required.</p>
+<p>The <strong>Publisher</strong> table is therefore known as the <em><strong>non-key-preserved table</strong></em>. Although the <em>PubId</em> attribute is a primary key in the <strong>Publisher</strong> table, it does not appear as an attribute in the <strong>Prices</strong> view. If you then try to change the name of the publisher (<em>Name</em>) for a record in the <strong><em>Prices</em></strong> view, this would conflict with the <em>PubID</em> value in the <strong>Publisher</strong> table, and would lead to an error.</p>
+<p>The screenshot below illustrates the creation of a complex view because of the use of the <strong>SUM()</strong> function along with <strong>GROUP BY</strong>.</p>
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802333/preview?verifier=DFawQZQ3xG3IQceZhlV008YbVB6e4hGhf7wLONp3" alt="M4_L4_VIEW_Complex-Example.png" width="641" height="370" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802333" data-api-returntype="File"></p>
+<p>We can see that <em>CustomerNo </em>1001 has two <em>OrderNo</em> values of 1003 and 1018.</p>
+<p>Similarly, <em>CustomerNo</em> 1003 has <em>OrderNo</em> values of 1006 and 1016.</p>
+<p>We would be unable to delete a record from this view (or to insert a new one) because the third column (<em>AmtDue</em>) is the result of a calculation and grouping. You would also not know which record to actually delete from the original table.&nbsp;</p>
+<div id="kl_custom_block_3" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_7" class="kl_panel_heading kl_panel_7">Guidelines (please click here - but only when you have read everything above)</h3>
+<div id="kl_panel_7_content" class="kl_panel_content kl_panel_7">
+<p>We can therefore summarise a set of guidelines when assessing whether <em>data manipulation language</em> (DML) operations are permissible on a complex view:</p>
+<ul>
+<li>If a constraint is violated, then no DML operation is permitted.</li>
+<li>A value cannot be added to a column that contains an arithmetic expression.</li>
+<li>DML operations are not permitted on non-key-preserved tables.</li>
+<li>If a view was created from the outcome of a <strong>GROUP BY</strong> clause, a <strong>DISTINCT</strong> keyword or the <strong>ROWNUM</strong> pseudo-column, then any DML operation is not permitted.
+<ul>
+<li><strong>ROWNUM</strong> is a pseudo-column which lists the row numbers an item is found in.</li>
+<li><strong>ROWNUM</strong> is assigned prior to any grouping or ordering taking place.</li>
+<li>In <strong>Oracle Live SQL</strong>, <strong>ROWNUM</strong> is hidden unless it is specified during the execution of a SQL statement.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&nbsp;</strong></p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
