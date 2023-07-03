@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M9 – L7: Table Joins: Outer</h2>
+</div>
+<div id="kl_banner_image"><img class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802109/download?verifier=trcDOjpDqOarrm9HNfNfdbERrwxH0FbFBGkgEeoY" alt="SQL–Table Operations.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802109" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>OUTER JOIN</h3>
+<p>&nbsp;<br>As seen with the <strong>INNER JOIN</strong>, if one row of a joined table is unmatched, then that row is omitted from the output table.</p>
+<p>With <strong>OUTER JOIN</strong> operations, the rows that do not satisfy the join condition are retained. The remainder of that row in the output table will be padded out with NULL values.</p>
+<p>There are three approaches in implementing <strong>OUTER JOIN</strong> operations.<br><br></p>
+<table style="border-collapse: collapse; width: 100%; margin-left: auto; margin-right: auto; height: 154px; border-color: #ffffff;" border="1" width="630">
+<tbody>
+<tr class="mps-table-headers" style="height: 53px;">
+<td class="" style="height: 53px; border-color: #ffffff;" width="210">
+<p><strong>LEFT (OUTER) JOIN</strong></p>
+</td>
+<td style="height: 53px; border-color: #ffffff;" width="210">
+<p><strong>RIGHT (OUTER) JOIN</strong></p>
+</td>
+<td style="height: 53px; border-color: #ffffff;" width="210">
+<p><strong>FULL (OUTER) JOIN</strong></p>
+</td>
+</tr>
+<tr class="mps-table-design" style="height: 101px;">
+<td class="" style="height: 101px; border-color: #ffffff;" width="210">
+<p>The unmatched rows tend to be included from the <strong><em>first</em></strong> table.</p>
+</td>
+<td class="" style="height: 101px; border-color: #ffffff;" width="210">
+<p>The unmatched rows tend to be included from the <strong><em>second</em></strong> table.</p>
+</td>
+<td style="height: 101px; border-color: #ffffff;" width="210">
+<p>The unmatched rows tend to be included from <strong><em>both</em></strong> of the tables.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br>The following figure illustrates the concept in the form of the joins via the Venn diagrams.</p>
+<p style="text-align: center;"><img id="63626" class="kl_image_max_fill kl_image_full_width" src="https://nulondon.instructure.com/courses/2778/files/802300/download?verifier=RoALYUkFfe4mEmbECswGiwCRHwgvhjMjnjSrIOwv" alt="M1_L10_Venn_Diagram.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802300" data-api-returntype="File"></p>
+<p style="text-align: center;"><em>Venn diagram illustrating the three OUTER JOIN approaches (Left, Right and Full).</em></p>
+<p>&nbsp;</p>
+<p>Joins are thus incredibly useful and powerful approaches in relational databases. They will enable a more thorough extraction of information leading to better analytical results and insights needed for successful business outcomes.</p>
+<p>Whilst the order of the tables <em>does not matter</em> if performing an <strong>INNER JOIN</strong>, the <em>order</em> of the tables in an <strong>OUTER JOIN</strong> <em>does matter</em>.</p>
+<p>For example, whether Table 1 is on the “left” or on the “right”, an <strong>INNER JOIN</strong> produces the same output table; that for an <strong>OUTER JOIN</strong> will however produce different output tables.</p>
+<p>This means that for <strong>LEFT</strong> or <strong>RIGHT</strong> joins, the order of the tables does matter because it states which table the unmatched results are returned for.</p>
+<p>The “left” table (e.g. "<strong>Table 1</strong>") is actually specified using <strong>FROM</strong> whilst the “right” table (e.g. "<strong>Table 2</strong>") is specified using <strong>LEFT JOIN</strong> or <strong>RIGHT JOIN</strong>.</p>
+<p>&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
