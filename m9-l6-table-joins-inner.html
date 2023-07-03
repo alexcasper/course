@@ -1,0 +1,99 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M9 – L6: Table Joins: Inner</h2>
+</div>
+<div id="kl_banner_image"><img class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802109/download?verifier=trcDOjpDqOarrm9HNfNfdbERrwxH0FbFBGkgEeoY" alt="SQL–Table Operations.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802109" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>INNER JOIN</h3>
+<p>&nbsp;</p>
+<p>An <strong>INNER JOIN</strong> tends to be the most common of joins used.</p>
+<p>The following video illustrates an example of <strong>INNER JOIN</strong>.</p>
+<p style="text-align: center;"><iframe style="border: 1px solid #464646;" title="embedded content" src="https://northeastern.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=c0862735-8e5a-42fc-98ff-acb800d16961&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" width="720" height="405" allowfullscreen="allowfullscreen" allow="autoplay"></iframe> <br><a class="instructure_file_link instructure_scribd_file" title="M3_Inner Join Example.pdf" href="https://nulondon.instructure.com/courses/2778/files/802298?verifier=C3GPLQdeVmG8kj56FNim7jzQ3RdIk2eHiVdJppwW&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802298" data-api-returntype="File">Transcript&nbsp;</a></p>
+<p><strong>INNER JOIN</strong> is similar to <strong>CROSS JOIN</strong> except that the number of rows in the output table are <em>limited</em> by a conditional expression usually stated in the <strong>WHERE</strong> clause.</p>
+<p>This expression is normally used to test the equality between similar columns, for example the <em>AlbumId</em> in both the <strong>Track</strong> and <strong>Album</strong> tables.</p>
+<p>The outcome of an <strong>INNER JOIN</strong> leads to an output table in which the rows of the <strong>Album</strong> table are correctly matched to the corresponding rows in the <strong>Track</strong> table.</p>
+<p>In an <strong>INNER JOIN</strong>, only matches are returned in the result.</p>
+<p>Note that if we intend to perform an "inner join" it is usually not necessary to supply the <strong>INNER</strong> keyword, and on some occasions <strong>JOIN</strong> also, because it is <em>implied</em> that the join will be <strong>INNER</strong>.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><iframe style="width: 720px; height: 405px;" title="Module 3 Inner Join" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3D5d479bd3-d9af-4f86-930a-acb700d1350e" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe> <br><a class="instructure_file_link instructure_scribd_file" title="M3_Inner Join.pdf" href="https://nulondon.instructure.com/courses/2778/files/802282?verifier=sLzt2f4PVMXWuRqwhYIMMFRA9uugWAqkIXtHPmvS&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802282" data-api-returntype="File">Transcript&nbsp;</a></p>
+<p>Please click on the 'INNER JOIN Example' tab to see more:</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">INNER JOIN Example</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p>The following figure illustrates the use of <strong>INNER JOIN</strong> in the previous example.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><span style="color: #e03e2d;"> <img id="63458" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802369/download?verifier=a4DCtB5m2bWe7xNsJhASfmPXiEnEJQefSvrCEhlA" alt="M3_L9_INNER JOIN Example.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802369" data-api-returntype="File"> &nbsp; </span>&nbsp; <br><em>Utilising the INNER and JOIN keywords. Dropping the INNER keyword demonstrates that the JOIN by itself defaults to an INNER join.</em></p>
+<p>&nbsp;We can apply the same conditions to the <span style="text-decoration: underline;"><strong><em>Chinook</em></strong></span> database. For example, we could say:</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>SELECT Title, TrackId </strong></span><br><span style="font-size: 12pt;"><strong>FROM Album, Track </strong></span><br><span style="font-size: 12pt;"><strong>WHERE Album.Albumid = Track.AlbumId </strong></span><br><span style="font-size: 12pt;"><strong>LIMIT 25;</strong></span></p>
+<p>When you copy this into the console, you should see an output of two columns (“Title” and “TrackId”) with 25 rows.</p>
+</div>
+</div>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64847" src="https://nulondon.instructure.com/courses/2778/files/802014/download?verifier=fcfYScyG8yiZP7UyitAUIkdk84U7Gb2vKgUEPhNg" alt="icon_logic.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802014" data-api-returntype="File"> Think About It!</p>
+<p>If you omit the <strong>LIMIT 25</strong>, what happens? What is the actual size of the output table, i.e. the number of rows? Compare this to the number of rows in the original tables.</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p><a id="kl_popup_1_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_1_content">Reveal Answer</a></p>
+<div id="kl_popup_1_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>There are 25 rows in the output table because of limiting that output to 25. If the <strong>LIMIT 25</strong> is removed, then the output table seems to scroll for a few milliseconds. In order to determine the number of rows, we can count both the <em>Title</em> and <em>TrackId</em> records using <strong>COUNT</strong>:</p>
+<p class="mps-program"><span style="font-size: 10pt;"><strong>SELECT COUNT(Title) AS “Num of Title”, COUNT(TrackId) AS “Num of Track” </strong></span><br><span style="font-size: 10pt;"><strong>FROM Album, Track </strong></span><br><span style="font-size: 10pt;"><strong>WHERE Album.AlbumId = Track.AlbumId;</strong></span></p>
+<p>The values should each be <strong>347</strong>. The numbers of rows in the <strong>Album</strong> and <strong>Track</strong> tables are:</p>
+<p class="mps-program"><span style="font-size: 10pt;"><strong>SELECT COUNT(Title) AS “Num Rows in Album” </strong></span><br><span style="font-size: 10pt;"><strong>FROM Album; </strong></span><br><br><span style="font-size: 10pt;"><strong>SELECT COUNT(TrackId) AS “Num Rows in Track” </strong></span><br><br><span style="font-size: 10pt;"><strong>FROM Track;</strong></span></p>
+<p>&nbsp;</p>
+<p>The numbers are respectively <strong>347</strong> and <strong>3503</strong>.</p>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64849" src="https://nulondon.instructure.com/courses/2778/files/802134/download?verifier=p4dBG8NWQTk6rsDmWty3TEXa4mlVTTbiPPCE18DV" alt="icons_insert.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802134" data-api-returntype="File"> INNER JOINS: Three Approaches</p>
+<p>Here are three other approaches for <strong>INNER JOINS</strong> which omit the need for the <strong>WHERE</strong> clause. However, the outputs of all three SQL statements are the same (please click on the 'Three Approaches' tab to learn more).</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">Three Approaches</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<table style="border-collapse: collapse; margin-left: auto; margin-right: auto; width: 0%;" border="1">
+<tbody>
+<tr>
+<td style="width: 43.1573%;">
+<p><strong>Approach</strong></p>
+</td>
+<td style="width: 70%;">
+<p class="mps-program"><strong>SQL Statement</strong></p>
+</td>
+</tr>
+<tr>
+<td class="" style="width: 43.1573%;" width="114">
+<p><strong>1</strong></p>
+</td>
+<td style="width: 70%;" width="510">
+<p class="mps-program"><strong>SELECT Title, TrackId </strong><br><strong>FROM Album NATURAL JOIN Track </strong><br><strong>LIMIT 25;</strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 43.1573%;" width="114">
+<p><strong>2</strong></p>
+</td>
+<td style="width: 70%;" width="510">
+<p class="mps-program"><strong>SELECT <span style="color: #3598db;">a</span>.Title, <span style="color: #e03e2d;">t</span>.TrackId </strong><br><strong>FROM <span style="color: #3598db;">Album a</span> JOIN </strong><br><strong><span style="color: #e03e2d;">Track t</span> ON <span style="color: #3598db;">a</span>.AlbumId = <span style="color: #e03e2d;">t</span>.AlbumId </strong><br><strong>LIMIT 25;</strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 43.1573%;" width="114">
+<p><strong>3</strong></p>
+</td>
+<td style="width: 70%;" width="510">
+<p class="mps-program"><strong>SELECT Title, TrackId </strong><br><strong>FROM Album JOIN Track USING(AlbumId) </strong><br><strong>LIMIT 25;</strong></p>
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>The outputs of all three SQL statements are the same. <strong><em>See for yourself!!</em></strong></p>
+<p>We can see that the first statement (<em>Approach 1</em>) uses the <strong>NATURAL JOIN</strong> which identifies that there are two identically labelled columns – one in each table – and will use them to link the two tables and produce the output.</p>
+<p>The second SQL statement (<em>Approach 2</em>) has made use of <strong><em>table aliases</em></strong> (<strong>a</strong> and <strong>t</strong>) and the <strong>ON</strong> keyword which looks similar to using <strong>WHERE</strong>. We will see more use of the <strong>ON</strong> keyword when dealing with <strong>OUTER JOIN</strong> commands.</p>
+<p>The final SQL statement (<em>Approach 3</em>) makes use of the <strong>USING</strong> keyword. This appears to be self-explanatory as it “uses” the <em>AlbumId</em> in both tables to link the two tables and meet the conditions.</p>
+<p>If there does not exist an attribute (column) with the same name in the second table then use <strong>ON</strong>.</p>
+<p>&nbsp;</p>
+</div>
+</div>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
