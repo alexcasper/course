@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<p style="text-align: center;"><span style="font-size: 18pt; color: #e03e2d; background-color: #fbeeb8;"><strong>&lt;&lt; UNPUBLISHED SINCE MERGED WITH M4-L4. &gt;&gt;</strong></span></p>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M4 – L7: Creating Complex Views&nbsp;</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802202/download?verifier=osl3iE7ceBPArdVNB7Bp6R0FOEuOyFeZyO82uz7i" alt="SQL-Database-Objects-and-Functions.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802202"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"> </i>Creating Complex Views</h3>
+<p>&nbsp;</p>
+<p>A complex view can be created from data from multiple tables or when using the <strong>GROUP BY</strong> clause, functions or expressions.</p>
+<p>This video illustrates <span>and compares </span>the creation of a <span>simple and a </span>complex view along with some queries carried out.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><iframe style="width: 720px; height: 405px;" title="Module 4 Simple and Complex Views" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3Db16c986e-8027-45e3-977e-acb700d7a9fb" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe> <br><a class="instructure_file_link instructure_scribd_file" title="M4_Simple and Complex Views.pdf" href="https://nulondon.instructure.com/courses/2778/files/802222?verifier=GV0bmBUoLHNVDrUym30Gh4BmsFYUKDINg0j5Eq4a&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802222" data-api-returntype="File">Transcript</a></p>
+<p>&nbsp;</p>
+<p>Let’s look at how to delete a record, add a record and update two or more tables. Please be sure to click on all of the tabs below:</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander" style="border-width: 1px; border-style: none; margin-right: 30px; margin-left: 30px; background-color: #ffffff; color: #000000;">
+<h3 id="kl_panel_0" class="kl_border_radius_20 kl_panel_heading kl_panel_0" style="background-color: #e3dfda; color: #000000; border-width: 0px;">Deleting a Record</h3>
+<div id="kl_panel_0_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_0" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<p>If an attempt is made to delete a record (row) from a view, it will be possible, providing that there are <em>no constraints </em>in the original table. Examples of constraints are Primary Keys, Foreign Keys, Unique and ‘Not Nulls’ established on the original table(s). If, for example, there is a Foreign Key on one or two of the original tables, then these need to be “disabled” on those tables via an <strong>ALTER TABLE</strong> and <strong>DISABLE CONSTRAINT</strong> SQL statement before the particular record can be deleted from the view. After deletion of the record(s), the constraints can be “re-enabled”.</p>
+</div>
+<h3 id="kl_panel_1" class="kl_border_radius_20 kl_panel_heading kl_panel_1" style="background-color: #e3dfda; color: #000000; border-width: 0px;">Adding a Record</h3>
+<div id="kl_panel_1_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_1" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<p>New records can be inserted into views, provided the items contained in the <strong>VALUES</strong> keyword match the number of attributes and their respective datatypes in the view. However, if one of the attributes is actually an <em>arithmetic expression</em>, it will not accept a numeric value because the value automatically gets calculated once the <em>Retail</em> value has been inserted. Therefore when using the <strong>INSERT INTO</strong> keywords, you would not specify the <em>Profit</em> attribute in the Prices view. When new records are inserted into the View, providing no further constraints, the original <strong>Books</strong> table will be updated automatically.</p>
+</div>
+<h3 id="kl_panel_2" class="kl_border_radius_20 kl_panel_heading kl_panel_2" style="background-color: #e3dfda; color: #000000; border-width: 0px;"><span style="color: #000000;">Updating Two or More Tables </span></h3>
+<div id="kl_panel_2_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_2" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<p>What happens if the View is made up from two or more tables?</p>
+<p>Let us assume that the <strong>Prices</strong> view was (re-)created as follows:</p>
+<p class="mps-program">CREATE OR REPLACE VIEW Prices <br>AS SELECT ISBN, Title, Cost, Retail, Retail-Cost Profit, Name <br>FROM Books JOIN Publisher USING(PubId);</p>
+<p>First, you will notice that the statement begins with <strong>CREATE OR REPLACE VIEW</strong>. This is required because if the view already exists and you try to create another view that has the same name as an existing view, then an error occurs. Using this statement permits the view to be replaced if it already exists.</p>
+</div>
+</div>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/download?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Try It Yourself!</p>
+<p>You can also see that an <strong>INNER JOIN </strong>was carried out. How do we know this is an <strong>INNER JOIN</strong>?</p>
+<p><a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Answer</h4>
+<p>We know this is an <strong>INNER JOIN</strong> because the <strong>JOIN</strong> keyword is used by itself and this usually <strong><em>implies</em></strong> an <strong>INNER JOIN</strong>.</p>
+<p>&nbsp;</p>
+<p>If we saw <strong>LEFT JOIN</strong>, or <strong>RIGHT JOIN</strong> or <strong>FULL JOIN</strong>, then we would know that this is an <strong>OUTER JOIN</strong>.</p>
+<p>&nbsp;</p>
+<p>In both cases, there has been no need to use the <strong>INNER</strong> or <strong>OUTER</strong> keywords due to the above implications, but you can still include them for confirmation, for example, <strong>INNER JOIN</strong> or <strong>LEFT OUTER JOIN</strong>.</p>
+</div>
+<p>&nbsp;</p>
+<p>The <strong>Books </strong>and the <strong>Publisher </strong>tables have been “joined” by the <em>PubId</em> attribute in both tables. If we wanted to update the <em>Retail </em>value for one of the book titles in the new <strong>Prices </strong>view, this would be feasible. However if we attempted to update the name of one of the publishers, this would not be feasible and would therefore result in an error. <strong>Why is this the case?</strong></p>
+<p class="kl_border_radius_20" style="margin-left: 40px; margin-right: 40px; background-color: #fbe5b8; padding: 20px;"><span style="color: #e03e2d;"> <img id="61358" style="padding-right: 0px; margin-right: 5px;" src="https://nulondon.instructure.com/courses/2778/files/802016/download?verifier=QcwbGvHiIzK8ifzqynQ75tSXbGNYWPJkAqVxHZm5" alt="icon_pdf.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802016" data-api-returntype="File"> <span style="color: #000000;">It is essential that you</span> <a id="63794" class="instructure_file_link instructure_scribd_file" href="https://nulondon.instructure.com/courses/2778/files/802302?verifier=eQycbUqLyazDheEzeHxMZ1GvRqub2FO21oLzROD3&amp;wrap=1" target="_blank" data-canvas-previewable="true" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802302" data-api-returntype="File"> <span style="color: #3598db;">download the <strong>PDF file</strong></span> </a> </span><strong> </strong> to <strong>find out why</strong>, and learn more about <strong>Complex Views</strong>.</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_accordion" style="border-width: 1px; border-style: none; margin-right: 30px; margin-left: 30px; background-color: #ffffff; color: #000000;">
+<h3 id="kl_panel_3" class="kl_border_radius_20 kl_panel_heading kl_panel_3" style="background-color: #e3dfda; color: #000000; border-width: 0px;">Guidelines (please click <strong>here</strong> - but only when you have read everything above)</h3>
+<div id="kl_panel_3_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_3" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<p>We can therefore summarise a set of guidelines when assessing whether <em>data manipulation language</em> (DML) operations are permissible on a complex view:</p>
+<ul>
+<li>If a constraint is violated, then no DML operation is permitted.</li>
+<li>A value cannot be added to a column that contains an arithmetic expression.</li>
+<li>DML operations are not permitted on non-key-preserved tables.</li>
+<li>If a view was created from the outcome of a <strong>GROUP BY</strong> clause, a <strong>DISTINCT</strong> keyword or the <strong>ROWNUM</strong> pseudo-column, then any DML operation is not permitted.</li>
+</ul>
+</div>
+</div>
+<p><strong>&nbsp;</strong></p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
