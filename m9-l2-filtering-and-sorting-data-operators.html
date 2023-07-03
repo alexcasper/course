@@ -1,0 +1,228 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M9 – L2: Filtering and Sorting Data: Operators</h2>
+</div>
+<div id="kl_banner_image"><img class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802109/download?verifier=trcDOjpDqOarrm9HNfNfdbERrwxH0FbFBGkgEeoY" alt="SQL–Table Operations.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802109" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Equality Operators</h3>
+<p>&nbsp;</p>
+<p>This lesson will focus on the equality, relational and logical operators.</p>
+<p>When we are interested in a particular piece of information, we can extend our query by using the <strong>WHERE</strong> keyword.</p>
+<p>We have already seen Module 2 that the <strong>WHERE</strong> keyword permits us to extract only those records that fulfil a specific expression.&nbsp;</p>
+<p>The expressions involve using a combination of operators. <em>Equality operators</em> is one type. This is when the two operands (values) are compared to see if they are equal or not. In <strong>SQLite3</strong>, there are two ways each of expressing ‘<em>equal</em>’ and ‘<em>not equal</em>’.</p>
+<p>&nbsp;</p>
+<table style="border-collapse: collapse; margin-left: auto; margin-right: auto; border-color: #ffffff; height: 183px;" border="1">
+<tbody>
+<tr class="mps-table-headers" style="height: 53px;">
+<td class="" style="border-color: #ffffff; height: 53px; width: 167.717px;">
+<p>&nbsp;</p>
+</td>
+<td style="border-color: #ffffff; height: 53px; width: 150px;">
+<p><strong>Equal</strong></p>
+</td>
+<td class="" style="height: 53px; width: 162px; border-color: #ffffff;">
+<p><strong>Not Equal</strong></p>
+</td>
+</tr>
+<tr class="mps-table-design" style="height: 53px;">
+<td class="" style="height: 53px; width: 167.717px; border-color: #ffffff;">
+<p><strong>Operator </strong></p>
+</td>
+<td style="height: 53px; width: 150px; border-color: #ffffff;">
+<p><span style="font-size: 14pt;">= or ==</span></p>
+</td>
+<td style="height: 53px; width: 162px; border-color: #ffffff;">
+<p><span style="font-size: 14pt;">&lt;&gt; or !=</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>For example, we could use the following query to list the names of the customers from France:</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>SELECT FirstName, LastName, Country </strong></span><br><span style="font-size: 12pt;"><strong>FROM Customer </strong></span><br><span style="font-size: 12pt;"><strong>WHERE Country = ‘France’;</strong></span></p>
+<p>The output should be as follows:</p>
+<p><img id="63450" class="kl_image_max_fill kl_image_full_width" src="https://nulondon.instructure.com/courses/2778/files/802407/download?verifier=MaRe5ylccuGacZrkbtxNIYe4IzrmnnZyG5j6Holk" alt="M3_L3_customers in France.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802407" data-api-returntype="File"></p>
+<p style="text-align: center;"><em>The query and resulting output for listing the customers based in France.</em></p>
+<h3 class="kl_border_radius_50 mps-page-title">Relational Operators</h3>
+<p>In many cases, there will be instances in which we are not looking for exact matches, and so we make use of Relational Operators and Logical Operators.</p>
+<p>In short, relational operators compare two operands to see if they meet the specified information: TRUE if so; FALSE if not.</p>
+<p>The relational operators in <strong>SQLite3</strong> are ‘greater than’, ‘less than’, ‘greater than or equal to’, and ‘less than or equal to’.</p>
+<table style="border-collapse: collapse; margin-left: auto; margin-right: auto; border-color: #ffffff;" border="1">
+<tbody>
+<tr class="mps-table-headers">
+<td class="" style="border-color: #ffffff; width: 160.6px;">
+<p>&nbsp;</p>
+</td>
+<td class="" style="border-color: #ffffff; width: 141.95px;">
+<p><strong>Greater than</strong></p>
+</td>
+<td style="border-color: #ffffff; width: 121.467px;">
+<p><strong style="border-color: #ffffff;">Less than</strong></p>
+</td>
+<td style="border-color: #ffffff; width: 141.95px;">
+<p><strong>Greater than or equal to</strong></p>
+</td>
+<td class="" style="border-color: #ffffff; width: 126.783px;">
+<p><strong>Less than or equal to</strong></p>
+</td>
+</tr>
+<tr class="mps-table-design">
+<td class="" style="border-color: #ffffff; width: 160.6px;">
+<p><strong>Operator</strong></p>
+</td>
+<td style="border-color: #ffffff; width: 141.95px;">
+<p><span style="font-size: 14pt;">&gt;&nbsp;</span></p>
+</td>
+<td class="" style="border-color: #ffffff; width: 121.467px;">
+<p><span style="font-size: 14pt;">&lt;&nbsp;</span></p>
+</td>
+<td style="border-color: #ffffff; width: 141.95px;">
+<p><span style="font-size: 14pt;">&gt;=</span></p>
+</td>
+<td style="border-color: #ffffff; width: 126.783px;">
+<p><span style="font-size: 14pt;">&lt;=</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>Please be sure to click on both tabs below:</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">Above or Below a Specified Value</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p>When the relational operators are employed in SQL statements, records can be identified in which values are above or below a specified value. For example, if we were interested in attaining the customer invoices that exceeded $20 for customers by the customer ID number and Invoice ID number, we would use the following query.</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>SELECT CustomerID, InvoiceID, Total </strong></span><br><span style="font-size: 12pt;"><strong>FROM Invoice </strong></span><br><span style="font-size: 12pt;"><strong>WHERE Total &gt; 20;</strong></span></p>
+<p>This would return the following:</p>
+<p><span style="color: #e03e2d;"> <img id="63453" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802387/download?verifier=AtCXsK3YaMQMW4BeqJzSsizDromS0yjlFL7FsTPo" alt="M3_L4_Invoices excess 20.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802387" data-api-returntype="File">&nbsp;<strong></strong> </span></p>
+<p><em>Attaining the Customer ID and Invoice ID numbers for Invoices that total in excess of $20.</em></p>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">Range</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p>We can also combine the relational operators to find records that fall into a particular range depending on a specific attribute, for example the customer invoices that lie in the range from 10 to 13 inclusive.</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>SELECT CustomerID, InvoiceID, Total </strong></span><br><span style="font-size: 12pt;"><strong>FROM Invoice </strong></span><br><span style="font-size: 12pt;"><strong>WHERE Total &gt;= 10 AND Total &lt;= 13;</strong></span></p>
+</div>
+</div>
+<p>&nbsp;</p>
+<h3 class="kl_border_radius_50 mps-page-title">Logical Operators and NULL</h3>
+<p>&nbsp;</p>
+<p>Logical operators involve the following: <strong>AND</strong>, <strong>OR</strong>, <strong>NOT</strong>, <strong>BETWEEN</strong>, <strong>IN</strong> and <strong>LIKE</strong>. You have already been introduced to some of these in Module 2. You can revise the types of logical operators.</p>
+<p style="text-align: center;"><span style="font-size: 14pt; background-color: #c2e0f4;"><strong>Please be sure to click on all of the expanding tabs shown on this page.</strong></span></p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">Logical Operators: Types&nbsp;</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p><strong>AND</strong>:</p>
+<p>This permits the existence of multiple conditions when using the <strong>WHERE</strong> clause.</p>
+<p><strong>OR</strong>:</p>
+<p>This is used to combine multiple conditions when using the <strong>WHERE</strong> clause.</p>
+<p><strong>NOT</strong>:</p>
+<p>This reverses (or ‘negates’) the meaning of the logical operator.</p>
+<ul>
+<li>If TRUE <strong>OR</strong> FALSE <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>"> TRUE then <strong>NOT</strong> makes it FALSE.</li>
+<li>If TRUE <strong>AND</strong> FALSE <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>"> FALSE then <strong>NOT</strong> makes it TRUE.</li>
+</ul>
+<p><strong>BETWEEN</strong>:</p>
+<p>Values are searched in which they sit within a specified range (the minimum and maximum value).</p>
+<p><strong>IN</strong>:</p>
+<p>This permits comparing a value with a list of <em>literal</em> values. If there is a positive match (TRUE) then the value is chosen. It is like having “multiple <strong>OR</strong>s”.</p>
+<p><strong>LIKE</strong>:</p>
+<p>This permits the comparison of a value with similar values using wildcard operators.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="67350" src="https://nulondon.instructure.com/courses/2778/files/802022/download?verifier=cC6ICjWre1EHCvCBkzm2cb2xEGnrwqrEcfa3N2dx" alt="icon_task_list.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802022" data-api-returntype="File">The BETWEEN Clause</p>
+<p>The <strong>BETWEEN </strong>operator can be used in place of relational operators and also other data types.</p>
+<div id="kl_custom_block_3" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">BETWEEN Operator Instead of Relational Operator</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p>The <strong>BETWEEN </strong>operator can be used in place of relational operators as shown below.</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>SELECT CustomerID, InvoiceID, Total </strong></span><br><span style="font-size: 12pt;"><strong>FROM Invoice </strong></span><br><span style="font-size: 12pt;"><strong>WHERE Total BETWEEN 10 AND 13;</strong></span></p>
+<p>The figure below compares the outputs of using relational operators and the <strong>BETWEEN</strong> clause, in addition to the effects of using <strong>NOT</strong>. Observe the use of <strong>LIMIT </strong>to restrict the output to only 5 records.</p>
+<p><img id="63455" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802388/download?verifier=tKUnlj0othgGamKZZBNyhAcCBNMViNNqRTQFSlXU" alt="M3_L5_NOT BETWEEN clause.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802388" data-api-returntype="File"> &nbsp;</p>
+<p style="text-align: center;"><em>Comparison of the outputs attained using the relational operators and the BETWEEN clause, including the effect of the NOT clause.&nbsp;</em></p>
+</div>
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">BETWEEN Clause for Data Types</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<p>The <strong>BETWEEN</strong> clause can also be used for other data types such as dates as shown in the figure below.</p>
+<p><img id="63454" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802193/download?verifier=cF2UzmXb6pvQ816AbOBK8ujkDXfTgbd1RQrhXCma" alt="M3_L5_BETWEEN logical operator.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802193" data-api-returntype="File"> &nbsp;&nbsp;</p>
+<p style="text-align: center;"><em>Using the BETWEEN logical operator for date ranges.</em></p>
+</div>
+</div>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="67350" src="https://nulondon.instructure.com/courses/2778/files/802022/download?verifier=cC6ICjWre1EHCvCBkzm2cb2xEGnrwqrEcfa3N2dx" alt="icon_task_list.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802022" data-api-returntype="File">Multiple Logical Operators</p>
+<p>A final point to note is when multiple logical operators are used. Recall that multiplication and division are evaluated first before addition and subtraction, the same also occurs with logical operators.</p>
+<p>The following video will demonstrate how the parentheses affects the order of the logical operators.</p>
+<div id="kl_custom_block_4" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_5" class="kl_panel_heading kl_panel_5">Order of Evaluation</h3>
+<div id="kl_panel_5_content" class="kl_panel_content kl_panel_5">
+<p>In fact, because the <strong>WHERE</strong> clause can possess multiple types of operators, you need to be aware of the full order in which all of the operators combined are resolved:</p>
+<ul>
+<li><strong>Arithmetic Operators</strong>:
+<ul>
+<li>Multiplication and Division</li>
+<li>Addition and Subtraction</li>
+</ul>
+</li>
+<li><strong>Relational Operators:</strong>
+<ul>
+<li>In no particular order: <strong>&lt;</strong>, <strong>&gt;</strong>, <strong>=</strong>, <strong>LIKE</strong>.</li>
+</ul>
+</li>
+<li><strong>Logical Operators</strong>:
+<ul>
+<li>These tend to be evaluated last and are done so in the order: <strong>NOT</strong>, <strong>AND</strong>, and <strong>OR</strong>.</li>
+</ul>
+</li>
+</ul>
+<p>If you need to change the order of the evaluation, then you make use of <strong><em>parentheses</em></strong> in order to define which operators get resolved first. View the video for an example that illustrates this well including the importance of parentheses.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p style="text-align: center;"><span style="color: #e03e2d;"> <iframe style="width: 720px; height: 405px;" title="Module 3 Parentheses Effects" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3D0deaca22-9518-4211-94a4-acb700d019e2" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *" data-mce-fragment="1"></iframe> <br><a class="instructure_file_link instructure_scribd_file" title="M3_Parentheses Effects.pdf" href="https://nulondon.instructure.com/courses/2778/files/802550?verifier=FoIRMvGj9IGY1kIErvFTneOQEiB6pEZMyeAJ0feT&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802550" data-api-returntype="File">Transcript&nbsp;</a> </span></p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64853" src="https://nulondon.instructure.com/courses/2778/files/802124/download?verifier=2mWP4b3CPZlOBr4LYINeDRkVXSnZPwoTxac02r7K" alt="icon_null.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802124" data-api-returntype="File"> NULL</p>
+<p>We have seen in Module 2 when <strong>NOT NULL</strong> is used to specify during table creation that entries into attributes are not ‘blank’, in other words not empty. This is especially the case for attributes that are designated as primary keys.</p>
+<p>We can also use <strong>NULL</strong> in combination with <strong>IS</strong> to check for conditions when using the <strong>WHERE</strong> clause.</p>
+<div id="kl_custom_block_5" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_6" class="kl_panel_heading kl_panel_6">NULL Example</h3>
+<div id="kl_panel_6_content" class="kl_panel_content kl_panel_6">
+<p>For example, not every customer in the Chinook database will have a fax number. Therefore we can enter a query that will find which customers do have fax numbers via <strong>IS NOT NULL</strong>, followed by the number of music tracks that do not have a composer via <strong>IS NULL</strong>. The figure below shows the output.</p>
+<p><img id="63456" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802383/download?verifier=EqPOdwP9BS3ys61ExZvDjurYBKVTutk8LvJitxAs" alt="M3_L5_NULL Example.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802383" data-api-returntype="File"></p>
+<p style="text-align: center;"><em>Utilising the IS NOT NULL and IS NULL keywords to list the customers that do possess fax numbers and the media tracks that have no composers respectively.</em></p>
+</div>
+</div>
+<p>&nbsp;&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/preview?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Try It Yourself!</p>
+<p>What SQL query would show the information for customers based in France given in the figure above as well as for Canada? The output should also order by country, and ensure that the surnames are in ascending order.</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p><a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>The SQL query would be as follows.</p>
+<p class="mps-program"><span style="font-size: 10pt;"><strong>SELECT FirstName, LastName, Country </strong></span><br><span style="font-size: 10pt;"><strong>FROM Customer </strong></span><br><span style="font-size: 10pt;"><strong>WHERE Country = ‘France’ OR Country = ‘Canada’ </strong></span><br><span style="font-size: 10pt;"><strong>ORDER BY Country, LastName;</strong></span></p>
+<p>Your output should be as follows.</p>
+<p><img id="63452" class="kl_image_max_fill kl_image_full_width" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802204/download?verifier=DwkzgONYKDqqNVG69txEd4ZlaG8tRXYELMPK7Cjt" alt="M3_L3_IN customers in Canada.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802204" data-api-returntype="File"></p>
+<p style="text-align: center;"><em>The query and resulting output.</em></p>
+<p style="text-align: center;"><em>Note the use of the IN keyword which replaces the need to use OR.</em></p>
+</div>
+<p><strong>&nbsp;</strong></p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/preview?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Try It Yourself!</p>
+<p>If you were interested in the customers based in cities that were not in France, what would be the SQL query? The output should be arranged in descending order for <em>Country</em>, but ascending order for <em>City</em> and <em>LastName</em>.</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p><a id="kl_popup_1_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_1_content">Reveal Answer</a></p>
+<div id="kl_popup_1_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #a9a9a9; background: #f7f7f7; padding: 10px; width: 700px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>The SQL query would be as follows.</p>
+<p class="mps-program"><span style="font-size: 10pt;"><strong>SELECT FirstName, LastName, City, Country </strong></span><br><span style="font-size: 10pt;"><strong>FROM Customer </strong></span><br><span style="font-size: 10pt;"><strong>WHERE Country != ‘France’ </strong></span><br><span style="font-size: 10pt;"><strong>ORDER BY Country DESC, City, LastName;</strong></span></p>
+<p>Your output should be as follows:</p>
+<p><span style="color: #e03e2d;"><em> <img id="63451" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802316/download?verifier=XXFosS1eKZbJbGcQtUZ01rlH9KqDnOL4b1wmiRzb" alt="M3_L3_customers not in France.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802316" data-api-returntype="File"> </em></span></p>
+<p style="text-align: center;"><em>The query and output for the custom&nbsp;ers that are not in France.</em></p>
+<p>&nbsp;</p>
+<p>In the figure, observe how the countries are arranged in descending order. For each country we see the cities in ascending order, and for each city, the last names are arranged in ascending order, e.g. Mountain View in the USA and Berlin in Germany.</p>
+</div>
+<p>&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
