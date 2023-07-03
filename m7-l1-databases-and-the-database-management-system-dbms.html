@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div" style="background-color: #4cb1c5; color: #ffffff; margin: 2px !important 0px !important 10px 0px !important;">
+<h2 style="color: #ffffff; border-top-width: 2px; border-color: #516b7c;">M7 - L1: Databases and the Database Management System (DBMS)</h2>
+</div>
+<div id="kl_banner_image" class="kl_border_radius_20"><img id="57362" src="https://nulondon.instructure.com/courses/2778/files/802023/download?verifier=v3hm2TBRYiYHEeuQi3vrzcCcNIPRiXqJEyE5Vxit" alt="Theory-of-Relational-Databases.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802023"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<div id="kl_custom_block_1" class="kl_border_radius_20" style="background-color: #ffffff; color: #000000;">
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>File-Based Systems</h3>
+<p style="margin-left: 40px; margin-right: 40px;"><br>Prior to the advent of databases, there were paper-based and then computer-based filing systems.</p>
+<p style="margin-left: 40px; margin-right: 40px;">In terms of the latter, these were seen as a collection of application programs which perform services for the end users, such as the generation of subject-specific reports.</p>
+<p style="margin-left: 40px; margin-right: 40px;">Each program would be seen to define and manage its own data. However, they were unable to interact with each other.</p>
+<p style="margin-left: 40px; margin-right: 40px;">The figure below illustrates the concept of a file-based processing system.<br><br></p>
+<p style="margin-left: 40px; margin-right: 40px; text-align: center;"><img id="140503" src="https://nulondon.instructure.com/courses/2778/files/802475/preview?verifier=2pDmf2Z7fPmVbDxsrCQxkff0XargSRQB7EXzQNJW" alt="M101FBS CVER.png" width="792" height="308" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802475" data-api-returntype="File"></p>
+<p style="margin-left: 40px; margin-right: 40px;">&nbsp;</p>
+<p style="margin-left: 40px; margin-right: 40px;">The “Sales files” and “Contracts files” are physically stored in distinctive locations, and are unable to interact with each other. This means that if information in the “Sales files” such as ‘client address’ is updated, the same information contained in the “Contracts files” will not be automatically updated.</p>
+<p style="margin-left: 40px; margin-right: 40px;">&nbsp;Let's take a look at the contents of the Sales and Contracts files:</p>
+<table style="width: 93.702%;">
+<tbody>
+<tr>
+<td style="width: 100%;" width="566">
+<p><span style="text-decoration: underline;"><strong>Sales Files</strong></span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; <strong>PropertyForRent</strong> (propertyNo, street, city, postcode, type, rooms, rent, ownerNo)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; <strong>PrivateOwner</strong> (ownerNo, fName, lName, address, telNo)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; <strong>Client</strong> (clentNo, fName, lName, address, telNo, prefType, maxrent)</p>
+</td>
+</tr>
+<tr>
+<td style="width: 100%;" width="566">
+<p><span style="text-decoration: underline;"><strong>Contracts Files</strong></span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; <strong>Lease</strong> (leaseNo, propertyNo, clientNo, rent, payMthd, deposit, paid, rentStart, rentEnd, length)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; <strong>PropertyForRent</strong> (propertyNo, street, city, postcode, rent)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; <strong>Client</strong> (clientNo, fName, lName, address, telNo)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="margin-left: 40px; margin-right: 40px;">If we compare the <strong>Client</strong> files in both systems, we see that the <strong>Client</strong> file in <span style="text-decoration: underline;"><strong>Contracts</strong></span> does not contain the <em>prefType</em> and <em>maxrent</em> attributes.</p>
+<p style="margin-left: 40px; margin-right: 40px;">This implies that a program that was designed to extract information from the <strong>Client</strong> file in <span style="text-decoration: underline;"><strong>Sales</strong></span> will need to be adapted (or “made aware”) that the <em>prefType</em> and <em>maxRent</em> attributes are missing in <span style="text-decoration: underline;"><strong>Contracts</strong></span>. This could cause the program to ‘crash’, and therefore lead to costly delays.</p>
+<p style="margin-left: 40px; margin-right: 40px;">Conversely, a program accessing the attributes from the <strong>Client</strong> file in <span style="text-decoration: underline;"><strong>Contracts</strong></span> will be unaware of the <em>prefType</em> and <em>maxRent</em> attributes in the <strong>Client</strong> file of <span style="text-decoration: underline;"><strong>Sales</strong></span>, and so the user could be missing out on important and vital information, which again could be costly to the business.</p>
+<p style="margin-left: 40px; margin-right: 40px;">There are obvious limitations to employing a file-based approach. Let's look at some limitations (click on the tabs):</p>
+<div class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0"><strong>Separation and Isolation of Data</strong></h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p>Each program is maintaining its own set of data, and users of one program may be unaware of potentially useful data being held by other programs.</p>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1"><strong>Duplication of Data</strong></h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p>The same data (i.e. information) is held by different programs, which results therefore in wasted storage space in conjunction with the likelihood of different values and/or different formats for the same item/attribute.</p>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2"><strong>Data is Dependent</strong></h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p>Dependent on how the file structure is defined in the coding of the program.</p>
+</div>
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3"><strong>Incompatible File Formats</strong></h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p>Programs are written in a variety of different languages making it difficult to access the files pertaining to the other programs in use.</p>
+</div>
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4"><strong>Task Oriented</strong></h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<p>Programs tend to be designed to perform a particular task/action (e.g. queries are always the same) and so any new requirement will involve the necessity to adapt the current program, or to construct a new program entirely.</p>
+</div>
+</div>
+<p style="margin-left: 40px; margin-right: 40px;">&nbsp;</p>
+<p style="margin-left: 40px; margin-right: 40px;">Therefore in file-based systems the data definition was dependent upon the instruction given by the application programs and there was no control over the access and manipulation of the data due to the enforced restrictions by the application programs.&nbsp;&nbsp;</p>
+<p style="margin-left: 40px; margin-right: 40px;">&nbsp;</p>
+<h3 class="kl_border_radius_50 mps-page-title">Database Management System (DBMS)</h3>
+<p style="margin-left: 40px; margin-right: 40px;">A much improved approach was required which resulted in the conception of the <em>database</em>, and thus a <em>database management system</em> (DBMS).</p>
+<p style="margin-left: 40px; margin-right: 40px;">A database can be described as:</p>
+<ul>
+<li><strong>Shared collection of logically related data</strong>, which includes a description of this data, designed to especially meet the information requirements of a business.</li>
+<li>It contains a <em><strong>system catalogue</strong></em> (i.e. “<strong>metadata</strong>”) which provides descriptions of the data in order to enable program-data independence.</li>
+<li>It contains <strong>logically related data</strong> made up of entities, attributes and relationships pertaining to the business organisation’s information.</li>
+</ul>
+<p>The <em>database management system</em> (DBMS) is the software that is employed to define, create, maintain, control user access and interaction with the database. A schematic of a DBMS is shown below.</p>
+<p style="text-align: center;"><img id="100529" src="https://nulondon.instructure.com/courses/2778/files/802123/preview?verifier=pe6MQY9CkBqBW3lvmqpjbNI6stU4t7qe3Vl4rPaZ" alt="Untitled-2.jpg" width="699" height="369" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802123" data-api-returntype="File"></p>
+<p style="text-align: center;">&nbsp;&nbsp;</p>
+<p style="text-align: center;"><span style="color: #000000;"><em>Illustration of a database management system (DBMS) as it permits two different program applications to access the database.</em></span></p>
+<p style="text-align: center;">&nbsp;</p>
+<p>Examples of how the attributes (columns) within relations (tables) can be defined are shown below, in which the relations are in <strong>bold</strong> and the attributes are encased in parentheses.<br><br></p>
+<p class="mps-program"><strong>PropertyForRent</strong> (propertyNo, street, city, postcode, type, rooms, rent, ownerNo) <br><strong>PrivateOwner</strong> (ownerNo, fName, lNname, address, telNo) <br><strong>Client</strong> (clientNo, fName, lName, address, telNo, prefType, maxRent) <br><strong>Lease</strong> (leaseNo, propertyNo, clientNo, paymentMethod, deposit, paid, rentStart, rentEnd)</p>
+<p>&nbsp;</p>
+<p>It is now clear to see from the above DBMS figure, that any change made to an item within an attribute by the “Sales Department” will also be seen by the “Contracts Department”.&nbsp;<br><br></p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="67350" src="https://nulondon.instructure.com/courses/2778/files/802022/preview?verifier=cC6ICjWre1EHCvCBkzm2cb2xEGnrwqrEcfa3N2dx" alt="icon_task_list.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802022" data-api-returntype="File"> Functions of a Database</p>
+<p>An efficient DBMS must be able to handle the following circumstances:</p>
+<ul>
+<li>Manage the physical structure of the database in terms of physical storage.
+<ul>
+<li>The database could be stored on one large hard drive in a dedicated PC server, or spread across multiple hard drives (e.g. via RAID5) in a dedicated PC server, or spread over numerous dedicated PC servers.</li>
+</ul>
+</li>
+<li>Control user access to the database by adhering to the privileges assigned to the user, therefore ensuring the security of the database and the contents held within.</li>
+<li>Handle multiple users at the same time, and ensure no conflicts ensue.</li>
+<li>Periodic backups of the data within the database, and to permit recovery options should the database fail or “suffer damage”.</li>
+<li>Make use of a dedicated language to allow access to the database – a ‘data access language’.</li>
+<li>To ensure the integrity of the data by enabling constraints and periodic checks on the data.</li>
+<li>To make use of a ‘data dictionary’ which will maintain information about the structure of the database.</li>
+</ul>
+</div>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
