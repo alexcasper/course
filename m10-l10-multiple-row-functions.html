@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M10 – L10: Multiple-Row Functions</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802202/download?verifier=osl3iE7ceBPArdVNB7Bp6R0FOEuOyFeZyO82uz7i" alt="SQL-Database-Objects-and-Functions.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802202"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Multiple-Row Functions</h3>
+<p>&nbsp;</p>
+<p>Multiple row functions are functions that act on <em>multiple rows within a table</em>, and then <em>output one result per group</em> of rows that have been processed. Let's look at some examples.</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander" style="border-width: 1px; border-style: none; margin-right: 30px; margin-left: 30px; background-color: #ffffff; color: #000000;">
+<h3 id="kl_panel_0" class="kl_border_radius_20 kl_panel_heading kl_panel_0" style="background-color: #e3dfda; color: #000000; border-width: 0px;">Aggregate Functions</h3>
+<div id="kl_panel_0_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_0" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<p>We have already seen some of these multiple-row functions (also known as ‘aggregate functions’) in the form of<span>&nbsp;</span><strong>COUNT</strong>,<span>&nbsp;</span><strong>SUM</strong>,<span>&nbsp;</span><strong>AVG</strong>,<span>&nbsp;</span><strong>MIN</strong><span>&nbsp;</span>and<span>&nbsp;</span><strong>MAX</strong>.</p>
+<p>We have also seen these functions employed with the<span>&nbsp;</span><strong>GROUP BY … HAVING</strong><span> keywords</span>.</p>
+<p>Recall that the<span>&nbsp;</span><strong>COUNT</strong>,<span>&nbsp;</span><strong>MIN</strong><span>&nbsp;</span>and<span>&nbsp;</span><strong>MAX</strong><span>&nbsp;</span>functions can also be performed on<span>&nbsp;</span><em>other datatypes</em><span>&nbsp;</span>apart from<span>&nbsp;</span><em>numeric</em><span>&nbsp;</span>such as<span>&nbsp;</span><em>character</em><span>&nbsp;</span>and<span>&nbsp;</span><em>date</em>.</p>
+<p>The<span>&nbsp;</span><strong>AVG</strong><span>&nbsp;</span>and<span>&nbsp;</span><strong>SUM</strong><span>&nbsp;</span>functions can only be applied to<span>&nbsp;</span><em>numeric</em><span>&nbsp;</span>datatypes.</p>
+</div>
+<h3 id="kl_panel_1" class="kl_border_radius_20 kl_panel_heading kl_panel_1" style="background-color: #e3dfda; color: #000000; border-width: 0px;">Statistics Functions: AVG, STDDEV and VARIANCE</h3>
+<div id="kl_panel_1_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_1" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<p>In addition to the <strong>average</strong> or <strong>mean</strong> function (<strong>AVG</strong>), we also have the <strong>standard deviation</strong> function (<strong>STDDEV</strong>) and the <strong>variance</strong> function (<strong>VARIANCE</strong>).</p>
+<p>These are employed in statistics to help determine, for example, precision in measurements, or significance of results via hypotheses testing.</p>
+<p>Both the standard deviation and the variance are ‘measures of dispersion’ from the mean. In fact, the variance is actually the ‘<em>square</em>’ of the standard deviation.</p>
+<p>You will learn more about statistics, and the use of these and many other functions, in Year 2.</p>
+<p>For now, you just need to be aware that statistical calculations using the above functions can also be carried out in SQL.&nbsp;</p>
+<p>The screenshot below illustrates the use of the&nbsp;three multiple-row (statistics) functions:<span>&nbsp;</span><strong>AVG, STDDEV </strong>and<strong> VARIANCE.</strong>&nbsp;</p>
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802513/preview?verifier=hG78uBTnOGg2wp0DCNj5BdSTzBS6EyiauAdDQBoz" alt="M4_L10_Multiple-Row_STATS_Example.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802513" data-api-returntype="File"></p>
+<p>In this SQL statement, we have employed the <strong>AVG</strong>, <strong>STDDEV</strong>, <strong>VARIANCE</strong>, <strong>MIN</strong> and <strong>MAX</strong> multiple-row functions on the profits made (<strong>Retail ‘minus’ cost</strong>), and grouped the results by category using the <strong>GROUP BY</strong> clause.</p>
+<p>Standard deviations and variances of 0 are obtained for counts that were only 1.</p>
+<p>We see that there is a wide variation in price as we can see from the Min and Max columns in the output table.</p>
+<p>You will notice that we have also used the <strong>TO_CHAR()</strong> function with a specific format (‘999.99’) to ensure the values are displayed correctly, and that we do not end up with ‘messy’ trailing numbers, e.g. 22.1435665677.</p>
+<p>This is useful for reporting purposes – a manager would not be impressed seeing a ‘trail of numbers’ after the decimal point!</p>
+</div>
+</div>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64864" src="https://nulondon.instructure.com/courses/2778/files/802141/preview?verifier=mdxA0FEHOdk1CfYgJNskf6pRyZONrtls5whrZJuz" alt="icons_compare.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802141" data-api-returntype="File"> Comparison of Functions in SQLite3 and Oracle Live SQL</p>
+<p class="kl_border_radius_20" style="margin: 30px 40px; background-color: #fbe5b8; padding: 20px;"><span style="color: #e03e2d;"><img id="61358" style="padding-right: 0px; margin-right: 5px;" src="https://nulondon.instructure.com/courses/2778/files/802016/download?verifier=QcwbGvHiIzK8ifzqynQ75tSXbGNYWPJkAqVxHZm5" alt="icon_pdf.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802016" data-api-returntype="File"> <span style="color: #000000;">It is highly recommended that you</span> <a class="instructure_file_link instructure_scribd_file" title="DDM1_M4_L10_Comparison of Functions in SQLite3 and Oracle Live SQL.pdf" href="https://nulondon.instructure.com/courses/2778/files/802082?verifier=dsQ6XdAfsjooSrj0g7dFeh9md0YZsjvnepGtMJdS&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802082" data-api-returntype="File"><span style="color: #3598db;">download the </span><span style="color: #3598db;"><strong>PDF file</strong></span></a></span><strong> </strong> for a confirmation of which single-row and multiple-row functions are available for use in&nbsp; <strong>SQLite3</strong> and <strong>Oracle Live SQL</strong>.</p>
+<p>Finally, if you were interested in <em>retrieving </em>the value of an item that is contained in the database system, and not from a table within the actual database, you can do the following:</p>
+<table style="border-collapse: collapse; width: 100%; border-color: #ffffff; margin-left: auto; margin-right: auto; margin-bottom: 40px;" border="1" width="630">
+<tbody>
+<tr class="mps-table-headers">
+<td class="" style="width: 275.114px; border-color: #ffffff;">
+<p><strong>SQLite3</strong></p>
+</td>
+<td style="width: 339.659px; border-color: #ffffff;">
+<p><strong>Oracle Live SQL</strong></p>
+</td>
+</tr>
+<tr class="mps-table-design">
+<td style="width: 275.114px; border-color: #ffffff;">
+<p><strong>SELECT CURRENT_DATE;</strong></p>
+<p>&nbsp;</p>
+<p>This command will print the current date. Note there is no <strong>FROM</strong> keyword.</p>
+<p>&nbsp;</p>
+</td>
+<td style="width: 339.659px; border-color: #ffffff;">
+<p><strong>SELECT CURRENT_DATE, SYSDATE FROM DUAL;</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>DUAL</strong> is a “dummy table” with 1 row and 1 column. It can be used to test functions.</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
