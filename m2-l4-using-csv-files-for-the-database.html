@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<p style="text-align: center;"><span style="font-size: 18pt; color: #e03e2d; background-color: #fbeeb8;"><strong>&lt;&lt; THIS HAS BEEN UNPUBLISHED SINCE NO LONGER NEEDED IN&nbsp; MODULE 2. &gt;&gt;</strong></span>&nbsp;&nbsp;</p>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M2-L4: Using CSV Files for the Database</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802464/download?verifier=MuLgltsjhelYJZNvZhOZWFuvKR6pjWJsMuhyhnC8" alt="Structured-Query-Language.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802464" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"> </i>Using CSV Files for the Database</h3>
+<p>Let's take a look at how CSV files for a database can be imported or exported.&nbsp;</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64849" src="https://nulondon.instructure.com/courses/2778/files/802134/download?verifier=p4dBG8NWQTk6rsDmWty3TEXa4mlVTTbiPPCE18DV" alt="icons_insert.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802134" data-api-returntype="File"> Importing CSV Files</p>
+<p>This video will show you how to import a CSV text file into a database.</p>
+<p style="text-align: center;"><br><br><iframe style="width: 720px; height: 405px;" title="Module 2 CSV Import" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3Db513e591-4f4a-410e-b82b-acb700c9359a" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe> <br><a class="instructure_file_link instructure_scribd_file" title="M2_CSV Import.pdf" href="https://nulondon.instructure.com/courses/2778/files/802286?verifier=XKQoJwzwzbt82UnHNKmUjIPiPyRDFPJESL9PLkxq&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802286" data-api-returntype="File">Transcript</a></p>
+<p><br>When a CSV file is being imported into a database, it is very important to consider the following (please be sure to click on both tabs):&nbsp;</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_accordion" style="border-width: 1px; border-style: none; margin-right: 30px; margin-left: 30px; background-color: #ffffff; color: #000000;">
+<h3 id="kl_panel_0" class="kl_border_radius_20 kl_panel_heading kl_panel_0" style="background-color: #e3dfda; color: #000000; border-width: 0px;">The table <em>does <span style="text-decoration: underline;">not</span> currently exist</em> inside the database.</h3>
+<div id="kl_panel_0_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_0" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<ul>
+<li>After importing of the CSV file, the first row in that file will be interpreted as attribute (column) names.&nbsp;</li>
+<li>All other rows are the actual data.</li>
+</ul>
+</div>
+<h3 id="kl_panel_1" class="kl_border_radius_20 kl_panel_heading kl_panel_1" style="background-color: #e3dfda; color: #000000; border-width: 0px;">The table <em> <span style="text-decoration: underline;">already</span> exists </em> inside the database.&nbsp;</h3>
+<div id="kl_panel_1_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_1" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<ul>
+<li>Every row in the CSV file is considered to be the data. This means that the attribute names in the first row of the CSV file will be seen as data and inserted into the existing table as such.</li>
+<li>After importing the new CSV file into an existing table, the first row pertaining to the new CSV file can be deleted from the updated table via a SQL query.
+<ul>
+<li>The deletion should only occur if the newly imported CSV file contained column headers. If it did not contain column headers then no deletion would be required.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>Two useful <strong>SQLite3</strong> dot commands are <strong>.tables</strong> and <strong>.schema</strong>:</p>
+<ul>
+<li><strong>.tables</strong> lists the names of the tables that are inside the current database.</li>
+<li><strong>.schema</strong> shows the attributes inside the tables along with their data types (or ‘domains’).</li>
+</ul>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64847" src="https://nulondon.instructure.com/courses/2778/files/802014/download?verifier=fcfYScyG8yiZP7UyitAUIkdk84U7Gb2vKgUEPhNg" alt="icon_logic.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802014" data-api-returntype="File"> Think About It!</p>
+<p>The figure shows the usage of the two commands. What do you notice about the schema?</p>
+<p>&nbsp;Once you are done, click Reveal Answer to view the answer.</p>
+<p style="text-align: center;"><img id="63283" src="https://nulondon.instructure.com/courses/2778/files/802343/download?verifier=hjla5s3BdzIqKHFRsAK6qhbPSbLMlabtTVwd4ZGQ" alt="DDM_M2-L4_.tables and .schema_1.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802343" data-api-returntype="File"></p>
+<p>&nbsp;<strong> <a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a> </strong></p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p style="text-align: center;">&nbsp; <img id="63284" src="https://nulondon.instructure.com/courses/2778/files/802329/download?verifier=2Omxo0GZGU31HcWevzpM9rqjnazI1nOXyH1KwDQS" alt="DDM_M2-L4_.tables and .schema_2.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802329" data-api-returntype="File">&nbsp;</p>
+<p style="text-align: center;"><em>Output following use of the <strong>.tables</strong> and <strong>.schema</strong> SQLite3 commands.</em></p>
+<p>All entries in the table are as characters (TEXT) and not as ‘double’ numbers for T1 to T5. We will see later how we can specify the data types (domains) of the appropriate attributes. This will be important if we require the need to sum or multiply two attributes together during a SQL query.</p>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64850" src="https://nulondon.instructure.com/courses/2778/files/802132/download?verifier=rx4e5hKorVO2rjpd0kjYaIluIvSebvaxdqHdVf8L" alt="icons_export.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802132" data-api-returntype="File"> Exporting to a CSV File</p>
+<p>&nbsp;As well as importing CSV files, we can <strong>export</strong> the contents of a table to a CSV file.</p>
+<p>&nbsp;This video will show you how to export the contents of a table to a CSV file.</p>
+<p style="text-align: center;"><br><iframe style="width: 720px; height: 405px;" title="Module 2 CSV Export" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3De2b111df-8909-4ae3-910f-acb700ca3374" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe> <br><a class="instructure_file_link instructure_scribd_file" title="M2_CSV Export.pdf" href="https://nulondon.instructure.com/courses/2778/files/802367?verifier=2JhGkp2Ge3U4wUnxXxMtFPcVq31JMnw5kTFfpQ68&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802367" data-api-returntype="File">Transcript&nbsp;</a></p>
+<p>&nbsp;</p>
+<p>In the video, you will observe that there is no output to the console. This is because the output was directed towards the CSV file, and not to the console. If the SQL query was repeated, the output would display to the console.</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64847" src="https://nulondon.instructure.com/courses/2778/files/802014/download?verifier=fcfYScyG8yiZP7UyitAUIkdk84U7Gb2vKgUEPhNg" alt="icon_logic.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802014" data-api-returntype="File"> Think About It!</p>
+<p>&nbsp;What should you do before repeating the same SQL query?</p>
+<p>&nbsp;Once you are done, click Reveal Answer to view the answer.</p>
+<p><a id="kl_popup_1_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_1_content">Reveal Answer</a></p>
+<div id="kl_popup_1_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>Yes, you should enter <strong>.mode column</strong> at the prompt before repeating the same SQL query.</p>
+<p>&nbsp;If you do not then the output would appear as comma-separated data values.</p>
+<p>&nbsp;The newly created CSV file should look something like this if opened in Notepad.</p>
+<p>&nbsp;</p>
+<p><img id="63285" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802352/download?verifier=g1UlHQ2f72io22UE72uJjqOX6jBFfhu2t5h0dfms" alt="DDM_M2-L4_CSV file Notepad.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802352" data-api-returntype="File"></p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><em>The exported CSV file viewed in Notepad following the SQL query for exporting a subsection of the Hair table into a CSV file.</em></p>
+</div>
+<p>&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
