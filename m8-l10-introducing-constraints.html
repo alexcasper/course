@@ -1,0 +1,142 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M8 - L10: Introducing Constraints&nbsp;</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802464/download?verifier=MuLgltsjhelYJZNvZhOZWFuvKR6pjWJsMuhyhnC8" alt="Structured-Query-Language.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802464" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Constraints</h3>
+<p>&nbsp;</p>
+<p>Constraints are rules which are employed to enforce business rules, practices and policies. These constraints are vital as they ensure that the data is robust and accurate, in other words the integrity of the data is intact.</p>
+<p>Creating constraints can take place when:</p>
+<ul>
+<li>Creating a table via <strong>CREATE TABLE</strong>…</li>
+<li>Updating a table via <strong>ALTER TABLE…</strong></li>
+</ul>
+<p>The constraint can be created at the ‘column level approach’ or the ‘table level approach’. Click on both tabs to lean more:</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">Column Level Approach</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<ul>
+<li>At the column level, the constraint applies specifically to that column.</li>
+<li>NOT NULL constraints can only be created at the column level.&nbsp;</li>
+<li>If the constraint is to be applied to more than one column, the table level approach must be used.</li>
+</ul>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">Table Level Approach</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<ul>
+<li>The constraint definitions are separate from any column definitions.</li>
+<li>When the constraint is created at the same time as the table is being created, it is done so after the columns in that table has been defined.</li>
+<li>A NOT NULL constraint cannot be created at the table level.</li>
+</ul>
+</div>
+</div>
+<p>Constraints are enforced at the row level. Therefore if there is a violation by a data value, the entire row in which that data value resides in is rejected.</p>
+<p>The normal convention for assigning a constraint name is the following:</p>
+<p><strong><em>tablename_columnname_constrainttype</em></strong>.</p>
+<p>For example, if it was required to add a constraint to the <strong>Customers</strong> table in that the <em>CustomerNo</em> attribute becomes a <u>Primary Key (PK)</u>, then the name of the constraint would be: <strong><em>Customers_CustomerNo_pk</em></strong>.</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="67350" src="https://nulondon.instructure.com/courses/2778/files/802022/preview?verifier=cC6ICjWre1EHCvCBkzm2cb2xEGnrwqrEcfa3N2dx" alt="icon_task_list.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802022" data-api-returntype="File"> Types of Constraints</p>
+<p>Let's take a look at the different types of constraints and how they can be inserted <strong>after a table has been created </strong>(be sure to click on all of the tabs to learn more):</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">PRIMARY KEY</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p><span>This determines which column(s) uniquely identifies each record. The primary key can't be NULL, and the data values must be unique.</span></p>
+<p><span>Example (for reference only):</span></p>
+<p><strong>ALTER TABLE Customers</strong></p>
+<p><strong>ADD CONSTRAINT customers_customerno_pk PRIMARY KEY (CustomerNo);</strong></p>
+</div>
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">FOREIGN KEY</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p>In a one-to-many or parent-child relationship, the constraint is added to the "many" table. The constraint ensures that if a value is entered in a specified column, it must already be in the "one" table, or the record isn't added.</p>
+<p>Before the Foreign Key constraint can be established, the attribute in the other table that will be referenced must exist and also be designated a Primary Key within that table (known as the ‘parent table’).</p>
+<p>Example (for reference only):</p>
+<p><strong>ALTER TABLE Orders</strong></p>
+<p><strong>ADD CONSTRAINT orders_customerno_fk FOREIGN KEY (CustomerNo)</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp;REFERENCES Customers(CustomerNo);</strong></p>
+<p>&nbsp;</p>
+<p>If it was required to delete a constraint, then can state the following:</p>
+<p><strong>ALTER TABLE Orders</strong></p>
+<p><strong>DROP CONSTRAINT orders_customerno_fk;</strong></p>
+</div>
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">UNIQUE</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<p>This ensures that all data values stored in a specified column are unique. The UNIQUE constraint differs from the PRIMARY KEY constraint in that it allows NULL values.</p>
+<p>Example (for reference only):</p>
+<p><strong>ALTER TABLE Books</strong></p>
+<p><strong>ADD CONSTRAINT books_title_uk UNIQUE (Title);</strong></p>
+<p>This ensures that the Title attribute in the Books table is deemed unique, even if there are some books that could have the same titles but by different authors and of different categories.</p>
+</div>
+<h3 id="kl_panel_5" class="kl_panel_heading kl_panel_5">CHECK</h3>
+<div id="kl_panel_5_content" class="kl_panel_content kl_panel_5">
+<p>This ensures that a specified condition is true before the data value is added to a table. For example, an order's ship date can't be earlier than its order date, the cost of a book must be greater than zero.</p>
+<p>Example 1 (for reference only):</p>
+<p><strong>ALTER TABLE Orders</strong></p>
+<p><strong>ADD CONSTRAINT orders_shipdate_ck CHECK (OrderDate &lt;= ShipDate);</strong></p>
+<p>If there is a violation, an error will be reported if the order date for a record is greater than (i.e. more recent than) the shipping date.</p>
+<p>Example 2 (for reference only):</p>
+<p><strong>ALTER TABLE Orderitems</strong></p>
+<p><strong>ADD CONSTRAINT orderitems_quantity_ck CHECK (quantity &gt; 0);</strong></p>
+<p>The quantity for an order must be greater than zero, in other words, a customer must order at least one item – zero items cannot be ordered!</p>
+</div>
+<h3 id="kl_panel_6" class="kl_panel_heading kl_panel_6">NOT NULL</h3>
+<div id="kl_panel_6_content" class="kl_panel_content kl_panel_6">
+<p>This ensures that a specified column can't contain a NULL value. The NOT NULL constraint can be created only with the column-level approach to table creation.</p>
+<p>Example (for reference only):</p>
+<p><strong>ALTER TABLE Orders</strong></p>
+<p><strong>MODIFY (CustomerNo CONSTRAINT orders_customerno_nn NOT NULL);</strong></p>
+<p>Observe that <strong>MODIFY</strong> has been used instead of <strong>ADD</strong> because we are modifying the <em>CustomerNo</em> attribute in the <strong>Orders</strong> table which is already a Foreign Key (which permits NULL values).</p>
+<p><span style="text-decoration: underline;"><strong>Important Note</strong></span>:</p>
+<p>The <strong>MODIFY</strong> keyword is not available in <strong>SQLite3.</strong></p>
+</div>
+</div>
+</div>
+<div class="kl_flat_sections kl_wrapper mps-page-content">
+<p>&nbsp;</p>
+<p>We can also add constraints when tables are being created. These can be at the column-level or the table-level. Click on the two tabs below to see how.</p>
+<div class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_12" class="kl_panel_heading kl_panel_12">Adding a constraint when creating a table: Column-Level</h3>
+<div id="kl_panel_12_content" class="kl_panel_content kl_panel_12">
+<p>Example (for reference only):</p>
+<p><strong>CREATE TABLE Dept</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (DepID NUMBER (2) CONSTRAINT dept_deptid_pk PRIMARY KEY,</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DName VARCHAR2(20) NOT NULL CONSTRAINT dept_dname_uk UNIQUE,</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fax VARCHAR2(12));</strong></p>
+<p>&nbsp;We can see that two constraints have been created at the same time as the creation of the respective attributes: one primary key and one unique attribute which must not contain any NULL valures.</p>
+</div>
+<h3 id="kl_panel_13" class="kl_panel_heading kl_panel_13">Adding a constraint when creating a table: Table-Level</h3>
+<div id="kl_panel_13_content" class="kl_panel_content kl_panel_13">
+<p>Example (for reference only):</p>
+<p><strong>CREATE TABLE Equip</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (EquipID NUMBER(3),</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Edesc VARCHAR2(30),</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PurchDate DATE,</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rating CHAR(1),</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DeptID NUMBER(2) NOT NULL,</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EtypeID NUMBER(2),</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONSTRAINT equip_equipid_pk PRIMARY KEY (EtypeID),</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONSTRAINT equip_deptid_fk FOREIGN KEY (DeptID)</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; REFERENCES Dept (DeptID),</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONSTRAINT equip_etypeid_fk FOREIGN KEY (EtypeID)</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; REFERENCES Etypes (EtypeID),</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONSTRAINT equip_rating_ck CHECK (Raing IN (‘A’, ‘B’, ‘C’)));</strong></p>
+<p>We can see that four constraints have been created following the creation of the respective attributes: one primary key, two foreign keys and a check.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>It is also possible to disable and then later re-enable constraints.</p>
+<p>Example (for reference only):</p>
+<p><strong>ALTER TABLE Equip</strong></p>
+<p><strong>DISABLE CONSTRAINT equip_rating_ck;</strong></p>
+<p><strong>...</strong></p>
+<p><strong>ALTER TABLE Equip</strong></p>
+<p><strong>ENABLE CONSTRAINT equip_rating_ck;</strong></p>
+<p><em><strong>Why would you want to disable a constraint? </strong></em></p>
+<p>It could be that if a large number of records are being inserted, the process of checking a particular criterion could slow down the process therefore reducing efficiency.</p>
+<p>Therefore, the constraint can be (temporarily) disabled.</p>
+<p>Of course, this is dependent on the operations being performed, so <strong>caution is advised</strong> if you decide to disable a constraint.&nbsp;</p>
+<p>&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
