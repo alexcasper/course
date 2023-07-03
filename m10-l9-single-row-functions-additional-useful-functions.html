@@ -1,0 +1,175 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M10 – L9: Single-Row Functions: Additional Useful Functions&nbsp;</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802202/download?verifier=osl3iE7ceBPArdVNB7Bp6R0FOEuOyFeZyO82uz7i" alt="SQL-Database-Objects-and-Functions.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802202"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Regular Expressions and Other Functions</h3>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/download?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> Regular Expressions</p>
+<p>Regular expressions have been employed to recognize and describe complex patterns within textual data.</p>
+<p>They originate from usage in UNIX, and have become used in many languages such as Python and R.</p>
+<p>Although we can use <strong>LIKE</strong> in SQL to match a name or word inside a string, it is limited to using <strong>%</strong> or <strong>_</strong> for wildcards.</p>
+<p>Furthermore, the entire string needs to be referenced. If the text contains a mixture of words, characters and numbers, the <strong>LIKE</strong> clause will be inefficient.</p>
+<p>We have therefore the <strong>REGEXP_LIKE</strong> function which can search out a complex string that contains a mix of names, sentences and phone numbers, and can return the appropriate output.&nbsp;</p>
+<p>An example of usage is as follows:&nbsp;</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>SELECT *</strong></span> <br><span style="font-size: 12pt;"><strong>FROM Books</strong></span> <br><span style="font-size: 12pt;"><strong>WHERE REGEXP_LIKE(Title, ‘COOK’);&nbsp;</strong></span></p>
+<p>This would give the same output as using <strong>WHERE Title LIKE ‘%COOK%’</strong>. However, the ‘power’ of the <strong>REGEXP_LIKE</strong> function is being able to search for a series of numbers (or any other characters) contained in a string but you do not know what these numbers (or characters) are.&nbsp;</p>
+<p>We can demonstrate this with an example.</p>
+<p>Let us say you have a table called <strong>Suppliers</strong> which has two attributes: <em>sup_name</em> and <em>sup_description</em>, the latter describes what the suppliers can offer.</p>
+<p>When we perform a query in which only the descriptions that contain a phone number in a particular format must be retained in the output table, the SQL statement can be written as:</p>
+<p class="mps-program"><span style="font-size: 14pt;"><strong>SELECT *</strong></span> <br><span style="font-size: 14pt;"><strong>FROM Suppliers</strong></span> <br><span style="font-size: 14pt;"><strong>WHERE REGEXP_LIKE(sup_description, ‘<span style="color: #236fa1;">[0-9]{3}</span> <span style="color: #ba372a;">[-.]</span> <span style="color: #236fa1;">[0-9]{3}</span> <span style="color: #ba372a;">[-.]</span> <span style="color: #843fa1;">[0-9]{4}</span>’);&nbsp; </strong></span></p>
+<p>Let us break down the second argument inside the <strong>REGEXP_LIKE</strong> function:</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0"><span style="color: #236fa1;"><strong>[0-9]{3}</strong></span></h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<ul>
+<li>The values in the square brackets indicate that a single character is being searched, and can be any number from 0 to 9.</li>
+<li>The <span style="color: #236fa1;"><strong>{3}</strong></span> implies that this search must be performed 3 times.</li>
+</ul>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1"><span style="color: #ba372a;"><strong>[-.]</strong></span></h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p>This implies that the next character must either be a hyphen (<strong>-</strong>) or a dot (<strong>.</strong>).</p>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2"><span style="color: #843fa1;"><strong>[0-9]{4}</strong></span></h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p>The same as for <span style="color: #236fa1;"><strong>[0-9]{3}</strong></span> but in which <span style="color: #843fa1;"><strong>{4}</strong></span> implies the search must be completed 4 times.</p>
+</div>
+</div>
+<p>This means that only records that contain phone numbers either as <strong>nnn-nnn-nnnn</strong> or <strong>nnn.nnn.nnnn</strong> (or even <strong>nnn-nnn.nnnn</strong> or <strong>nnn.nnn-nnnn</strong>) will be returned to the output table.</p>
+<p>We can apply the REGEXP_LIKE() function to the Just Lee Bookstore database in Oracle Live SQL.</p>
+<p>Click on the tab below to view more.</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">REGEXP_LIKE example applied to Just Lee Bookstore database</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802467/preview?verifier=hZFsXkQ1y9P7OZUaCmLLaR9FTpOGAZlNsikmMxtI" alt="M4_L9_REGEXP_LIKE-Example.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802467" data-api-returntype="File"></p>
+<p>The SQL statement only returns the customers whose Zip codes contain only the numbers 1, 2 or 3 in any position within the five-digit number.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/download?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> Other Functions</p>
+<p>Other useful functions that can be of great assistance are presented in the next set of accordion tabs. These have been applied to the <span style="text-decoration: underline;"><strong>Just Lee Bookstore</strong></span> database.</p>
+<p>Please be sure to click on them sequentially.</p>
+<div id="kl_custom_block_3" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">NVL</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<ul>
+<li>Replace a NULL value for an actual value such as a letter, word, number, or date.</li>
+<li>Example: <strong>NVL(shipdate, ’06-APR-09’)</strong>
+<ul>
+<li>A NULL value in the <em>shipdate</em> attribute is replaced with ’06-APR-09’.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_5" class="kl_panel_heading kl_panel_5">NVL2</h3>
+<div id="kl_panel_5_content" class="kl_panel_content kl_panel_5">
+<ul>
+<li>Permits a set of different actions or scenarios depending on whether there is a NULL value present.</li>
+<li>Example: <strong>NVL2(shipdate, “Shipped”, “Not Shipped”)</strong>
+<ul>
+<li>Where the shipdate contains a date then state “Shipped”; if it contains a NULL then state “Not Shipped”.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_6" class="kl_panel_heading kl_panel_6">NULLIF</h3>
+<div id="kl_panel_6_content" class="kl_panel_content kl_panel_6">
+<ul>
+<li>If two items agree, then a NULL value is returned.</li>
+<li>Example: <strong>NULLIF(A,B)</strong>
+<ul>
+<li>This implies that if A = B then NULL is returned; if different then A is returned.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_7" class="kl_panel_heading kl_panel_7">Oracle Live SQL Example</h3>
+<div id="kl_panel_7_content" class="kl_panel_content kl_panel_7">
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802472/preview?verifier=rkA31KHmNMCRNLvuyl4OzVnTQk4IisdCU9JBrDMh" alt="M4_L9_NVL-NVL2-NULLIF-SQL-Examples.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802472" data-api-returntype="File"></p>
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802492/preview?verifier=7k2kJZ3wCEMuYqF9QrATuYgozwhXiPQeB1mrSEjn" alt="M4_L9_NVL-NVL2-NULLIF-Output-Examples.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802492" data-api-returntype="File"></p>
+<p>We can see that when the <strong>NVL</strong> function is employed, any null values were replaced with ’06-APR-09’.</p>
+<p>This is confirmed by “Not Shipped” from the <strong>NVL2</strong> function (the “Status” column).</p>
+<p>We can also see that the <strong>NULLIF</strong> function did not return any null values.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div id="kl_custom_block_4" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_8" class="kl_panel_heading kl_panel_8">TO_CHAR</h3>
+<div id="kl_panel_8_content" class="kl_panel_content kl_panel_8">
+<ul>
+<li>This converts dates and numbers to a formatted character string.</li>
+<li>Example: <strong>TO_CHAR(Retail, ‘$999.99’) “Retail Price”</strong>
+<ul>
+<li>The number value in the <em>Retail</em> attribute is converted to a character string with the defined format in dollars.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_9" class="kl_panel_heading kl_panel_9">TO_NUMBER</h3>
+<div id="kl_panel_9_content" class="kl_panel_content kl_panel_9">
+<ul>
+<li>This converts a number in a string format to a numeric data type in order for that number to be employed in actual calculations.</li>
+<li>Example: <strong>TO_NUMBER(‘2334.8’)</strong>
+<ul>
+<li>The number 2334.8 should be returned as a numeric datatype.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_10" class="kl_panel_heading kl_panel_10">Oracle Live SQL Example</h3>
+<div id="kl_panel_10_content" class="kl_panel_content kl_panel_10">
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802107/download?verifier=RsR05lOXt5NQTr3BiyuCzI0Pfhb3DkKegBGHELrC" alt="M4_L9_TO-CHAR_TO-NUMBER_SQL-Examples.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802107" data-api-returntype="File"></p>
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802537/preview?verifier=MXr0oCh4qUx1JSL80wE3RAED9qKANGRFf5WEbuo8" alt="M4_L9_TO-CHAR_TO-NUMBER_Output-Examples.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802537" data-api-returntype="File"></p>
+<p>So that the “$” sign can be displayed in the ‘Retail Price’ column in the output table, the number had to be converted into a character with the appropriate format <span style="color: #ba372a;"><strong>('$999.99')</strong></span>.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div id="kl_custom_block_5" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_11" class="kl_panel_heading kl_panel_11">DECODE</h3>
+<div id="kl_panel_11_content" class="kl_panel_content kl_panel_11">
+<ul>
+<li>This decides on what action to take based upon specific values in a list.</li>
+<li>It is similar to <strong>IF… THEN … ELSE</strong> structures used in other programming languages.</li>
+<li>If there are five categories in an attribute, it will assign an individual value to, for example, two categories, and a default value to the remainder</li>
+</ul>
+</div>
+<h3 id="kl_panel_12" class="kl_panel_heading kl_panel_12">SOUNDEX</h3>
+<div id="kl_panel_12_content" class="kl_panel_content kl_panel_12">
+<ul>
+<li>This permits searches for items based on <em>phonetic pronunciations</em> and not on how they are spelt.</li>
+<li>Example: <strong>SOUNDEX(lastname) = SOUNDEX(‘smyth’)</strong>
+<ul>
+<li>Any last name that “<em>sounds like</em>” ‘Smyth’ will be returned.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_13" class="kl_panel_heading kl_panel_13">Oracle Live SQL Examples</h3>
+<div id="kl_panel_13_content" class="kl_panel_content kl_panel_13">
+<p><strong>DECODE</strong></p>
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802511/download?verifier=Wx8BA5Fxw4s0LRMJNs30QHoQ4ocjtscFRGdRaTlv" alt="M4_L9_DECODE_SQL-Example.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802511" data-api-returntype="File"></p>
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802527/preview?verifier=fIMgTem5hlbuWdhRrEqjIMZ4go3JdaaS2EYSAwU9" alt="M4_L9_DECODE_Output-Example.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802527" data-api-returntype="File"></p>
+<p>As can be seen from the output table, when the state matched ‘CA’, a value of 0.08 was given, but if matched ‘FL’ then a value of 0.07 was given, else a value of zero was given.</p>
+<p>&nbsp;</p>
+<p><strong>SOUNDEX</strong></p>
+<p><strong><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802219/download?verifier=vGsL8jxPdOmNwfoF68uN38f1EhjQO7zbdrqjaDa9" alt="M4_L9_SOUNDEX_SQL-Example.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802219" data-api-returntype="File"></strong></p>
+<p><strong><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802456/preview?verifier=AgZHs5FyrMRk4BWlG6NKZVNz35CzGB4eZjl2bM5O" alt="M4_L9_SOUNDEX_Output-Example.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802456" data-api-returntype="File"></strong></p>
+<p>The output from the SOUNDEX function has matched two persons with the surname “Smith”.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64863" src="https://nulondon.instructure.com/courses/2778/files/802192/download?verifier=r0nl6V1B4bxwzRVI2NMmvaWZJWy6MUPxN4EnpE1M" alt="icons_expression.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802192" data-api-returntype="File"> CASE Function</p>
+<p>A final but very useful function to mention is <strong>CASE</strong>. It is similar to the <strong>DECODE</strong> function as it can perform <strong>IF</strong> <strong>… THEN … ELSE</strong> conditional processing. However, <strong>CASE</strong> expressions can allow other comparisons besides equalities due to incorporating the use of <strong>WHEN</strong>, <strong>THEN</strong>, <strong>ELSE</strong> and <strong>END</strong> keywords. It permits one to <strong><em>evaluate conditions</em></strong> in order to determine the resulting value.&nbsp;</p>
+<p>This video illustrates a simple use of the <strong>CASE</strong> function.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><iframe style="width: 720px; height: 405px;" title="Module 4 The CASE Function" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3D6d95e8fb-a73d-489a-afdc-acb700da7fec" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe> <br><a class="instructure_file_link instructure_scribd_file" title="M4_The CASE Function.pdf" href="https://nulondon.instructure.com/courses/2778/files/802571?verifier=ZJ1nt0416LAduOKmZmHI4HBtjetikbCE7YwXNE61&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802571" data-api-returntype="File">Transcript&nbsp;</a></p>
+<p>&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
