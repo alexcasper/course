@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M11 – L5: Transactions&nbsp;</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802194/download?verifier=ZObkZbVZgDFz47mh6nmsNoFa1G3gw05QSHE3V9Bi" alt="SQL-Introducing-Advanced-Features.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802194"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Introducing Transactions</h3>
+<p>&nbsp;</p>
+<p>So far in this course you have been looking at examples of SQL commands that are entered into a database management system (DBMS) application mostly in<span>&nbsp;</span><strong>SQLite3</strong><span>&nbsp;</span>or<span>&nbsp;</span><strong>Oracle Live SQL</strong>.</p>
+<p>You, the<span>&nbsp;</span><em>single user</em>, have also entered commands into these systems which have resulted in retrieving, updating or deleting information from a table in a database.</p>
+<p>This can therefore be be seen as a<span>&nbsp;</span><em>transaction</em>.&nbsp;</p>
+<p>A transaction, however, is not limited to ‘one action’, for example, to “<em>update the bonus to be paid to employee number 2442</em>”.</p>
+<p>A transaction can actually involve ‘numerous actions’. This means that a specific request can generate ‘many actions’ leading to the updating of multiple tables within a database, or numerous tables across many databases!</p>
+<p>This could be initiated by a database administrator, or by an application where one user ‘points-and-clicks’ the options from a dropdown menu, enters some values where appropriate, and then selects ‘Go’.&nbsp;</p>
+<p>At the same time, there could be many users accessing the same database(s), and retrieving information or making changes to information within the same table(s).</p>
+<p>This therefore poses a risk in that one user could extract the wrong/incorrect value for a client because another user has just changed this value (possibly incorrectly!).</p>
+<p>Therefore the DBMS must ensure that the database remains<em><span>&nbsp;</span>consistent</em><span>&nbsp;</span>(i.e. concurrent) and<span>&nbsp;</span><em>reliable</em><span>&nbsp;</span>for all users.&nbsp;</p>
+<p>In this regard, the DBMS must be able to provide the following functionalities:</p>
+<ul>
+<li>Transaction support</li>
+<li>Concurrency control services</li>
+<li>Recovery services</li>
+</ul>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64862" src="https://nulondon.instructure.com/courses/2778/files/802221/preview?verifier=0KTqWGfbK0AMQG1G8g9cCt5kuSY2fz0jfUF38e58" alt="icons_right.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802221" data-api-returntype="File"> Concurrency Control and Recovery Services</p>
+<p>It is important to stress that the three functionalities listed above are actually<span>&nbsp;</span><em>mutually dependent</em>.</p>
+<p>For example,<span>&nbsp;</span><em>concurrency control services</em><span>&nbsp;</span>and<span>&nbsp;</span><em>recovery services</em><span>&nbsp;</span>are<span>&nbsp;</span><strong><em>vital</em></strong><span>&nbsp;</span>for protecting the database against inconsistencies and loss of data.</p>
+<p>Since DBMSs permit multiple users to carry out simultaneous operations on the database, if there are no control mechanisms in place, then the access by the users will very likely interfere with one another. This is where the<span>&nbsp;</span><em>concurrency control services</em><span>&nbsp;</span>‘step in’.&nbsp;</p>
+<p>Concurrently, the recovery services involves restoring a database to a correct stable state following a failure.</p>
+<p>This failure could be a result of hardware, such as PC server(s), network(s) and/or hard drive(s) failure, or any software error such as an application crash, logical flow error in a program/application, or even erroneous SQL coding that leads to corruption of the data within the database(s).</p>
+<p>Either way, the DBMS must be able to restore the database(s) to a consistent state.</p>
+<p>'Recovery services' and 'Concurrency control services' will be discussed in greater detail in Part 2 of the course.</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
