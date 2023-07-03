@@ -1,0 +1,116 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div" style="background-color: #4cb1c5; color: #ffffff; margin: 2px !important 0px !important 10px 0px !important;">
+<h2 style="color: #ffffff; border-top-width: 2px; border-color: #516b7c;">M7 - L8: Entity-Relationship Model</h2>
+</div>
+<div id="kl_banner_image" class="kl_border_radius_20"><img id="57362" src="https://nulondon.instructure.com/courses/2778/files/802023/download?verifier=v3hm2TBRYiYHEeuQi3vrzcCcNIPRiXqJEyE5Vxit" alt="Theory-of-Relational-Databases.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802023"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<div id="kl_custom_block_1" class="kl_border_radius_20" style="background-color: #ffffff; color: #000000;">
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Entity-Relationship Model</h3>
+<p>&nbsp;</p>
+<p>An <em>entity-relationship</em> (<strong>E-R</strong>) model is an <em>object-oriented model</em> and can be used to describe the relational structures in a database.</p>
+<p>The E-R model is normally presented as using <em>entity relationship diagrams</em> (ERDs).</p>
+<p style="margin-left: 40px; margin-right: 40px;">ERDs are very useful in designing a database. They are also very useful in describing existing databases, especially the very large ones in which there is an important requirement to understand how different tables within the database are related and work together.</p>
+<p style="margin-left: 40px; margin-right: 40px;">The ERDs employ simple boxes, lines and symbols in order to illustrate the <em>entities</em>, <em>attributes</em> and <em>relationship</em>s between the data.</p>
+<p style="margin-left: 40px; margin-right: 40px;"><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802028/preview?verifier=9jWvS0rW0EKETvJc2v6Eza2IdFLS2wwL0hIpZidK" alt="M1_L8_entity-relationship-diagram_reduced.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802028" data-api-returntype="File"></p>
+<p style="margin-left: 40px; margin-right: 40px; padding-left: 40px; text-align: center;"><em>Generic example of an entity-relationship diagram showing the entities, attributes and relationships. <br><br></em></p>
+<p style="margin-left: 40px; margin-right: 40px;"><img id="61439" class="kl_image_max_fill kl_image_full_width" src="https://nulondon.instructure.com/courses/2778/files/802019/download?verifier=6dIrnF0WoUk0HEzcvbY56xBoQrjQ9ZiYMfeGG2ZF" alt="F3-4_entity-relationship-diagram.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802019" data-api-returntype="File"></p>
+<p style="margin-left: 40px; margin-right: 40px; padding-left: 40px;"><em>Example of an entity relationship diagram (ERD). There are four labelled relations (tables) each displaying their attributes, some of which have been identified as primary keys (PK) and foreign keys (FK). &nbsp; <br>&nbsp; </em></p>
+<p>Click the tabs to learn more.</p>
+<div class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">Entities</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p>Entities comprise unique identities such as people, things or concepts in which the information they convey is very important to the business (e.g. a product, customer, supplier, property or order).</p>
+<p>They can exist as physical or conceptual:</p>
+<ul>
+<li>Physical existence includes “staff”, “property”, “customer”, “part”, “supplier” and “product”.</li>
+<li>Conceptual existence includes “viewing”, “inspection”, “sale” and “work experience".</li>
+</ul>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">Attributes</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p>Attributes, as can be seen, are the properties pertaining to the characteristics of an entity such as a name, type or colour.</p>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">Relationships</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p>The relationships describe how the data is shared between the entities by the lines joining (or linking) the two tables.</p>
+<p>We can also observe how the entities (tables) are linked using the primary and foreign keys.</p>
+<p>In the ERD, these are indicated by the lines shown between the entities, and also describe how the entities are linked using symbols defined by the cardinality and the modality (see next tab).</p>
+</div>
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">Cardinality and Modality</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p>The <em>cardinality</em> and the <em>modality</em> are described by the styling of the line and what the endpoint looks like.</p>
+<p>This also depends on the chosen notation style. They both concern ‘business rules’ around a relationship between entities.&nbsp;</p>
+<ul>
+<li><strong>Cardinality</strong> refers to the <em>maximum</em> number of times an instance in one entity can be associated with instances in the related entity.&nbsp;</li>
+<li><strong>Modality </strong>refers to the <em>minimum</em> number of times an instance in one entity can be associated with an instance in another entity.</li>
+</ul>
+<p>The notations can be inserted either side of the relationship (denoted by the line) and therefore permits the full comprehension of the relationship between the two tables (entities).</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;The following video demonstrates an ERD for the Chinook database, a sample database for a fictional digital media store. <br><br></p>
+<p style="text-align: center;"><iframe style="width: 720px; height: 405px;" title="ERD of Sample Database Chinook  01" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3Dc78bc9db-1d25-470b-89ad-acb700c6d196" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe> <br>&nbsp;<a class="instructure_file_link instructure_scribd_file" title="M1_ERD of Sample Database_Chinook.pdf" href="https://nulondon.instructure.com/courses/2778/files/802817?verifier=lT8LP5NpgNEBXZsViJtfsRjIwD6OJ07D8TnkU5cx&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802817" data-api-returntype="File">Transcript</a></p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="67350" src="https://nulondon.instructure.com/courses/2778/files/802022/download?verifier=cC6ICjWre1EHCvCBkzm2cb2xEGnrwqrEcfa3N2dx" alt="icon_task_list.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802022" data-api-returntype="File"> Common Types of Relationships</p>
+<p>There are three common types of relationships in ERDs.</p>
+<div class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">&nbsp;One-to-one</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<ul style="list-style-type: circle;">
+<li>This is the most basic kind of inter-table relationship. This is when a relationship is established between <strong>one row</strong> (tuple) of a table with <strong>one row</strong> from another table.</li>
+</ul>
+</div>
+<h3 id="kl_panel_5" class="kl_panel_heading kl_panel_5">One-to-many</h3>
+<div id="kl_panel_5_content" class="kl_panel_content kl_panel_5">
+<ul style="list-style-type: circle;">
+<li>This is when a relationship is established between <strong>one row</strong> of a table and <strong>many rows</strong> of another table.</li>
+</ul>
+</div>
+<h3 id="kl_panel_6" class="kl_panel_heading kl_panel_6">Many-to-many</h3>
+<div id="kl_panel_6_content" class="kl_panel_content kl_panel_6">
+<ul style="list-style-type: circle;">
+<li>This can be seen as two one-to-many <strong>relationships constructed over each other</strong>.</li>
+<li>This permits <strong>one row</strong> from the first table to be linked to <strong>many rows</strong> in the second table whilst at the same time one row from the second table is linked to many rows in the first table.</li>
+</ul>
+</div>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20" style="margin-left: 40px; margin-right: 40px; background-color: #fbe5b8; padding: 20px;"><span style="color: #e03e2d;"> <img id="61358" style="padding-right: 0px; margin-right: 5px;" src="https://nulondon.instructure.com/courses/2778/files/802016/download?verifier=QcwbGvHiIzK8ifzqynQ75tSXbGNYWPJkAqVxHZm5" alt="icon_pdf.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802016" data-api-returntype="File"> <span style="color: #000000;">It is essential that you</span> <a class="instructure_file_link instructure_scribd_file" title="DDM1_M1_L8_Types of Relationships.pdf" href="https://nulondon.instructure.com/courses/2778/files/802826?verifier=YifMPUq6Tt8LBPPpby0j9Ca81gBQr1na5UyiE0Qf&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802826" data-api-returntype="File"><span style="color: #3598db;">download the <strong>PDF file</strong></span></a> </span><strong> </strong>to read more details pertaining to the Entity-Relationship Model and its relationship types.</p>
+</div>
+<p>Click on the tab below to see an ERD for a sample database created in 2012 called <em>Chinook</em> which is available via the following URL: <span><a href="https://github.com/lerocha/chinook-database">https://github.com/lerocha/chinook-database</a></span>. The model represents a digital media store in which information pertaining to the artists, albums, customers, invoices and media tracks is stored in respective tables.</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_7" class="kl_panel_heading kl_panel_7">The Chinook database ERD</h3>
+<div id="kl_panel_7_content" class="kl_panel_content kl_panel_7">
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802027/download?verifier=daPLYsSy3SJZu1MNF9x1OAEBQlaraLFPCo7VWTTs" alt="M1_L8_Chinook_ERD.png" width="807" height="454" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802027" data-api-returntype="File"></p>
+<p>The ERD schema clearly shows how tables are linked together (one-to-one, one-to-many, and many-to-many), and identifies the attributes which are primary keys and foreign keys.</p>
+<p>Take time to follow and understand the links (i.e. relationships) between the tables.</p>
+<p>Which of those tables appears to be a “joining table”?&nbsp;</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>It is worth emphasising the following point:</p>
+<p><strong><em>The ability to explain the database design to a non-technical person will be very important in your career as a data scientist or digital technology solutions consultant. </em></strong></p>
+<p><strong><em>The ERDs will help illustrate the conceptual and logical designs when describing the relational structures within the database.</em></strong></p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61394" src="https://nulondon.instructure.com/courses/2778/files/802015/download?verifier=EnVmPWYkp6dXUdCl3VcXRG5ZIi8sI0xdulxsEZbe" alt="icon_assesment1.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802015" data-api-returntype="File">Defining a Relation</p>
+<p>What are the properties of a relation?</p>
+<p><em>Try to summarise what a relation is before revealing the answer.</em></p>
+<p>Click Reveal Answer to view the answer.</p>
+<p>&nbsp;<a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>&nbsp;A relation has the following properties:</p>
+<ul>
+<li>A name that is distinct from all other relation names in the relational schema.</li>
+<li>Each cell contains exactly one atomic (single) value.</li>
+<li>Each attribute has a distinct name.</li>
+<li>The values of an attribute are all the same domain (i.e. data type).</li>
+<li>Each tuple (row) is distinct which means there are no duplicate tuples.</li>
+<li>The order of the attributes has no significance.</li>
+<li>The order of the tuples should have no significance but this may depend on its position in the table if there are thousands of rows present.</li>
+</ul>
+</div>
+<p>&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
