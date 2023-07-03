@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><p style="text-align: center;"><span style="font-size: 18pt; color: #e03e2d; background-color: #f1c40f;"><strong>&lt;&lt; UNPUBLISHED! MOVING TO DDM2 &gt;&gt;</strong></span></p>
+<div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M5 – L9: Recovery Services</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802194/download?verifier=ZObkZbVZgDFz47mh6nmsNoFa1G3gw05QSHE3V9Bi" alt="SQL-Introducing-Advanced-Features.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802194"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title">
+<i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"> </i>Recovery Services</h3>
+<p>&nbsp;</p>
+<p>A DBMS <em>must be able to <strong>restore</strong></em> <em>a database</em> to a former <em>consistent state</em> following a failure of some kind, whether that be software, hardware or both. There must be in place some form of “recovery service” that can enable the restoration.</p>
+<p>Recall that <em>non-database processing</em> usually involves operations taking place on variables that are stored <strong><em>in memory</em></strong>. This is considered to be “<em>volatile storage</em>”. If there is a loss of power, then that storage is lost, as are any operations and updates to variables that were stored in memory.&nbsp;&nbsp;</p>
+<p>In terms of “<em>non-volatile storage</em>”, data contained in tables are stored on physical hard drives, but also likely replicated on other physical hard drives. In the event of a hardware failure, such as hard drive failure, the table(s) can be retrieved from other working hard drives, and the database restored.</p>
+<p>Examples of failures include:</p>
+<ul>
+<li>System crashes (which can involve loss of memory, i.e. the “volatile storage”).</li>
+<li>Media failures such as hard drives.</li>
+<li>Application (software) errors.</li>
+<li>Natural physical disasters.</li>
+<li>Carelessness by users leading to (unintentional) destruction of the data.</li>
+<li>Sabotage!</li>
+</ul>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20" style="margin-left: 40px; margin-right: 40px; background-color: #fbe5b8; padding: 20px;"><span style="color: #e03e2d;"> <img id="61358" style="padding-right: 0px; margin-right: 5px;" src="https://nulondon.instructure.com/courses/2778/files/802016/download?verifier=QcwbGvHiIzK8ifzqynQ75tSXbGNYWPJkAqVxHZm5" alt="icon_pdf.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802016" data-api-returntype="File"> <a id="63815" class="instructure_file_link instructure_scribd_file" href="https://nulondon.instructure.com/courses/2778/files/802328?verifier=bhc4ETA7MgBzOb3xeoaoa9B5Y3gO0U7C2jBzDGNR&amp;wrap=1" target="_blank" data-canvas-previewable="true" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802328" data-api-returntype="File"> <span style="color: #3598db;">Download the <strong>PDF</strong></span> </a> </span><strong> </strong> to view examples of “undoing” and “redoing” transactions.</p>
+<p>The DBMS should be able to provide the following facilities in order to assist with the recovery of the database:</p>
+<ul>
+<li>A <strong>backup mechanism</strong> that can make periodic backup copies of the database.</li>
+<li>
+<strong>Logging facilities</strong> in order to keep track of the current state of the transactions, and the changes being made to the database.</li>
+<li>A <strong>checkpoint facility</strong> in which any updates currently being made to the database are made permanent.</li>
+<li>A <strong>recovery manager</strong> that will permit the system to <em>restore</em> the database back to a consistent state should a failure occur.</li>
+</ul>
+<p>Recovery services are therefore very important in database management.</p>
+<p>&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
