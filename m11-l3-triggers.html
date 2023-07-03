@@ -1,0 +1,125 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M11 – L3: Triggers</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802194/download?verifier=ZObkZbVZgDFz47mh6nmsNoFa1G3gw05QSHE3V9Bi" alt="SQL-Introducing-Advanced-Features.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802194"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Establishing a Trigger</h3>
+<p>&nbsp;</p>
+<p>A trigger can be set up to define an action that the database must undertake should an event occur which can <em>compromise</em> data within a table, some tables or the entire database.</p>
+<p>A trigger can also be used to enforce some referential integrity constraints, to enforce complex constraints, or to audit changes to the data.</p>
+<p>Triggers are said to be based on the <em>Event-Condition-Action</em> (<strong>ECA</strong>) model (please be sure to click on the tabs below):</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">Event</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<ul>
+<li>The event(s) can involve the following SQL commands applied to records within a table or tables or views: <strong>INSERT</strong>, <strong>UPDATE</strong> or <strong>DELETE</strong>.</li>
+<li>The event(s) can involve the following SQL commands applied to any object within a schema such as tables, sequences and indexes: <strong>CREATE</strong>, <strong>ALTER</strong> or <strong>DROP</strong>.</li>
+<li>The event(s) can also include the startup and shutdown of a database, or when specific users log on and log off the database.</li>
+<li>The event(s) can also include any error messages that are generated.</li>
+</ul>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">Condition</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<ul>
+<li>This determines whether the action should be executed or ignored.</li>
+<li>The condition is an optional parameter, and so does not need to be specified.
+<ul>
+<li>If the condition is specified, the action will only be executed if the condition happens to be TRUE.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">Action</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p>This contains the SQL statements and code to be executed when a triggering statement is issued and the trigger condition (if used) evaluates to TRUE.<strong>&nbsp;</strong></p>
+</div>
+</div>
+<p>The trigger can be directed when to take effect in relation to the event: <strong>BEFORE</strong>, <strong>AFTER</strong> or <strong>INSTEAD OF</strong>.</p>
+<p>The latter can be useful for modifying views that cannot be altered using the normal SQL <em>data manipulation language</em> (DML) statements. In this instance, the trigger gets <em>fired </em>in place of executing the original SQL statement.&nbsp;</p>
+<p>Two types of triggers that take place are (please be sure to click on the tabs below):</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">Row-Level Triggers</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<ul>
+<li>These occur for <strong><em>each row</em></strong> of the table.
+<ul>
+<li>The SQL keywords used are: <strong>FOR EACH ROW</strong>.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">Statement-Level Triggers</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<ul>
+<li>These occur only <strong><em>once</em></strong> for <strong><em>each statement</em></strong> and can affect multiple rows in a table.</li>
+<li>The SQL keywords used are: <strong>FOR EACH STATEMENT</strong></li>
+</ul>
+</div>
+</div>
+<p>Triggers can also activate themselves sequentially. This can occur should there be a situation where one trigger executes, and on completion of altering the database, a second and other triggers activate, which themselves cause more changes to the database, and possibly activate even more triggers, therefore leading to a <em>cascade of triggers!</em></p>
+<h3 class="kl_border_radius_50 mps-page-title">Advantages and Disadvantages of Triggers</h3>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64862" src="https://nulondon.instructure.com/courses/2778/files/802221/preview?verifier=0KTqWGfbK0AMQG1G8g9cCt5kuSY2fz0jfUF38e58" alt="icons_right.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802221" data-api-returntype="File"> Advantages of Triggers</p>
+<p>The <strong>advantages</strong> of establishing triggers are (please be sure to click on all of the tabs below):</p>
+<div id="kl_custom_block_3" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_5" class="kl_panel_heading kl_panel_5">Elimination of Redundant Code</h3>
+<div id="kl_panel_5_content" class="kl_panel_content kl_panel_5">
+<p>The trigger only needs to be stored once in the database and not on every user’s profile.</p>
+</div>
+<h3 id="kl_panel_6" class="kl_panel_heading kl_panel_6">Simplifying Modifications</h3>
+<div id="kl_panel_6_content" class="kl_panel_content kl_panel_6">
+<ul>
+<li>If a trigger is changed, it only needs to be done once as all the applications automatically employ the updated trigger.</li>
+<li>The triggers are therefore only coded once, tested once, and finally enforced centrally in order for all of the applications to have access.</li>
+<li>The <em>database administrator</em> (DBA) with advanced knowledge can control efficiently, and if necessary, audit the trigger.</li>
+</ul>
+</div>
+<h3 id="kl_panel_7" class="kl_panel_heading kl_panel_7">Increased Security</h3>
+<div id="kl_panel_7_content" class="kl_panel_content kl_panel_7">
+<p>As the triggers are stored in the secured database, they are therefore protected.</p>
+</div>
+<h3 id="kl_panel_8" class="kl_panel_heading kl_panel_8">Improved Integrity</h3>
+<div id="kl_panel_8_content" class="kl_panel_content kl_panel_8">
+<p>Triggers that are stored in the database can consistently enforce <em>integrity constraints</em> across all of the platforms by the <em>database management system</em> (DBMS).</p>
+</div>
+<h3 id="kl_panel_9" class="kl_panel_heading kl_panel_9">Improved Processing Power</h3>
+<div id="kl_panel_9_content" class="kl_panel_content kl_panel_9">
+<p>The triggers actually add processing power to the DBMS and to the database.</p>
+</div>
+<h3 id="kl_panel_10" class="kl_panel_heading kl_panel_10">Good Fit With the Client-Server Architecture</h3>
+<div id="kl_panel_10_content" class="kl_panel_content kl_panel_10">
+<p>As the trigger is stored “centrally” within the database, it can be executed by a user leading to automatic procedures of sequences of checks and operations by the database server itself.</p>
+<ul>
+<li>This increases performance because there is no need to transfer operations across the network since the triggers are already on the database (server).</li>
+</ul>
+</div>
+</div>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64861" src="https://nulondon.instructure.com/courses/2778/files/802115/preview?verifier=9tVfS2TlhA8NrAI5Jsbjutb4WDUSpdX8tfTK1FDE" alt="icons_cross.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802115" data-api-returntype="File"> Disadvantages of Triggers</p>
+<p>The <strong>disadvantages</strong> of establishing triggers are (please be sure to click on all of the tabs below):</p>
+<div id="kl_custom_block_4" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_11" class="kl_panel_heading kl_panel_11">Performance Overheads</h3>
+<div id="kl_panel_11_content" class="kl_panel_content kl_panel_11">
+<p>Managing and executing the triggers results in a performance overhead which needs to be balanced against the “improved processing power” mentioned previously.</p>
+</div>
+<h3 id="kl_panel_12" class="kl_panel_heading kl_panel_12">Cascading Effects</h3>
+<div id="kl_panel_12_content" class="kl_panel_content kl_panel_12">
+<p>There is a risk of one trigger firing off a number of subsequent triggers in a “cascading manner”.</p>
+<ul>
+<li>This can cause a significant change to the tables in the database.</li>
+<li>It can be hard to foresee the overall effects when the trigger is being designed.</li>
+</ul>
+</div>
+<h3 id="kl_panel_13" class="kl_panel_heading kl_panel_13">Cannot be Scheduled</h3>
+<div id="kl_panel_13_content" class="kl_panel_content kl_panel_13">
+<p>The trigger occurs when the event it is based on actually happens.</p>
+</div>
+<h3 id="kl_panel_14" class="kl_panel_heading kl_panel_14">Less Portable</h3>
+<div id="kl_panel_14_content" class="kl_panel_content kl_panel_14">
+<p>Because most of the DBMSs have their own specific way of dealing with triggers, this affects portability of the database into other systems.</p>
+</div>
+</div>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
