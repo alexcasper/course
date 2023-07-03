@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M9 – L9: Table Joins: Right and Full Outer&nbsp;</h2>
+</div>
+<div id="kl_banner_image"><img class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802109/download?verifier=trcDOjpDqOarrm9HNfNfdbERrwxH0FbFBGkgEeoY" alt="SQL–Table Operations.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802109" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>RIGHT OUTER JOIN and FULL OUTER JOIN</h3>
+<p>&nbsp;</p>
+<p>So far we have mostly discussed <strong>LEFT (OUTER) JOIN</strong> approaches. Let us know look at <strong>RIGHT</strong> and <strong>FULL</strong>.</p>
+<p><span>Please watch the Explainer Video that compares the <strong>INNER JOIN</strong> with the <strong>LEFT</strong>, <strong>RIGHT </strong>and <strong>FULL OUTER JOIN </strong>approaches.</span></p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><iframe style="width: 720px; height: 405px;" title="Module 3 Inner v Outer Join" src="https://nulondon.instructure.com/courses/2778/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fnortheastern.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3D38d4c0ec-6e2b-433e-93ba-acb700d3062d" width="720" height="405" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe> <br><a class="instructure_file_link instructure_scribd_file" title="M3_Inner v Outer Join.pdf" href="https://nulondon.instructure.com/courses/2778/files/802548?verifier=xSzz4uSuvambrg1FrsXRufowCy3Pp4hFwYbYddX4&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802548" data-api-returntype="File">Transcript</a></p>
+<p>&nbsp;</p>
+<p>When using <strong>LEFT</strong>, <strong>RIGHT </strong>or <strong>FULL OUTER JOIN</strong> approaches, any unmatched columns are filled in with <strong>NULL </strong>values.</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64858" src="https://nulondon.instructure.com/courses/2778/files/802119/download?verifier=DOT6KG6Ii6KvhgsFDljS4aHCgmmMRayImVwQpTj3" alt="icon_join.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802119" data-api-returntype="File"> Self-Joins</p>
+<p>A final join to introduce is the "<strong>Self-Join</strong>". This is normally employed to link a table to itself.</p>
+<p>This requires the use of <em>table aliases</em> along with the use of <em>column qualifiers</em>.</p>
+<p>The join can occur via the <strong>WHERE</strong> clause or via the <strong>FROM</strong> clause in conjunction with the <strong>ON</strong> clause.</p>
+<p>In the figure below we see a portion of a table (<strong>Customer2</strong>) and how the Referred attribute indicates which customer is linked to other customers via their CustomerId value.</p>
+<p>The SQL statements that follow utilize the the <strong>WHERE</strong> and <strong>FROM</strong>/<strong>ON</strong> clauses which produce the same output.</p>
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802470/preview?verifier=GABhUxnElNHpOIwAjvDfAhNFdzkBwpDSqQwqpT5a" alt="M3_L9_SELF-JOIN-SQL-EXAMPLE.JPG" width="652" height="981" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802470" data-api-returntype="File"></p>
+<p>The self-join simply occurs when a <em>different alias</em> is used for the <strong>same table</strong>, in this case, <strong>c</strong> and <strong>r</strong> for the <strong>customer2</strong>&nbsp;table.</p>
+<p>This has given the impression that two tables are being joined together when in fact it is the same table.</p>
+<p>One final point to note here is that the <strong>USING</strong> clause cannot be employed with a self-join since two different columns are being used in the join.</p>
+<p>&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
