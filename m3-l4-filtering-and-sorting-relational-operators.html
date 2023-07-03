@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<p style="text-align: center;"><span style="font-size: 14pt; color: #e03e2d; background-color: #fbeeb8;"><strong>&lt;&lt; UNPUBLISHED SINCE MERGED WITH M3-L2 &gt;&gt;</strong></span></p>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M3 – L4: Filtering and Sorting: Relational Operators&nbsp;</h2>
+</div>
+<div id="kl_banner_image"><img class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802109/download?verifier=trcDOjpDqOarrm9HNfNfdbERrwxH0FbFBGkgEeoY" alt="SQL–Table Operations.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802109" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"> </i>Relational Operators</h3>
+<p>In many cases, there will be instances in which we are not looking for exact matches, and so we make use of Relational Operators and Logical Operators.</p>
+<p>In short, relational operators compare two operands to see if they meet the specified information: TRUE if so; FALSE if not.</p>
+<p>The relational operators in <strong>SQLite3</strong> are ‘greater than’, ‘less than’, ‘greater than or equal to’, and ‘less than or equal to’.</p>
+<table style="border-collapse: collapse; margin-left: auto; margin-right: auto; border-color: #ffffff;" border="1">
+<tbody>
+<tr class="mps-table-headers">
+<td class="" style="border-color: #ffffff; width: 160.6px;">
+<p>&nbsp;</p>
+</td>
+<td class="" style="border-color: #ffffff; width: 141.95px;">
+<p><strong>Greater than</strong></p>
+</td>
+<td style="border-color: #ffffff; width: 121.467px;">
+<p><strong style="border-color: #ffffff;">Less than</strong></p>
+</td>
+<td style="border-color: #ffffff; width: 141.95px;">
+<p><strong>Greater than or equal to</strong></p>
+</td>
+<td class="" style="border-color: #ffffff; width: 126.783px;">
+<p><strong>Less than or equal to</strong></p>
+</td>
+</tr>
+<tr class="mps-table-design">
+<td class="" style="border-color: #ffffff; width: 160.6px;">
+<p>Operator</p>
+</td>
+<td style="border-color: #ffffff; width: 141.95px;">
+<p>&gt;&nbsp;</p>
+</td>
+<td class="" style="border-color: #ffffff; width: 121.467px;">
+<p>&lt;&nbsp;</p>
+</td>
+<td style="border-color: #ffffff; width: 141.95px;">
+<p>&gt;=</p>
+</td>
+<td style="border-color: #ffffff; width: 126.783px;">
+<p>&lt;=</p>
+</td>
+</tr>
+<tr class="mps-table-design">
+<td style="border-color: #ffffff; width: 160.6px;">
+<p>Other Alternative</p>
+</td>
+<td class="" style="border-color: #ffffff; width: 141.95px;">
+<p>gt</p>
+</td>
+<td class="" style="border-color: #ffffff; width: 121.467px;">
+<p>lt</p>
+</td>
+<td style="width: 141.95px; border-color: #ffffff;">
+<p>ge</p>
+</td>
+<td style="width: 126.783px; border-color: #ffffff;">
+<p>le</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>Please be sure to click on both tabs below:</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander" style="border-width: 1px; border-style: none; margin-right: 30px; margin-left: 30px; background-color: #ffffff; color: #000000;">
+<h3 id="kl_panel_0" class="kl_border_radius_20 kl_panel_heading kl_panel_0" style="background-color: #e3dfda; color: #000000; border-width: 0px;">Above or Below a Specified Value</h3>
+<div id="kl_panel_0_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_0" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000;">
+<p>When the relational operators are employed in SQL statements, records can be identified in which values are above or below a specified value. For example, if we were interested in attaining the customer invoices that exceeded $20 for customers by the customer ID number and Invoice ID number, we would use the following query.</p>
+<p class="mps-program">SELECT CustomerID, InvoiceID, Total <br>FROM Invoice <br>WHERE Total &gt; 20;</p>
+<p>This would return the following:</p>
+<p><span style="color: #e03e2d;"> <img id="63453" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802387/download?verifier=AtCXsK3YaMQMW4BeqJzSsizDromS0yjlFL7FsTPo" alt="M3_L4_Invoices excess 20.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802387" data-api-returntype="File">&nbsp;<strong></strong> </span></p>
+<p><em>Attaining the Customer ID and Invoice ID numbers for Invoices that total in excess of $20.</em></p>
+</div>
+<h3 id="kl_panel_1" class="kl_border_radius_20 kl_panel_heading kl_panel_1" style="background-color: #e3dfda; color: #000000; border-width: 0px;">Range</h3>
+<div id="kl_panel_1_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_1" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<p>We can also combine the relational operators to find records that fall into a particular range depending on a specific attribute, for example the customer invoices that lie in the range from 10 to 13 inclusive.</p>
+<p class="mps-program">SELECT CustomerID, InvoiceID, Total <br>FROM Invoice <br>WHERE Total &gt;= 10 AND Total &lt;= 13;</p>
+</div>
+</div>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
