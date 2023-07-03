@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<p style="text-align: center;"><span style="font-size: 18pt; color: #e03e2d; background-color: #fbeeb8;"><strong>&lt;&lt; UNPUBLISHED SINCE MERGED WITH M4-L3. &gt;&gt;</strong></span></p>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M4 – L5: Verifying, Altering and Dropping an Index</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802202/download?verifier=osl3iE7ceBPArdVNB7Bp6R0FOEuOyFeZyO82uz7i" alt="SQL-Database-Objects-and-Functions.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802202"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"> </i>Verifying, Altering and Dropping an Index</h3>
+<p>&nbsp;</p>
+<p>Let’s look at how to verify, alter and drop an index.&nbsp;</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61405" src="https://nulondon.instructure.com/courses/2778/files/802289/preview?verifier=BvzQpIuYoIuWFEQpCq8zPm45il3qvEHfggVWunNe" alt="icon_assesment.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802289" data-api-returntype="File"> Verifying an Index</p>
+<p>In <strong>SQLite3</strong>, you can confirm which tables contain indexes by typing at the prompt: <span style="font-family: 'courier new', courier;"><strong>.indexes</strong></span>.&nbsp;</p>
+<p>In <strong>Oracle Live SQL</strong>, you can access the <em>data dictionary</em> (or <em>system catalogue</em>) to check what indexes are available in the table of interest, for example (if you are still logged in on <strong>Oracle Live SQL</strong>, and the session has not ‘timed out’ you can copy the following, else no need):&nbsp;</p>
+<p class="mps-program">SELECT table_name, index_name, index_type <br>FROM user_indexes <br>WHERE table_name = ‘CUSTOMERS’;&nbsp;</p>
+<p>The output would reveal the current indexes that exist for the <strong>Customers</strong> table along with whether they are B-tree (“Normal”) or Bitmap. Previously, we created the function-based index in the <strong>Books</strong> table, the output would also state “Normal” for B-tree index and “Function-Based Normal” due to the function used to calculate the profit (retail – cost).&nbsp;</p>
+<p>However, if we are interested in knowing which columns contain the actual index, we can type the following (in <strong>Oracle Live SQL</strong>):&nbsp;</p>
+<p class="mps-program">SELECT table_name, index_name, column_name <br>FROM user_ind_columns <br>WHERE table_name = ‘CUSTOMERS’;&nbsp;</p>
+<p>The column names that have been indexed will be identified as shown in the figure below.&nbsp;</p>
+<p><img id="63483" class="kl_image_max_fill" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802269/download?verifier=PhuzSCJTuGZSAkVSu5V96aPphBkbOIz5iJKXB3qS" alt="M4_L5_Verifying an Index.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802269" data-api-returntype="File"></p>
+<p style="text-align: center;"><em>Output of the query from the user_ind_columns data dictionary to ascertain which attributes in the Customer table are indexes.</em>&nbsp;</p>
+<p>Observe in the figure that the <strong>customers_name_idx</strong> has been listed twice, one for the <em>LastName</em> and one for the <em>FirstName</em> attributes in the <strong>Customers</strong> table.&nbsp;</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61405" src="https://nulondon.instructure.com/courses/2778/files/802289/preview?verifier=BvzQpIuYoIuWFEQpCq8zPm45il3qvEHfggVWunNe" alt="icon_assesment.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802289" data-api-returntype="File"> Altering and Dropping an Index</p>
+<p>Altering an index is similar to altering a table, however you are only limited to change the name of the index, for example:&nbsp;</p>
+<p class="mps-program">ALTER INDEX books_profit_idx <br>RENAME TO books_profitcalc_idx;&nbsp;</p>
+<p>To drop an index, again it is similar to dropping a table, i.e.:</p>
+<p class="mps-program">DROP INDEX <em>indexname</em>;</p>
+<p>Once an index is dropped it cannot be restored.</p>
+<p>&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
