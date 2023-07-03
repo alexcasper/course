@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><p style="text-align: center;"><span style="font-size: 18pt; color: #e03e2d; background-color: #f1c40f;"><strong>&lt;&lt; UNPUBLISHED! MOVING TO DDM2 &gt;&gt;</strong></span></p>
+<div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M5 – L8: Concurrency Control Services&nbsp;</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802194/download?verifier=ZObkZbVZgDFz47mh6nmsNoFa1G3gw05QSHE3V9Bi" alt="SQL-Introducing-Advanced-Features.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802194"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title">
+<i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"> </i>Concurrency Control Services</h3>
+<p>&nbsp;</p>
+<p>The concurrency control services <em>enable</em> the <strong><em>management of operations</em></strong> being performed on the database that are taking place at the same time, and which <strong><em>do not interfere</em></strong> with each other. These also prohibits interference should there be two or more users accessing the database at the same time, and in which one user happens to be updating data within the database. It is important to bear in mind that even if there are two transactions that are each correct, the interleaving of operations may end up producing a wrong result.</p>
+<p>The need for <em>concurrency control</em> is therefore <strong><em>very important</em></strong>. When databases are designed, they need to be able to handle multiple users at the same time, and especially those users that are accessing and even updating the same data.</p>
+<p>We can list three examples of potential <strong>problems</strong> caused by concurrency:</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_accordion" style="border-width: 1px; border-style: none; margin-right: 30px; margin-left: 30px; background-color: #ffffff; color: #000000;">
+<h3 id="kl_panel_0" class="kl_border_radius_20 kl_panel_heading kl_panel_0" style="background-color: #e3dfda; color: #000000; border-width: 0px;">Missing Update</h3>
+<div id="kl_panel_0_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_0" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<p>A successfully completed update operation by one user can be <em>overridden</em> by another user.</p>
+</div>
+<h3 id="kl_panel_1" class="kl_border_radius_20 kl_panel_heading kl_panel_1" style="background-color: #e3dfda; color: #000000; border-width: 0px;">Uncommitted Dependency</h3>
+<div id="kl_panel_1_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_1" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<p>This is when one transaction is able to access the intermediate results of another transaction <em>before</em> it gets committed.</p>
+</div>
+<h3 id="kl_panel_2" class="kl_border_radius_20 kl_panel_heading kl_panel_2" style="background-color: #e3dfda; color: #000000; border-width: 0px;">Inconsistent Analysis</h3>
+<div id="kl_panel_2_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_2" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<p>This can occur when one transaction reads in a few values but another transaction makes changes to some of these values whilst the first transaction is still executing.</p>
+<ul>
+<li>This can sometimes be labelled as a “<em>dirty read</em>” or “<em>unrepeatable read</em>”.</li>
+</ul>
+</div>
+</div>
+<p class="kl_border_radius_20" style="margin-left: 40px; margin-right: 40px; background-color: #fbe5b8; padding: 20px; margin-bottom: 30px;"><span style="color: #e03e2d;"> <img id="61358" style="padding-right: 0px; margin-right: 5px;" src="https://nulondon.instructure.com/courses/2778/files/802016/download?verifier=QcwbGvHiIzK8ifzqynQ75tSXbGNYWPJkAqVxHZm5" alt="icon_pdf.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802016" data-api-returntype="File"> <a id="63817" class="instructure_file_link instructure_scribd_file" href="https://nulondon.instructure.com/courses/2778/files/802320?verifier=cabvhc0nf1E4Bxaxu1T7L5UCEyAFD9wM4rs3XOXt&amp;wrap=1" target="_blank" data-canvas-previewable="true" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802320" data-api-returntype="File"> <span style="color: #3598db;">Download the <strong>PDF</strong></span> </a> </span><strong> </strong>to view an example of a ‘missing update’ problem.&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64847" src="https://nulondon.instructure.com/courses/2778/files/802014/preview?verifier=fcfYScyG8yiZP7UyitAUIkdk84U7Gb2vKgUEPhNg" alt="icon_logic.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802014" data-api-returntype="File"> Think About It!</p>
+<p>How could we avoid <strong>T2</strong>’s lost update looking at the figure shown in the PDF file titled Example of a Missing Update Problem?</p>
+<p><a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Answer</h4>
+<p>We can make sure that <strong>T1</strong> does not begin the transaction until <strong>time 5</strong> at the point in which <strong>T2</strong> has updated the balance on the database to £200.</p>
+</div>
+<p class="kl_border_radius_20" style="margin-left: 40px; margin-right: 40px; background-color: #fbe5b8; padding: 20px; margin-bottom: 30px;"><span style="color: #e03e2d;"> <img id="61358" style="padding-right: 0px; margin-right: 5px;" src="https://nulondon.instructure.com/courses/2778/files/802016/download?verifier=QcwbGvHiIzK8ifzqynQ75tSXbGNYWPJkAqVxHZm5" alt="icon_pdf.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802016" data-api-returntype="File"> <a id="63816" class="instructure_file_link instructure_scribd_file" href="https://nulondon.instructure.com/courses/2778/files/802259?verifier=diWpydCWgGNWAwGRSeDAeN7nuaguRy5ro2AGIaYf&amp;wrap=1" target="_blank" data-canvas-previewable="true" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802259" data-api-returntype="File"> <span style="color: #3598db;">Download the <strong>PDF</strong></span> </a> </span><strong> </strong> to view an example of an ‘uncommitted dependency’ problem.</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64847" src="https://nulondon.instructure.com/courses/2778/files/802014/preview?verifier=fcfYScyG8yiZP7UyitAUIkdk84U7Gb2vKgUEPhNg" alt="icon_logic.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802014" data-api-returntype="File"> Think About It!</p>
+<p>From the figure shown in the PDF file titled Example of an Uncommitted Dependency Problem, explain how an ‘uncommitted dependency’ problem can be avoided.</p>
+<p><a id="kl_popup_1_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_1_content">Reveal Answer</a></p>
+<div id="kl_popup_1_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Answer</h4>
+<p>The problem can be avoided by ensuring that <strong>T3</strong> does not read the balance from the database until <strong>T4</strong> has either committed the changes or aborted the transaction. In other words, <strong>T3</strong>’s transactions should begin at <strong>time 7</strong>.</p>
+</div>
+<p class="kl_border_radius_20" style="margin-left: 40px; margin-right: 40px; background-color: #fbe5b8; padding: 20px; margin-bottom: 30px;"><span style="color: #e03e2d;"> <img id="61358" style="padding-right: 0px; margin-right: 5px;" src="https://nulondon.instructure.com/courses/2778/files/802016/download?verifier=QcwbGvHiIzK8ifzqynQ75tSXbGNYWPJkAqVxHZm5" alt="icon_pdf.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802016" data-api-returntype="File"> <a id="63808" class="instructure_file_link instructure_scribd_file" href="https://nulondon.instructure.com/courses/2778/files/802212?verifier=J0UAfqN3VRdavyD0qwFc4U2hCVlMjgJyWXhdajwy&amp;wrap=1" target="_blank" data-canvas-previewable="true" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802212" data-api-returntype="File"> <span style="color: #3598db;">Download the <strong>PDF</strong></span> </a> </span><strong> </strong> to view an example of an ‘inconsistent analysis’ problem.</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64847" src="https://nulondon.instructure.com/courses/2778/files/802014/preview?verifier=fcfYScyG8yiZP7UyitAUIkdk84U7Gb2vKgUEPhNg" alt="icon_logic.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802014" data-api-returntype="File"> Think About It!</p>
+<p>Look at the figure shown in the PDF file titled Example of an Inconsistent Analysis Problem and explain how an ‘inconsistent analysis’ problem can be avoided.</p>
+<p><a id="kl_popup_2_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_2_content">Reveal Answer</a></p>
+<div id="kl_popup_2_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Answer</h4>
+<p>We can avoid this problem by prohibiting <strong>T6</strong> from reading the balances of <strong><em>x</em></strong> and <strong><em>z</em></strong> from the database until after <strong>T5</strong> has committed the changes. <strong>T6</strong> should read balance <strong><em>x</em></strong> at <strong>time 9</strong>.</p>
+</div>
+<p>An additional problem that can occur is when a transaction (<strong>T7</strong>) happens to reread a data item it had previously read, but in the time between, another transaction (<strong>T8</strong>) had altered the item. This results in the transaction (<strong>T7</strong>) attaining <em>two different values for the same item</em>. This situation is sometimes referred to as a “<strong><em>non-repeatable (or fuzzy) read</em></strong>”. Similarly, transaction <strong>T9</strong> executes a query that results in collecting a number of items that satisfy a condition, but then later on it executes the same query only to receive additional items which are referred to as “phantom”, and the process is therefore labelled as a “<strong><em>phantom read</em></strong>”.</p>
+<p>&nbsp;</p>
+<p>Some approaches to overcome the problems described above are summarized below:</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_accordion" style="border-width: 1px; border-style: none; margin-right: 30px; margin-left: 30px; background-color: #ffffff; color: #000000;">
+<h3 id="kl_panel_3" class="kl_border_radius_20 kl_panel_heading kl_panel_3" style="background-color: #e3dfda; color: #000000; border-width: 0px;">Serialisation</h3>
+<div id="kl_panel_3_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_3" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<p>Transactions that involve updating values in a table can be made to run one after the other.</p>
+</div>
+<h3 id="kl_panel_4" class="kl_border_radius_20 kl_panel_heading kl_panel_4" style="background-color: #e3dfda; color: #000000; border-width: 0px;">Locking</h3>
+<div id="kl_panel_4_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_4" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<p>A transaction can “lock” a table in a database whilst it is processing it, which therefore prevents another transaction from altering the table.</p>
+<ul>
+<li>When the original transaction is completed, the table is “unlocked” for other transactions to access (and if necessary, to update further) the table.</li>
+</ul>
+</div>
+<h3 id="kl_panel_5" class="kl_border_radius_20 kl_panel_heading kl_panel_5" style="background-color: #e3dfda; color: #000000; border-width: 0px;">Timestamp</h3>
+<div id="kl_panel_5_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_5" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<ul>
+<li>This is a unique identifier that a DBMS creates for a transaction which indicates the start time for that transaction.</li>
+<li>Other transactions that follow will not run until the original transaction (at the lower timestamp) has completed its set of actions.</li>
+</ul>
+</div>
+<h3 id="kl_panel_6" class="kl_border_radius_20 kl_panel_heading kl_panel_6" style="background-color: #e3dfda; color: #000000; border-width: 0px;">Optimistic Techniques</h3>
+<div id="kl_panel_6_content" class="kl_border_radius_20 kl_solid_border kl_panel_content kl_panel_6" style="border-style: solid; border-width: 0px; background-color: #f5eede; color: #000000; padding-left: 15px;">
+<ul>
+<li>This <strong><em>assumes</em></strong> that <em>conflicts are rare</em> and so transactions should be made to proceed without further delay.</li>
+<li>When the time comes to commit, a check can be made to deduce whether any conflicts have occurred; if so then the transaction is “rolled back” and restarted.</li>
+<li>Three phases involved: <em>Read</em>, <em>Validate</em> and <em>Write</em>.</li>
+</ul>
+</div>
+</div>
+<p>Concurrency control is therefore very important in database management.</p>
+<p>&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
