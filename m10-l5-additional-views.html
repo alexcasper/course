@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M10 – L5: Additional Views</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802202/download?verifier=osl3iE7ceBPArdVNB7Bp6R0FOEuOyFeZyO82uz7i" alt="SQL-Database-Objects-and-Functions.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802202"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Inline and Materialised Views</h3>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64860" src="https://nulondon.instructure.com/courses/2778/files/802196/preview?verifier=GLqFGXNlsczPlr7My5BXGO3qkTA3atWMmlRlaQsk" alt="icon_view.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802196" data-api-returntype="File"> Inline View</p>
+<p>An inline view is a <em>temporary table</em> which is created from a <strong>subquery</strong> that sits <em>inside</em> the <strong>FROM</strong> clause of the original <strong>SELECT</strong> statement (within the parentheses).</p>
+<p>It can only be referenced while the statement is being processed; once complete, the inline view no longer exists.</p>
+<p>Within the two tabs below are screenshots showing an example of an inline view respectively generated in <strong>SQLite3</strong> and <strong>Oracle Live SQL</strong> (please click on both tabs).</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">SQLite3</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802365/preview?verifier=v4icanJAH0RHNSFnvybRx1b3ZSF2BcncoH5fkz2z" alt="M4_L5_VIEW_Inline_SQLite3.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802365" data-api-returntype="File"></p>
+<p>The output table shows the book titles and profits for the records residing in rows 1 to 5</p>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">Oracle Live SQL</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802535/preview?verifier=HfRrjKFixMYbffP1FplZjLqJfirwpsPOrg5dlR0g" alt="M4_L5_VIEW_Inline_OLS.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802535" data-api-returntype="File"></p>
+<p>&nbsp;</p>
+<p>In place of <strong>LIMIT 5</strong>, we use <strong>WHERE ROWNUM &lt;= 5</strong>.</p>
+</div>
+</div>
+<p>&nbsp;&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64860" src="https://nulondon.instructure.com/courses/2778/files/802196/preview?verifier=GLqFGXNlsczPlr7My5BXGO3qkTA3atWMmlRlaQsk" alt="icon_view.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802196" data-api-returntype="File"> Materialised Views</p>
+<p>A materialised view <em>permits the storage of retrieved data</em> performed by the view query and then to <em>reuse</em> that data without requiring the view query to be rerun.</p>
+<p>In other words, the data can be <em>replicated</em>.</p>
+<p>The views can thus be seen as “snapshots” of the data at a particular time.&nbsp;&nbsp;</p>
+<p>Furthermore, if registered users are accessing the database remotely, and from a great distance, the materialised view can be created on the user’s local server and so will be able to make more efficient queries, instead of having to transfer data across the vast network, and therefore suffer delays in obtaining results.&nbsp;</p>
+<p>It is important that the materialised view is updated.&nbsp;</p>
+<p>If we remain with the <span style="text-decoration: underline;"><strong>Just Lee Bookstore</strong></span> database, updating is important because once customers have paid the amount they owe for the purchases of the books, their customer numbers can be omitted from the view.&nbsp;</p>
+<p>Unfortunately, it appears that the SQL statement employed to create the materialised view does not appear to work in <strong>SQLite3</strong> nor <strong>Oracle Live SQL</strong>!&nbsp;</p>
+<p><span style="color: #236fa1;"> <span style="color: #34495e;"><em>You may be rightly asking why we are being told about these statements if they will not work in <strong>SQLite3</strong> and <strong>Oracle Live SQL</strong>. </em></span> </span></p>
+<p><span style="color: #236fa1;"> <span style="color: #34495e;"><em>In both cases, <strong>SQLite3</strong> and <strong>Oracle Live SQL</strong> are ‘free to use’. </em></span> </span></p>
+<p><span style="color: #236fa1;"> <span style="color: #34495e;"><em><strong>SQLite3</strong>, as the name suggests, is a “light version” of a full-on database application, and so has limited functionality as you so far have seen. </em></span> </span></p>
+<p><span style="color: #236fa1;"> <span style="color: #34495e;"><em>Though <strong>Oracle Live SQL</strong> appears to be “more powerful” than <strong>SQLite3</strong>, it is also limited in functionality seeing as it is also ‘free to use’. </em></span> </span></p>
+<p><span style="color: #236fa1;"> <span style="color: #34495e;"><em>Overall, it is still very important to be aware of certain functionalities available to a database administrator and a data scientist!</em></span><strong>&nbsp;</strong> </span></p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64860" src="https://nulondon.instructure.com/courses/2778/files/802196/preview?verifier=GLqFGXNlsczPlr7My5BXGO3qkTA3atWMmlRlaQsk" alt="icon_view.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802196" data-api-returntype="File"> Dropping Views</p>
+<p>Dropping views is similar to dropping tables, sequences and indexes. For simple and complex views, you simply type:&nbsp;</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>DROP VIEW <em>viewname</em>;</strong>&nbsp;</span></p>
+<p>If you are going to drop a materialized view, then you simply type:&nbsp;</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>DROP MATERIALIZED VIEW <em>viewname</em>;&nbsp;</strong></span></p>
+<p>When dropping a view, the data in the underlying tables are untouched. In other words, any changes made to records within the underlying tables but via the views will remain when that view is dropped.</p>
+<p>&nbsp;</p>
+<h3 class="kl_border_radius_50 mps-page-title">Advantages and Disadvantages of Views</h3>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64862" src="https://nulondon.instructure.com/courses/2778/files/802221/preview?verifier=0KTqWGfbK0AMQG1G8g9cCt5kuSY2fz0jfUF38e58" alt="icons_right.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802221" data-api-returntype="File"> Advantages</p>
+<p>Key <strong>advantages</strong> of views are (please be sure to click on all of the tabs):</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">Data Independence</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p>The view can appear to be unchanging even when there are changes made to the underlying source tables.</p>
+<ul>
+<li>For example, a source table could have a column added or deleted. As long as the column is not required by the view, the view does not need to be updated.</li>
+</ul>
+</div>
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">Currency</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<p>Changes that are made to the base tables will be updated in the view.</p>
+</div>
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">Improved Security</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<p>Users can be granted access to specific areas of the database via views, and so the sensitive data can be hidden from them.</p>
+</div>
+<h3 id="kl_panel_5" class="kl_panel_heading kl_panel_5">Reduced Complexity</h3>
+<div id="kl_panel_5_content" class="kl_panel_content kl_panel_5">
+<p>The view can simplify queries especially if it was constructed from the joining of multiple tables.</p>
+</div>
+<h3 id="kl_panel_6" class="kl_panel_heading kl_panel_6">Convenience</h3>
+<div id="kl_panel_6_content" class="kl_panel_content kl_panel_6">
+<p>The user only needs to see the part of the database to complete their assigned tasks.</p>
+</div>
+<h3 id="kl_panel_7" class="kl_panel_heading kl_panel_7">Customisation</h3>
+<div id="kl_panel_7_content" class="kl_panel_content kl_panel_7">
+<p>Views can be displayed to one user in a particular way which may differ for another user, but in which both users are accessing the same tables within a database.</p>
+</div>
+<h3 id="kl_panel_8" class="kl_panel_heading kl_panel_8">Data Integrity</h3>
+<div id="kl_panel_8_content" class="kl_panel_content kl_panel_8">
+<p>When a view is created, there is the additional option of including a clause such as <strong>WITH CHECK OPTION</strong>.</p>
+<p>This ensures that if an attempt is made to insert a new record, and it fails to satisfy the <strong>WHERE</strong> clause of the query that created the view, then the underlying base (or source) table(s) will not be updated.</p>
+</div>
+</div>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64861" src="https://nulondon.instructure.com/courses/2778/files/802115/preview?verifier=9tVfS2TlhA8NrAI5Jsbjutb4WDUSpdX8tfTK1FDE" alt="icons_cross.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802115" data-api-returntype="File"> Disadvantages</p>
+<p>Key <strong>disadvantages </strong>of views are (please be sure to click on all of the tabs):</p>
+<div id="kl_custom_block_3" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_9" class="kl_panel_heading kl_panel_9">Update Restrictions</h3>
+<div id="kl_panel_9_content" class="kl_panel_content kl_panel_9">
+<p>In certain situations, updates cannot be performed especially if <strong>GROUP BY</strong> and <strong>DISTINCT</strong> have been used to create the view.</p>
+</div>
+<h3 id="kl_panel_10" class="kl_panel_heading kl_panel_10">Structure Restrictions</h3>
+<div id="kl_panel_10_content" class="kl_panel_content kl_panel_10">
+<p>A view’s structure is defined during its creation. If <strong>SELECT * FROM</strong>… was employed during the creation, the columns in the view would be whatever columns were present in the base table.</p>
+<p>If columns are added to the base table, the new columns will not appear in the view.</p>
+<ul>
+<li><span>In order to see the new columns in the view, the view would have to be dropped and recreated.</span></li>
+</ul>
+</div>
+<h3 id="kl_panel_11" class="kl_panel_heading kl_panel_11">Performance</h3>
+<div id="kl_panel_11_content" class="kl_panel_content kl_panel_11">
+<p>If a view is constructed from large multiple tables, then when that view is accessed, the tables need to be ‘rejoined’ together which could lead to the consumption of computer resources, and therefore reducing efficiency.</p>
+<p>This implies there is always a “performance penalty” when a view is being used.</p>
+<ul>
+<li>The exception is the <strong>materialised view</strong>.</li>
+</ul>
+</div>
+</div>
+<p><strong>&nbsp;</strong></p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
