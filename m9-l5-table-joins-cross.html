@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M9 – L5: Tables Joins: Cross&nbsp;&nbsp;</h2>
+</div>
+<div id="kl_banner_image"><img class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802109/download?verifier=trcDOjpDqOarrm9HNfNfdbERrwxH0FbFBGkgEeoY" alt="SQL–Table Operations.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802109" data-api-returntype="File"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Cross Joins</h3>
+<p>&nbsp;</p>
+<p>Earlier in the module, you saw how using subqueries can help fine tune a query in order to hone in on a particular piece of information. However, this may still not be sufficient to achieve the overall goal.</p>
+<p>It is usually therefore necessary to join tables together in order to retrieve the information, and thus gain additional insights.</p>
+<p>Performing <strong>joins</strong> are therefore the most important and powerful database operation which permits data stored on different tables to be brought together.</p>
+<p>When we look at a single table, we are only getting a limited piece of information. This will be insufficient in answering business-related questions that require adequate answers and significant insights.</p>
+<p>This is also in conjunction with some tables containing potentially hundreds, thousands and even millions of rows – the effort required to manually match up the information in order to retrieve the insights required would be substantial.</p>
+<p>To overcome these issues, SQL can be employed to temporarily <em><strong>join two or more tables into one (large) table</strong></em>, which thus contains all of the required information in one location and permit targeted information retrieval.</p>
+<p>How these tables are joined together will depend on the actual relationship between the tables, and the information that is to be retrieved.&nbsp;</p>
+<p>There are therefore a number of different approaches to joining tables together:</p>
+<ul>
+<li>Cross Join</li>
+<li>Inner Join</li>
+<li>Left Outer Join</li>
+<li>Right Outer Join</li>
+<li>Full Outer Join</li>
+</ul>
+<p>These approaches will be explained in the following lessons. In this lesson, we will look at Cross Joins.</p>
+<p>The outcome of a <strong>CROSS JOIN</strong> is simply to <strong>match <em>each row</em> from the first table to <em><span style="text-decoration: underline;">all</span> of the rows</em> in the second table</strong>.</p>
+<p>The figure below illustrates the <strong>CROSS JOIN</strong> approach.</p>
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802351/preview?verifier=LtyB8wv6JbIUNRGm5vjf7vmYvmJm3YtZPJy3tLio" alt="M3_L5_CROSS-JOIN.png" width="803" height="479" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802351" data-api-returntype="File"></p>
+<p>The <strong>CROSS JOIN</strong> approach will result in very large tables being generated. Therefore they should be used with extreme caution. It is possible to calculate the size of the product table from a <strong>CROSS JOIN</strong> as:</p>
+<ul>
+<li>The number of <em>rows</em> will be the <em>product</em> of the number of rows of the two tables.</li>
+<li>The number of columns will be the sum of the number of columns in both tables.</li>
+</ul>
+<p>If <strong>Table 1</strong> contained a list of colours (Red, Blue and Yellow) whilst <strong>Table 2</strong> contained a list of sizes (Large, Medium and Small), what would be the outcome of the <strong>CROSS JOIN</strong>?</p>
+<p>We can demonstrate the process using <strong>SQLite3</strong> (click on the three numbered tabs).</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">1. Creating first table of colours</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802385/preview?verifier=k9US6RcxCfLxhjvTU3tbLSptwtyYuE1X67tHABDx" alt="M3_L5_CROSS-JOIN-Table1.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802385" data-api-returntype="File"></p>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">2. Creating second table of sizes</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802251/preview?verifier=PbQJ5I4MYPys84nkc8dxRgXUiNnPgpwZSRFvgk7N" alt="M3_L5_CROSS-JOIN-Table2.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802251" data-api-returntype="File"></p>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">3. Performing the CROSS JOIN</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p><img class="instructure_file_link inline_disabled" src="https://nulondon.instructure.com/courses/2778/files/802419/download?verifier=ItMA38Mx45KWANQmDGRAtzYDMozzG5OmsF0Adlzy" alt="M3_L5_CROSS-JOIN-Table3.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802419" data-api-returntype="File"></p>
+<p>The output therefore has <strong>9</strong> rows since <strong>9</strong> is the product of the number of rows of each of the tables (i.e. 3 × 3). We also have <strong>2</strong> columns since <strong>2</strong> is the sum of the number of columns of each table.&nbsp;</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="64847" src="https://nulondon.instructure.com/courses/2778/files/802014/download?verifier=fcfYScyG8yiZP7UyitAUIkdk84U7Gb2vKgUEPhNg" alt="icon_logic.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802014" data-api-returntype="File"> Think About It</p>
+<p>If the first table contains 30 rows and the second table contains 50 rows, then what will be the final number of rows when the two tables are joined?</p>
+<p>Once you are done, click Reveal Answer to view the answer.</p>
+<p><a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>The number of rows will be the product of 30 and 50, i.e. 30 × 50 = 1500.</p>
+</div>
+<p>&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
