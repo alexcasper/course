@@ -1,0 +1,374 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div" style="background-color: #4cb1c5; color: #ffffff; margin: 2px !important 0px !important 10px 0px !important;">
+<h2 style="color: #ffffff; border-top-width: 2px; border-color: #516b7c;">M7 - L7: Relational Data Model</h2>
+</div>
+<div id="kl_banner_image" class="kl_border_radius_20"><img id="57362" src="https://nulondon.instructure.com/courses/2778/files/802023/download?verifier=v3hm2TBRYiYHEeuQi3vrzcCcNIPRiXqJEyE5Vxit" alt="Theory-of-Relational-Databases.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802023"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<div id="kl_custom_block_1" class="kl_border_radius_20" style="background-color: #ffffff; color: #000000;">
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Relational Data Model</h3>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="70155" src="https://nulondon.instructure.com/courses/2778/files/802037/preview?verifier=AzsD2Dyafa4Q21okICVXwPGKijHHOfginU1dP8ru" alt="icon_learning_Objective.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802037" data-api-returntype="File">Indexes</p>
+<p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;https://nowlearning.servicenow.com/lxp?id=learning_course_prev&amp;course_id=3b9eacee1b1408105c28997fbd4bcb9a\nhttps://nowlearning.servicenow.com/lxp?id=learning_course&amp;course_id=d3b525f11b9c8d5475950dc0604bcbee&amp;group_id=763d16601b1e8950000d6adb234bcb02&amp;child_id=77cd56e41b1e8950000d6adb234bcbce&amp;spa=1\nhttps://nowlearning.servicenow.com/lxp?id=learning_course&amp;course_id=d3b525f11b9c8d5475950dc0604bcbee&amp;group_id=763d16601b1e8950000d6adb234bcb02&amp;child_id=0401b0701b968d50000d6adb234bcb12&amp;spa=1\nhttps://nowlearning.servicenow.com/lxp?id=learning_course&amp;course_id=d3b525f11b9c8d5475950dc0604bcbee&amp;group_id=763d16601b1e8950000d6adb234bcb02&amp;child_id=50a534341bd68d50000d6adb234bcbec&amp;spa=1&quot;}" data-sheets-userformat="{&quot;2&quot;:14370,&quot;4&quot;:{&quot;1&quot;:2,&quot;2&quot;:16777215},&quot;8&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;14&quot;:{&quot;1&quot;:2,&quot;2&quot;:0},&quot;15&quot;:&quot;Inconsolata, monospace, arial, sans, sans-serif&quot;,&quot;16&quot;:11}" data-sheets-formula="=IFERROR(TEXTJOIN(&quot;
+&quot;,true,FILTER(Session!R2C[0]:C[0],Session!R2C[-4]:C[-4]=LEFT(R1C[-1],1)&amp;R[0]C[-4])),&quot;&quot;)">Complete the <a class="inline_disabled" href="https://nowlearning.servicenow.com/lxp?id=learning_course&amp;course_id=92008c9147629558dbaf1162846d4396&amp;group_id=170a4c9987a21ddcbfe94088dabb350c&amp;child_id=62dc4ab2976e19d88934b67e6253af95&amp;spa=1" target="_blank">Index</a> section from the ServiceNow Administration Advanced course.</span></p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="70155" src="https://nulondon.instructure.com/courses/2778/files/802037/preview?verifier=AzsD2Dyafa4Q21okICVXwPGKijHHOfginU1dP8ru" alt="icon_learning_Objective.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802037" data-api-returntype="File">The Relational Model</p>
+<p style="margin-left: 40px; margin-right: 40px;">Most of the modern commercial systems tend to be based on the relational data model approach.</p>
+<p style="margin-left: 40px; margin-right: 40px;">The relational database management system (RDBMS) is now the most popular and thus dominant data processing software employed today.</p>
+<p style="margin-left: 40px; margin-right: 40px;">The model had been first proposed when Codd presented in a paper “<em>A relational model of data for large shared databanks</em>” back in 1970. This paper has now become generally accepted as the landmark in database systems.</p>
+<p style="margin-left: 40px; margin-right: 40px;">The <strong>objectives</strong> of the <strong>relational data model</strong> were specified as:</p>
+<ul>
+<li><strong>To permit a high degree of data independence:</strong></li>
+<li><strong>To provide substantial grounds for dealing with data semantics, consistency and redundancy problems</strong></li>
+<li><strong>To enable the growth of set-oriented data manipulation languages.</strong></li>
+</ul>
+<p>Go to the link to view the Codd paper.&nbsp; &nbsp; &nbsp;&nbsp;</p>
+<ul>
+<li>E. F. Codd, <a class="instructure_file_link instructure_scribd_file" title="codd_rmdb_1970.pdf" href="https://nulondon.instructure.com/courses/2778/files/802832/preview?verifier=sAtskqw6LljzCZNRai5HyJxMeXQ9u1FZz1AcmSlE" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802832" data-api-returntype="File">A Relational Model of Data for Large Shared Data Banks</a>. (June, 1970). IBM Research Laboratory.</li>
+</ul>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="67350" src="https://nulondon.instructure.com/courses/2778/files/802022/preview?verifier=cC6ICjWre1EHCvCBkzm2cb2xEGnrwqrEcfa3N2dx" alt="icon_task_list.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802022" data-api-returntype="File"> Common Terminology</p>
+<p><span>The relational data model is based on the mathematical concept of a <em><strong>relation</strong></em>; this is physically represented as a <em><strong>table</strong></em>. </span></p>
+<p><span>As Codd was a trained mathematician, the terminology was taken from mathematics, notably in the areas of <em>set theory</em> and <em>predicate logic</em>.</span></p>
+<p>You will now be presented with the common terminology along with the structural concepts of the <strong>relational data model. </strong>Please be sure to click on all of the tabs:</p>
+<div class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">Relation</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<ul>
+<li>A table with columns and rows.</li>
+<li>This will be applicable to the logical structure of the database in terms of the external and conceptual levels of the ANSI-SPARC architecture.</li>
+<li>This will not be applicable to the physical structure (internal level) of the database.
+<ul>
+<li>An additional alternative name is “file”.</li>
+<li>In the figure below, Branch and Staff are relations (i.e. tables)</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">Attribute</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<ul>
+<li>This is a named column within a relation, i.e. inside a table.
+<ul>
+<li>If a table possesses 8 attributes, it simply means there are 8 columns.</li>
+</ul>
+</li>
+<li>An alternative name is “field”.</li>
+<li>In the figure below, "branchNo", “street” and “postcode” are attributes in the Branch relation (table) whilst “fName” and “position” are attributes (columns) in the Staff relation.</li>
+</ul>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">Domain</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<ul>
+<li>This is the set of permissible values for one or more attributes.</li>
+<li>It is a very important concept because it permits the user to define in a central location the meaning and source of values that attributes can hold. Examples in reference to the below figure:
+<ul>
+<li>The branchNo attribute can be a character-type with a size of 4 characters and a fixed range from B000 to B999.</li>
+<li>The city attribute can be a character with a set maximum length (i.e. number of characters) of 20.</li>
+<li>The postcode attribute can be a character with a set maximum length of 9.</li>
+<li>The salary attribute can be a numeric value with a currency format (e.g. £xx,xxx.xx) and a defined range (e.g. £40,000.00 to £70,000.00).</li>
+<li>The DOB attribute can be a date type with a range from 01-Jan-1920. The format can also be defined (e.g. dd-mm-yyyy).</li>
+</ul>
+</li>
+<li>It is important that when data is inserted into the database, it conforms to the specified domains of the respective attributes. This an important "<em>integrity constraint</em>".
+<ul>
+<li>For example, you cannot insert a person’s first name into the salary attribute because the attribute is expecting numbers and not letters.</li>
+</ul>
+</li>
+<li>There may be a request to multiply two attributes together:
+<ul>
+<li>This will only be successful if the two attributes are of the same domain, in this case a numeric type (integers or double).</li>
+<li>If one attribute contains numbers in numeric type and another contains numbers in character type, the latter will need to be converted to numeric type before the multiplication takes place. This is permissible during a query.</li>
+</ul>
+</li>
+<li>An alternative name is "data type" (or "datatype").</li>
+</ul>
+</div>
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">Tuple</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<ul>
+<li>This is a row of a relation (i.e. a row in a table).</li>
+<li>In reference to the figure below:
+<ul>
+<li>Each tuple (row) in the Branch relation contains four values, one for each attribute.</li>
+<li>Each tuple in the Staff relation contains eight values.</li>
+</ul>
+</li>
+<li>The rows can appear in any order in the relation (table), and does not affect the meaning or representation of the data in that relation.</li>
+<li>An alternative name is “Record”.</li>
+<li>In the below figure, there are five tuples (rows) in the Branch relation (table) and six tuples in the Staff relation.</li>
+</ul>
+</div>
+<h3 id="kl_panel_4" class="kl_panel_heading kl_panel_4">Degree</h3>
+<div id="kl_panel_4_content" class="kl_panel_content kl_panel_4">
+<ul>
+<li>This is simply the number of attributes (columns or fields) in a relation.
+<ul>
+<li>If a relation contains six attributes (columns) then it is known as a six-tuple, and be classed as a “degree six”.</li>
+<li>If a relation contains only one attribute it would be classed as a “degree one” and be called a unary relation (or one-tuple).</li>
+<li>If a relation contains only two attributes <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>">&nbsp; a binary relation.</li>
+<li>If a relation contains only three attributes <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>">&nbsp; a ternary relation.</li>
+<li>If a relation contains more than three attributes <img class="equation_image" title="\longrightarrow" src="https://nulondon.instructure.com/equation_images/%255Clongrightarrow" alt="LaTeX: \longrightarrow" data-equation-content="\longrightarrow" x-canvaslms-safe-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;>
+  <mo stretchy=&quot;false&quot;>&amp;#x27F6;<!-- ⟶ --></mo>
+</math>">&nbsp; <em>n</em>-ary relation.</li>
+</ul>
+</li>
+<li>A degree of a relation is also a property of the <em>intension</em> of the relation.
+<ul>
+<li>The <em>intension</em> is derived from the structure of the relation along with the specified domains. This remains constant as long as the relation does not change.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_5" class="kl_panel_heading kl_panel_5">Cardinality</h3>
+<div id="kl_panel_5_content" class="kl_panel_content kl_panel_5">
+<ul>
+<li>This is the number of tuples (rows) in a relation (table).</li>
+<li>This tends to change as data values are inserted or removed from a relation.</li>
+<li>This is the property of the extension of the relation, and can be ascertained from the instance of the relation at a given moment.
+<ul>
+<li>In the below figure, &nbsp;the Branch relation has a cardinality of five.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<p style="margin-left: 40px; margin-right: 40px;">&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="67350" src="https://nulondon.instructure.com/courses/2778/files/802022/preview?verifier=cC6ICjWre1EHCvCBkzm2cb2xEGnrwqrEcfa3N2dx" alt="icon_task_list.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802022" data-api-returntype="File"> Keys and Schemas</p>
+<p>The relational database is therefore a collection of relations (tables) with distinctive names (e.g. Branch as in the figure below). Be sure to click on all of the tabs below to learn about three very important terms when relating the tables within a database:</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_6" class="kl_panel_heading kl_panel_6">Primary Key (PK)</h3>
+<div id="kl_panel_6_content" class="kl_panel_content kl_panel_6">
+<ul>
+<li>This is a <strong>unique identifier</strong>. It consists of one or more columns that uniquely identify each tuple in a relation.
+<ul>
+<li>An example of a unique identifier is the National Insurance (NI) number of a person.</li>
+</ul>
+</li>
+<li>PKs play an important role in the design and use of a database.
+<ul>
+<li>They can be seen as “look up values” for the rows of a table.</li>
+</ul>
+</li>
+<li>When a new relation (table) is being created, it is mandatory to designate a Primary Key, and to ensure there is a value in each row (e.g. the NI number).
+<ul>
+<li>A typical constraint here is that NULL values are not allowed.</li>
+</ul>
+</li>
+<li>As PKs are unique identifiers for a given record (row), they cannot be changed.</li>
+<li>PKs are central to managing the relationships between tables.</li>
+<li>In the figure below, the branchNo attribute in the Branch relation is a Primary Key.</li>
+</ul>
+</div>
+<h3 id="kl_panel_7" class="kl_panel_heading kl_panel_7">Foreign Key (FK)</h3>
+<div id="kl_panel_7_content" class="kl_panel_content kl_panel_7">
+<ul>
+<li>This is a reference to a specific row containing the primary key (e.g. the branchNo attribute in the Staff relation in the figure below).
+<ul>
+<li>It can act as a cross-reference between two or more relations.</li>
+</ul>
+</li>
+<li>The FK is in essence a “recording” of a PK, and is employed as a pointer to a different (or “foreign”) row typically in another table.
+<ul>
+<li>It is an attribute in one relation and a Primary Key in another relation.</li>
+</ul>
+</li>
+<li>FKs are not required to be unique inside a table. This is due to the fact that there could be multiple rows in one table containing the same value but which refers (or points) to the same unique value in another table.
+<ul>
+<li>In the figure below, you can see that the Staff relation contains three rows with the same branchNo attribute: B003.</li>
+<li>This is known as a “one-to-many” relationship.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_8" class="kl_panel_heading kl_panel_8">Candidate Key</h3>
+<div id="kl_panel_8_content" class="kl_panel_content kl_panel_8">
+<ul>
+<li>This is actually a Super Key that contains no repeated attributes.</li>
+<li>The Primary Key is usually selected from this.</li>
+<li>It is possible for a relation to possess more than one candidate key, but only ever one primary key.</li>
+<li>An example is when a table contains three of the following attributes: ‘<em>NI Number</em>’, ‘<em>Employee ID Number</em>’, and ‘<em>Employee Surname</em>’:
+<ul>
+<li>The first two attributes are candidate keys because one person can only have one NI number, and the “<em>Employee ID Number</em>’ is unique to one person.</li>
+<li>There can however be more than one “Smith” in ‘<em>Employee Surname</em>’</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_9" class="kl_panel_heading kl_panel_9">Composite Key</h3>
+<div id="kl_panel_9_content" class="kl_panel_content kl_panel_9">
+<p>This assists in uniquely identifying the record (row) in a relation by combining two or more attributes (columns) so as to ‘hone in’ on the unique record. neither attribute is required to be a foreign key.</p>
+<ul>
+<li>If one of the attributes was a foreign key, we would attain a 'compound key'.&nbsp;</li>
+</ul>
+</div>
+<h3 id="kl_panel_10" class="kl_panel_heading kl_panel_10">Surrogate Key</h3>
+<div id="kl_panel_10_content" class="kl_panel_content kl_panel_10">
+<ul>
+<li>This can be generated in the absence of any Primary Keys.</li>
+<li>It does not alter the meaning of the relation.</li>
+<li>It usually takes the form of an integer.</li>
+<li>It can be generated just before a record is inserted into a relation.</li>
+<li>Example:
+<ul>
+<li>If a relation consists of employee names, and dates of vacation for the financial year, but no ‘Employee ID Number’ or ‘NI Number’, then a surrogate key can be employed to uniquely identify the employee (e.g. V001, V002, etc.).</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="kl_panel_11" class="kl_panel_heading kl_panel_11">Relation schema</h3>
+<div id="kl_panel_11_content" class="kl_panel_content kl_panel_11">
+<ul>
+<li>This is where the named relation is defined by a set of attribute and domain name pairs.</li>
+<li>This can be considered to be a set of mappings from the attribute names to their corresponding domains.
+<ul>
+<li>This means that each element in the tuple (row) – where an element is analogous to a Microsoft Excel worksheet cell (e.g. C5, F32 or AB27) will consist of an attribute and contain a value for that attribute.</li>
+</ul>
+</li>
+<li>One of the tuples in the Branch relation can be expressed as follows: {(branchNo: B005, street: 22 Deer Rd, city: London, postCode: SW1 4EH)}.
+<ul>
+<li>This is further referenced as a relation instance because this is the situation at this moment in time. In a months’ time, the branch office could have relocated.</li>
+</ul>
+</li>
+<li>When we have a set of relational schemas that each contain a distinctive name, e.g. Branch, then we have a <strong>relational database schema</strong>.</li>
+</ul>
+</div>
+</div>
+<p>&nbsp;Let us now see how these all come together in the figure below.</p>
+<p><img id="61436" class="kl_image_max_fill kl_image_full_width" src="https://nulondon.instructure.com/courses/2778/files/802018/download?verifier=rXBsAeRWNZi4JwMTTlzpLf34M3O5mW43ebIdhDUp" alt="3-1_Staff-Relations-Ttable.jpg" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802018" data-api-returntype="File"></p>
+<p style="text-align: center;"><span><em>The instances of Branch and Staff Relations (tables) inside a database called DreamHome along with the terminology presented. We can see that the branchNo attribute is a Primary Key inside the Branch table and a Foreign Key inside the Staff table. We can also see for example that John White and Julie Lee both work at one of the London branches (B005).</em></span></p>
+<p>&nbsp;</p>
+<p>Click on the tabs below to view the respective responses.</p>
+<div id="kl_custom_block_4" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_12" class="kl_panel_heading kl_panel_12"><em><strong>So you may ask what is the actual relationship here shown in in the figure above?</strong></em></h3>
+<div id="kl_panel_12_content" class="kl_panel_content kl_panel_12">
+<p>Well we can say that there is a relationship between the <strong>Branch</strong> and <strong>Staff</strong> tables, notably that the branch office must have staff working in it from the manager down to the assistant.</p>
+<p>Although there would appear not to be a physical link between these two tables, we can see that the two tables have the same column (“<em>branchNo</em>”) and can deduce that a relationship exists.</p>
+</div>
+<h3 id="kl_panel_13" class="kl_panel_heading kl_panel_13"><em><strong>You may next be inclined to ask: Why not just have one big table?</strong></em></h3>
+<div id="kl_panel_13_content" class="kl_panel_content kl_panel_13">
+<p>This would be impractical because there would be duplication of information (introducing redundancy in to the database) which would lead to a waste of storage space.</p>
+<p>In addition to this, it would make the database difficult to manage because if an item of information needed to be updated, then all the corresponding duplicate information would also need to be updated, for example the mobile phone number of a customer.</p>
+<p>It is therefore more conducive to use separate tables which hold information based around a particular theme, as shown in the figure above for <strong>Staff </strong>and <strong>Branch</strong>.</p>
+</div>
+<h3 id="kl_panel_14" class="kl_panel_heading kl_panel_14"><strong>What observations in relation to the relational data model can we make?</strong></h3>
+<div id="kl_panel_14_content" class="kl_panel_content kl_panel_14">
+<ul>
+<li>The <strong>name of one relation</strong> (table) is <strong>distinctive</strong> from all the other names in the relation schema.</li>
+<li>Each element (cell) of a relation contains exactly <strong>one atomic (i.e. single) value</strong>.
+<ul>
+<li>There should not be two entries in one cell.
+<ul>
+<li>One branch address cannot have two postcodes.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Each <strong>attribute</strong> inside a relation has a <strong>distinct name</strong>.</li>
+<li>The <strong>values</strong> of an attribute are all from the <strong>same domain</strong>.</li>
+<li>Each tuple is distinct, i.e. there are <strong>no duplicate tuples</strong>.</li>
+<li>There is no significance in how the attributes are ordered.</li>
+<li>There is no significance in how the tuples are ordered.</li>
+<li>It must be noted that the order could affect how efficiently the tuples are accessed, especially if there are thousands of them.</li>
+</ul>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>And finally, in relation to the figure above, an alternative way to express the <strong>relational (database) schema</strong> is to list the name of the relation followed by the attributes, for example:</p>
+<ul>
+<li><strong>Branch</strong> (<em><u>branchNo</u></em>, <em>street</em>, <em>city</em>, <em>postCode</em>)</li>
+<li><strong>Staff</strong> (<em><u>staffNo</u></em>, <em>fName</em>, <em>lName</em>, <em>position</em>, <em>sex</em>, <em>DOB</em>, <em>salary</em>, <em>branchNo</em>)</li>
+</ul>
+<p>Note that the Primary Keys (<em>branchNo</em> in <strong>Branch</strong> and <em>staffNo</em> in <strong>Staff</strong>) have been underlined.</p>
+<p style="margin-left: 40px; margin-right: 40px;">&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="67350" src="https://nulondon.instructure.com/courses/2778/files/802022/preview?verifier=cC6ICjWre1EHCvCBkzm2cb2xEGnrwqrEcfa3N2dx" alt="icon_task_list.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802022" data-api-returntype="File"> The Importance of Integrity Constraints</p>
+<p>Instigating a series of <strong>integrity constraints</strong> is very important when establishing a relational data model. But what are they?</p>
+<p class="kl_border_radius_20" style="margin-left: 40px; margin-right: 40px; background-color: #fbe5b8; padding: 20px;"><span style="color: #e03e2d;"> <img id="61358" style="padding-right: 0px; margin-right: 5px;" src="https://nulondon.instructure.com/courses/2778/files/802016/download?verifier=QcwbGvHiIzK8ifzqynQ75tSXbGNYWPJkAqVxHZm5" alt="icon_pdf.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802016" data-api-returntype="File"> <span style="color: #000000;">This</span>&nbsp;<a class="instructure_file_link instructure_scribd_file" title="DDM1_M1_L7_Integrity Constraints.pdf" href="https://nulondon.instructure.com/courses/2778/files/802815?verifier=0utO9hWsJmbrroXqqUoSncbZIEWpQ3lqTIAy4ome&amp;wrap=1" target="_blank" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802815" data-api-returntype="File"><span style="color: #3598db;"><strong>PDF file</strong></span></a> </span>explains Integrity Constraints and NULL values.</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61389" src="https://nulondon.instructure.com/courses/2778/files/802014/preview?verifier=fcfYScyG8yiZP7UyitAUIkdk84U7Gb2vKgUEPhNg" alt="icon_logic.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802014" data-api-returntype="File"> Example Tables</p>
+<p>The following table shows relations (tables) that form part of a database held in a relational DBMS (the bold and italic attributes are primary keys):</p>
+<table style="border-collapse: collapse; margin-left: auto; margin-right: auto; border-color: #ffffff;" border="1">
+<tbody>
+<tr class="mps-table-headers">
+<td class="" style="border-color: #ffffff;" width="107">
+<p><strong>Relations</strong></p>
+</td>
+<td class="" style="border-color: #ffffff;" width="365">
+<p><strong>Attributes</strong></p>
+</td>
+<td style="border-color: #ffffff;" width="151">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr class="mps-table-design">
+<td class="" style="border-color: #ffffff;" width="107">
+<p>Hotel</p>
+</td>
+<td class="" style="border-color: #ffffff;" width="365">
+<p>(<strong><em>hotelNo</em></strong>, hotelName, City)</p>
+</td>
+<td class="" style="border-color: #ffffff;" width="151">
+<p>Hotel&nbsp; details</p>
+</td>
+</tr>
+<tr class="mps-table-design">
+<td class="" style="border-color: #ffffff;" width="107">
+<p>Room</p>
+</td>
+<td class="" style="border-color: #ffffff;" width="365">
+<p>(<strong><em>roomNo</em></strong>, <strong><em>hotelNo</em></strong>, Type, Price)</p>
+</td>
+<td class="" style="border-color: #ffffff;" width="151">
+<p style="border-color: #ffffff;">Room details</p>
+</td>
+</tr>
+<tr class="mps-table-design">
+<td style="border-color: #ffffff;" width="107">
+<p>Booking</p>
+</td>
+<td style="border-color: #ffffff;" width="365">
+<p>(<strong><em>hotelNo</em></strong>, <strong><em>guestNo</em></strong>, <strong><em>dateFrom</em></strong>, dateTo, roomNo)</p>
+</td>
+<td style="border-color: #ffffff;" width="151">
+<p>Booking details</p>
+</td>
+</tr>
+<tr class="mps-table-design">
+<td style="border-color: #ffffff;" width="107">
+<p>Guest</p>
+</td>
+<td class="" style="border-color: #ffffff;" width="365">
+<p>(<strong><em>guestNo</em></strong>, guestName, guestAddress)</p>
+</td>
+<td class="" style="border-color: #ffffff;" width="151">
+<p>Guest details</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Identify the foreign keys in this schema. Give your reasoning.&nbsp;</p>
+<p>Click Reveal Answer to view the answer.</p>
+<p><a id="kl_popup_0_trigger" class="kl_modal_trigger kl_popup_trigger bs-btn bs-btn-primary" href="#kl_popup_0_content">Reveal Answer</a></p>
+<div id="kl_popup_0_content" class="kl_modal_content kl_popup_content" style="border: 1px solid #A9A9A9; background: #f7f7f7; padding: 10px; width: 600px; max-width: 100%; margin: auto;">
+<h4 class="kl_modal_title" style="margin-top: 0;">Reveal Answer</h4>
+<p>The Primary key must not contain any null values.</p>
+<ul>
+<li>Room:
+<ul>
+<li>Connected to Hotel by hotelNo so this would be considered to be a foreign key. However, as the hotelNo attribute in Room cannot contain a null value (a room must exist in a hotel) then it is also a primary key.</li>
+</ul>
+</li>
+<li>Booking:
+<ul>
+<li>Connected to Hotel by hotelNo. This is a primary key because it cannot contain a null value. The guestNo could be considered a foreign key but because there has to be a room booked for someone in the hotel then it must also be a primary key. The roomNo attribute can be a foreign key because it is linked with the Room table. It may be possible to reserve a room for a guest as a stand-by.</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>&nbsp;</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
