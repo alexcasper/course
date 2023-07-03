@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/852203/mobile.min.css"><div id="kl_custom_css">&nbsp;</div>
+<div id="kl_wrapper_3" class="kl_flat_sections kl_wrapper mps-page-content">
+<div id="kl_banner" class="kl_border_radius_20 mps-banner-div">
+<h2 class="mps-banner-h2">M10 – L3: Indexes: Types and Actions&nbsp;</h2>
+</div>
+<div id="kl_banner_image"><img id="62515" class="kl_border_radius_20" src="https://nulondon.instructure.com/courses/2778/files/802202/download?verifier=osl3iE7ceBPArdVNB7Bp6R0FOEuOyFeZyO82uz7i" alt="SQL-Database-Objects-and-Functions.jpg" data-api-returntype="File" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802202"></div>
+<div id="kl_custom_block_0" class="" style="background-color: #ffffff; color: #000000; padding-top: 20px; padding-right: 0px; padding-left: 0px;">
+<p class="kl_module_progress_icons" style="background-color: #3c5b72; color: #ffffff; border-color: #ffffff;">Icon Progress Bar/Navigation (built in browser, hidden in app)</p>
+</div>
+<h3 class="kl_border_radius_50 mps-page-title"><i class="fas fa-info" style="background-color: #3c5b72; color: #ffffff;" aria-hidden="true"><span class="dp-icon-content" style="display: none;">&nbsp;</span></i>Creating Indexes: Implicit or Explicit</h3>
+<p>&nbsp;</p>
+<p>Indexes can either be created <em>implicitly</em> or <em>explicitly</em>:&nbsp;</p>
+<ul>
+<li><strong>Implicitly: </strong>When a primary key is specified during the creation of a table, or a primary key constraint is added.<strong>&nbsp;</strong></li>
+<li><strong>Explicitly</strong>: Directly via the <strong>CREATE INDEX</strong> statement.<strong>&nbsp;</strong></li>
+</ul>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61405" src="https://nulondon.instructure.com/courses/2778/files/802289/download?verifier=BvzQpIuYoIuWFEQpCq8zPm45il3qvEHfggVWunNe" alt="icon_assesment.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802289" data-api-returntype="File"> Types of Indexes</p>
+<p>Please be sure to click on the tabs below to learn more:</p>
+<div id="kl_custom_block_1" class="kl_panels_wrapper kl_panels_expander">
+<h3 id="kl_panel_0" class="kl_panel_heading kl_panel_0">Composite Index</h3>
+<div id="kl_panel_0_content" class="kl_panel_content kl_panel_0">
+<p>We can also (explicitly) create an index on two or more columns at the same time:&nbsp;</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>CREATE INDEX customer_name_idx </strong> </span><br><strong><span style="font-size: 12pt;">ON Customers (LastName, FirstName);</span>&nbsp;</strong></p>
+<p>This is known as a <em>composite index</em>.</p>
+<p>It can improve performance of certain queries because one index is applied to two attributes (columns).</p>
+<p>This is because less I/O is required to read one index compared to reading two attributes.</p>
+</div>
+<h3 id="kl_panel_1" class="kl_panel_heading kl_panel_1">Unique Index</h3>
+<div id="kl_panel_1_content" class="kl_panel_content kl_panel_1">
+<p>A unique index tends to be created when a Primary Key or Unique constraint is being defined in an attribute during the creation of a table.</p>
+<p>This is the <em>implicit</em> approach.</p>
+<p>The <em>explicit</em> approach involves creating the index directly, such as:&nbsp;</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>CREATE UNIQUE INDEX books_title_idx </strong> </span><br><span style="font-size: 12pt;"><strong>ON Books (Title);</strong></span></p>
+</div>
+<h3 id="kl_panel_2" class="kl_panel_heading kl_panel_2">Sort Index</h3>
+<div id="kl_panel_2_content" class="kl_panel_content kl_panel_2">
+<p>It is also possible to create an index in which the sort order can be descending or ascending (the default).</p>
+<p>This can sometimes be useful in improving the performance – depending on the type of query or task being carried out:&nbsp;</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>CREATE INDEX customers_zip_desc_idx </strong> </span><br><span style="font-size: 12pt;"><strong>ON Customers(Zip DESC);&nbsp;</strong></span></p>
+</div>
+</div>
+<p>Let’s look at how to verify, alter and drop an index.&nbsp;</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61405" src="https://nulondon.instructure.com/courses/2778/files/802289/preview?verifier=BvzQpIuYoIuWFEQpCq8zPm45il3qvEHfggVWunNe" alt="icon_assesment.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802289" data-api-returntype="File"> Verifying an Index</p>
+<p>In <strong>SQLite3</strong>, you can confirm which tables contain indexes by typing at the prompt: <span style="font-family: 'courier new', courier;"><strong>.indexes</strong></span>.&nbsp;</p>
+<p>In <strong>Oracle Live SQL</strong>, you can access the <em>data dictionary</em> (or <em>system catalogue</em>) to check what indexes are available in the table of interest, for example (if you are still logged in on <strong>Oracle Live SQL</strong>, and the session has not ‘timed out’ you can copy the following, else no need):&nbsp;</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>SELECT table_name, index_name, index_type</strong></span><br><span style="font-size: 12pt;"><strong>FROM user_indexes</strong></span><br><span style="font-size: 12pt;"><strong>WHERE table_name = ‘CUSTOMERS’;&nbsp;</strong></span></p>
+<p>The output would reveal the current indexes that exist for the <strong>Customers</strong> table along with whether they are a B-tree (“Normal”) index or some other type of index, e.g. function-based.</p>
+<p>The output for the above from <strong>Oracle Live SQL</strong> should look like:</p>
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802377/preview?verifier=JVTclT4h9yycu1SpBI1ZnRevkQU3swo7dKxTX1Jf" alt="M4_L3_IndexType_Normal-Output1.JPG" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802377" data-api-returntype="File"></p>
+<p>A function-based index could be created for the <strong>Books</strong> table in the <span style="text-decoration: underline;"><strong>Just Lee Bookstore</strong></span> database in relation to the profits returned for each book:</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>CREATE INDEX books_profot_idx</strong></span><br><span style="font-size: 12pt;"><strong>ON Books(Retail - Cost);</strong><strong>&nbsp;</strong></span></p>
+<p>The output would also state “Normal” for B-tree index and “Function-Based Normal” due to the function used to calculate the profit (retail – cost):</p>
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802536/preview?verifier=QYVKKNDqLUpRybW4J8zBe4Dgv5OD5RkLznjJlPmb" alt="M4_L3_IndexType_FunctionNormal-Output2.JPG" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802536" data-api-returntype="File"></p>
+<p>However, if we are interested in knowing which columns contain the actual index, we can type the following (in <strong>Oracle Live SQL</strong>):&nbsp;</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>SELECT table_name, index_name, column_name</strong></span><br><span style="font-size: 12pt;"><strong>FROM user_ind_columns</strong></span><br><span style="font-size: 12pt;"><strong>WHERE table_name = ‘CUSTOMERS’;&nbsp;</strong></span></p>
+<p>The column names that have been indexed will be identified as shown in the figure below:</p>
+<p><img class="instructure_file_link inline_disabled" style="display: block; margin-left: auto; margin-right: auto;" src="https://nulondon.instructure.com/courses/2778/files/802512/preview?verifier=vPfvfrVmABTMIQOkUjbxIlmKlhALdSH9qpEd7pSd" alt="M4_L3_IndexType_Normal-Output3.JPG" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802512" data-api-returntype="File"></p>
+<p>Observe in the figure that the <strong>customers_name_idx</strong> has been listed twice, one for the <em>LastName</em> and one for the <em>FirstName</em> attributes in the <strong>Customers</strong> table.&nbsp;</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61405" src="https://nulondon.instructure.com/courses/2778/files/802289/preview?verifier=BvzQpIuYoIuWFEQpCq8zPm45il3qvEHfggVWunNe" alt="icon_assesment.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802289" data-api-returntype="File"> Altering and Dropping an Index</p>
+<p>Altering an index is similar to altering a table, however you are only limited to change the name of the index, for example:&nbsp;</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>ALTER INDEX books_profit_idx</strong></span><br><strong><span style="font-size: 12pt;">RENAME TO books_profitcalc_idx;</span>&nbsp;</strong></p>
+<p>To drop an index, again it is similar to dropping a table, i.e.:</p>
+<p class="mps-program"><span style="font-size: 12pt;"><strong>DROP INDEX <em>indexname</em>;</strong></span></p>
+<p>Once an index is dropped it cannot be restored.</p>
+<p>&nbsp;</p>
+<p class="kl_border_radius_20 mps-page-subtitle"><img id="61390" src="https://nulondon.instructure.com/courses/2778/files/802146/preview?verifier=63ynP0oOghWPatnGX0DHAOdF7dmuvwQjChDinjVU" alt="icon_tryout.png" data-api-endpoint="https://nulondon.instructure.com/api/v1/courses/2778/files/802146" data-api-returntype="File">Indexes – Do’s and Don’ts</p>
+<p>Indexes should only be created for columns that actually require “indexing”. It would therefore not be advisable to generate indexes for every column in a table, as this will likely ‘defeat the purpose’ of efficiency (please click on the tab below to learn more):</p>
+<div id="kl_custom_block_2" class="kl_panels_wrapper kl_panels_accordion">
+<h3 id="kl_panel_3" class="kl_panel_heading kl_panel_3">Increasing Efficiency of Indexes</h3>
+<div id="kl_panel_3_content" class="kl_panel_content kl_panel_3">
+<ul>
+<li>Since an index is a database object, any update made to a table such as a deletion or insertion, the index also has to be updated which also affects the efficiency.</li>
+<li>Indexes should only be employed if a small portion of a table is going to be returned during a query.
+<ul>
+<li>If the portion is too large, the number of leaf blocks that are generated could result in a larger scan being performed than a ‘normal’ full table scan.</li>
+</ul>
+</li>
+<li>If the table is small, indexes are not required.</li>
+<li>More storage space is actually required on the physical disk drive if indexes are created and used.</li>
+</ul>
+</div>
+</div>
+<p>It is therefore of vital importance to decide whether creating indexes will be of benefit to the system.</p>
+</div><script src="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_167640000000000001/attachments/849352/mobile.min.js"></script>
